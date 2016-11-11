@@ -1,0 +1,4 @@
+services:
+#    pdf_genesis_element.example:
+#        class: PdfGenesis\ElementBundle\Example
+#        arguments: ["@service_id", "plain_value", "%parameter%"]

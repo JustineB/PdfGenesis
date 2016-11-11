@@ -1,0 +1,5 @@
+pdf_genesis_core:
+    resource: "@PdfGenesisCoreBundle/Resources/config/routing.yml"
+    prefix:   /
+
+

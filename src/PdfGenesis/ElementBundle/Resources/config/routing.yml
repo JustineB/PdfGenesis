@@ -1,0 +1,3 @@
+#pdf_genesis_element_index:
+#    path:     /
+#    defaults: { _controller: PdfGenesisElementBundle:Default:index }
