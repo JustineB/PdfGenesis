@@ -44,6 +44,8 @@
 
 # Composer PHAR
 /composer.phar
+composer.lock
+/composer.lock
 
 # Backup entities generated with doctrine:generate:entities command
 */Entity/*~
@@ -57,5 +59,6 @@
 web/assets/*
 
 .idea
+.idea/*
 .travis.yml
 app/.DS_Store

@@ -1,0 +1,14 @@
+
+{% stylesheets filter="scssphp" output="css/bootstrap.css"
+    "bundles/pdfgenesiscore/scss/bootstrap/_bootstrap.scss" %}
+    <link rel="stylesheet" href="{{ asset_url }}"/>
+{% endstylesheets %}
+
+{% stylesheets filter="cssrewrite" output="css/materialDesign.css"
+    "bundles/pdfgenesiscore/css/materialDesign/bootstrap-material-design.css"
+    "bundles/pdfgenesiscore/css/materialDesign/ripples.css" %}
+
+    <link rel="stylesheet" href="{{ asset_url }}"/>
+{% endstylesheets %}
+
+

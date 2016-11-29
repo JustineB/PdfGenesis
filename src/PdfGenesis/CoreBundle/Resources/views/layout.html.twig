@@ -2,8 +2,19 @@
 <html>
 <head>
     <title> PDF Genesis </title>
+
+    {% block javascripts %}
+        {% include 'PdfGenesisCoreBundle:assets:__javascripts.html.twig' %}
+    {% endblock %}
+
+    {% block stylesheets %}
+        {% include 'PdfGenesisCoreBundle:assets:__stylesheets.html.twig' %}
+    {% endblock %}
+
 </head>
+
 <body>
+    <a class="btn btn-raised" href="#"> Absolutely ! </a>
     {% block content %}
     {% endblock %}
 </body>
