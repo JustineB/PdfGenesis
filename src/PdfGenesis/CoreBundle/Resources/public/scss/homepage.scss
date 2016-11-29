@@ -1,6 +1,4 @@
 @import 'mixins';
-@import 'triangle-scss/triangle';
-
 
 .background-image-homepage{
   @include background(1);
@@ -19,7 +17,7 @@
 
     .main-triangle{
       @include fixed($right : -11em, $left: inherit);
-      @include triangle-down(40em, rgba(148, 123, 97, 0.74));
+      @include triangle-down(40em, rgba(152, 128, 102, 0.66));
     }
   }
 
