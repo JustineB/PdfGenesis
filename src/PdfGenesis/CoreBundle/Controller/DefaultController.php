@@ -8,6 +8,6 @@ class DefaultController extends Controller
 {
     public function indexAction()
     {
-        return $this->render('PdfGenesisCoreBundle::layout.html.twig');
+        return $this->render('PdfGenesisCoreBundle:homepage:index.html.twig');
     }
 }
