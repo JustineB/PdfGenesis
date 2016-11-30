@@ -12,12 +12,12 @@
   left: inherit;
 
   .border-triangle{
-    @include fixed($right : -13em, $left: inherit);
-    @include triangle-down(42em, rgba(247, 244, 242, 0.74));
+    @include fixed($right : -8em, $left: inherit);
+    @include triangle-down(32em, rgba(247, 244, 242, 0.74));
 
     .main-triangle{
-      @include fixed($right : -11em, $left: inherit);
-      @include triangle-down(40em, rgba(152, 128, 102, 0.66));
+      @include fixed($right : -6em, $left: inherit);
+      @include triangle-down(30em, rgba(152, 128, 102, 0.55));
     }
   }
 

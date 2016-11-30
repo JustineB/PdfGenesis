@@ -24,21 +24,21 @@
     position: fixed;
     top: 0;
     left: inherit;
-    right: -13em;
+    right: -8em;
     width: 0;
     height: 0;
-    border-left: 42em solid transparent;
-    border-right: 42em solid transparent;
-    border-top: 47em solid rgba(247, 244, 242, 0.74); }
+    border-left: 32em solid transparent;
+    border-right: 32em solid transparent;
+    border-top: 37em solid rgba(247, 244, 242, 0.74); }
     .content .border-triangle .main-triangle {
       position: fixed;
       top: 0;
       left: inherit;
-      right: -11em;
+      right: -6em;
       width: 0;
       height: 0;
-      border-left: 40em solid transparent;
-      border-right: 40em solid transparent;
-      border-top: 45em solid rgba(152, 128, 102, 0.66); }
+      border-left: 30em solid transparent;
+      border-right: 30em solid transparent;
+      border-top: 35em solid rgba(152, 128, 102, 0.55); }
 
 /*# sourceMappingURL=homepage.css.map */
