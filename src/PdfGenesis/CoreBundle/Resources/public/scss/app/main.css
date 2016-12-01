@@ -1,11 +1,4 @@
 li {
   list-style-type: none; }
 
-.navbar-default {
-  z-index: 9999;
-  background-color: transparent !important; }
-  .navbar-default a {
-    font-weight: 500;
-    color: #eab451 !important; }
-
 /*# sourceMappingURL=main.css.map */

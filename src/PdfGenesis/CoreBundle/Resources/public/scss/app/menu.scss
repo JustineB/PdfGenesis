@@ -1,0 +1,41 @@
+@import 'mixins';
+@import 'color';
+
+.navbar-main {
+  z-index: 9999;
+  background-color: transparent !important;
+
+  a {
+    color: $menu-link !important;
+  }
+
+  .container-fluid {
+    text-align: left;
+    @include center($width: 100%);
+
+    .navbar-header {
+      @include center($width: 13%);
+      float: inherit;
+      a {
+        font-size: 17px;
+      }
+    }
+    .navbar-nav {
+      @include center($width: 30%);
+      float: inherit;
+      li {
+        padding-left: 11px;
+
+        a {
+          font-weight: 500;
+          font-size: 19px;
+        }
+        &:first-child {
+          a {
+            color: $taupe !important;
+          }
+        }
+      }
+    }
+  }
+}

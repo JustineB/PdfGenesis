@@ -3,9 +3,10 @@
 # Release: Working copy
 # Locale: fr-FR, French (France)
 # Exported by: justine benezra
-# Exported at: Wed, 30 Nov 2016 17:45:43 +0000
+# Exported at: Thu, 01 Dec 2016 13:05:06 +0000
 pdf-genesis:
   menu:
     concept: Concept
     design: Créer
+    login-sign-up: se connecter/s'inscrire
 

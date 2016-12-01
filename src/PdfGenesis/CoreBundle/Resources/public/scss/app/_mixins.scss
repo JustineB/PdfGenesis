@@ -1,14 +1,33 @@
-@mixin blur($degree){
+@import 'color';
+
+@mixin blur($degree : 0){
+  filter: blur($degree);
   -webkit-filter: blur($degree);
   -moz-filter: blur($degree);
-  -o-filter: blur($degree);
   -ms-filter: blur($degree);
-  filter: blur($degree);
+  -o-filter: blur($degree);
+}
+@mixin saturate($degree : 0){
+  filter: saturate($degree);
+  -webkit-filter: saturate($degree);
+  -moz-filter: saturate($degree);
+  -ms-filter: saturate($degree);
+  -o-filter: saturate($degree);
+}
+
+@mixin gradient($first-color : $beige , $second-color: $taupe, $degree: -90deg ){
+  background: $first-color; /* For browsers that do not support gradients */
+  background: -webkit-linear-gradient($degree, $first-color, $second-color); /* For Safari 5.1 to 6.0 */
+  background: -o-linear-gradient($degree, $first-color, $second-color); /* For Opera 11.1 to 12.0 */
+  background: -moz-linear-gradient($degree, $first-color, $second-color); /* For Firefox 3.6 to 15 */
+  background: linear-gradient($degree, $first-color, $second-color); /* Standard syntax */
+
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
 @mixin fixed($right: 0, $left: 0, $top: 0){
   position: fixed;
-
   top : $top;
   left: $left;
   right: $right;
@@ -16,21 +35,26 @@
 
 
 @mixin background($z-index : 1, $right: 0, $left:0 ){
-
   @include fixed($right,$left);
   z-index: $z-index;
   height: 100%;
   width: 100%;
 }
 
+@mixin center($width: 100%){
+  width: $width;
+  margin-left: auto;
+  margin-right: auto;
+  position: relative;
+}
+
 
 
 @mixin triangle-down($size: 40em, $color: white){
-
   width: 0;
   height: 0;
   border-left: $size solid transparent;
   border-right: $size solid transparent;
-  border-top: $size+5em solid $color;
+  border-top: $size+4em solid $color;
 
 }
