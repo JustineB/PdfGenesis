@@ -1,0 +1,15 @@
+{% extends 'PdfGenesisCoreBundle::layout.html.twig' %}
+
+
+
+{% block body %}
+    <div class="content" id="design-container">
+        <div class="row">
+            <div class="design-tool-container col-sm-3"></div>
+            <div class="blank-sheet-container col-sm-6">
+                {% include  'PdfGenesisCoreBundle:design:_edit.html.twig' %}
+            </div>
+            <div class="design-tool-container col-sm-3"></div>
+        </div>
+    </div>
+{% endblock %}

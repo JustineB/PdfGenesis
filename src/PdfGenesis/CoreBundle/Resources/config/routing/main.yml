@@ -2,3 +2,7 @@ homepage:
     path:     /
     defaults: { _controller: PdfGenesisCoreBundle:Default:index }
 
+design:
+    path:     /design
+    defaults: { _controller: PdfGenesisCoreBundle:Default:design }
+

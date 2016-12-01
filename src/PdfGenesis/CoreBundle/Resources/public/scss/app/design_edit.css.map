@@ -1,0 +1,7 @@
+{
+"version": 3,
+"mappings": "AAIA,YAAY;ECwCV,KAAK,EADe,IAAI;EAExB,WAAW,EAAE,IAAI;EACjB,YAAY,EAAE,IAAI;EAClB,QAAQ,EAAE,QAAQ;EDxClB,MAAM,EAAE,KAAK;EACb,gBAAgB,EENT,IAAI;;AFSb,WAAW;EACT,MAAM,EAAE,KAAK",
+"sources": ["design_edit.scss","_mixins.scss","_color.scss"],
+"names": [],
+"file": "design_edit.css"
+}

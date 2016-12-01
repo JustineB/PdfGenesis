@@ -10,4 +10,9 @@ class DefaultController extends Controller
     {
         return $this->render('PdfGenesisCoreBundle:homepage:index.html.twig');
     }
+
+    public function designAction()
+    {
+        return $this->render('PdfGenesisCoreBundle:design:index.html.twig');
+    }
 }

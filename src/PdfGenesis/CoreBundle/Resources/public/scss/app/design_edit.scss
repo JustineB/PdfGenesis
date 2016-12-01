@@ -1,0 +1,15 @@
+@import 'mixins';
+@import 'color';
+
+
+.blank-sheet{
+  @include center();
+
+  height: 600px;
+  background-color: $white;
+}
+
+.free-space{
+  height: 100px;
+}
+
