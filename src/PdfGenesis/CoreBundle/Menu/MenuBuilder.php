@@ -12,7 +12,10 @@ class MenuBuilder implements ContainerAwareInterface{
 
     public function mainMenu(FactoryInterface $factory, array $options)
     {
-        $menu = $factory->createItem('root');
+        $menu = $factory->createItem('root',array(
+            'childrenAttributes' => array(
+                'class' => 'nav navbar-nav'
+            )));
 
         $menu->addChild('concept', array('uri' => '#concept'));
         $menu->addChild('design', array('uri' => '#design'));

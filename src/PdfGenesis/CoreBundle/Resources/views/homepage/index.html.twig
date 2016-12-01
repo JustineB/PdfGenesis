@@ -4,9 +4,14 @@
 {% block body %}
     <div class="background-image-homepage"></div>
     <div class="content">
-        <div class="nav">
-            {{ knp_menu_render('PdfGenesisCoreBundle:MenuBuilder:mainMenu') }}
-        </div>
+        <nav class="navbar navbar-default">
+            <div class="container-fluid">
+                <div class="navbar-header">
+                    <a class="navbar-brand" href="#">WebSiteName</a>
+                </div>
+                {{ knp_menu_render('PdfGenesisCoreBundle:MenuBuilder:mainMenu' , {'style': 'navbar-right', 'allow_safe_labels': true}) | raw  }}
+            </div>
+        </nav>
         <div class="border-triangle">
             <div class="main-triangle">
             </div>

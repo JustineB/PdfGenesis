@@ -1,4 +1,4 @@
-@mixin blur($degree) {
+@mixin blur($degree){
   -webkit-filter: blur($degree);
   -moz-filter: blur($degree);
   -o-filter: blur($degree);
@@ -15,16 +15,17 @@
 }
 
 
-@mixin background($z-index : 1) {
-  @include fixed();
+@mixin background($z-index : 1, $right: 0, $left:0 ){
 
+  @include fixed($right,$left);
   z-index: $z-index;
   height: 100%;
+  width: 100%;
 }
 
 
 
-@mixin triangle-down($size: 40em, $color: white) {
+@mixin triangle-down($size: 40em, $color: white){
 
   width: 0;
   height: 0;

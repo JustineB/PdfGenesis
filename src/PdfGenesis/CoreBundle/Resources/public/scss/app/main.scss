@@ -1,0 +1,17 @@
+@import 'mixins';
+@import 'color';
+
+li{
+  list-style-type: none;
+}
+
+.navbar-default{
+  z-index: 9999;
+  background-color: transparent !important;
+
+  a{
+    font-weight: 500;
+    color: $orange !important;
+  }
+}
+

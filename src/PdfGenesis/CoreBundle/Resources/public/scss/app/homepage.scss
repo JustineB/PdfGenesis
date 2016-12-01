@@ -1,4 +1,5 @@
 @import 'mixins';
+@import 'color';
 
 .background-image-homepage{
   @include background(1);
@@ -8,8 +9,8 @@
 }
 
 .content{
-  @include background(9999);
-  left: inherit;
+  @include background(9999, $right: inherit, $left: inherit);
+
 
   .border-triangle{
     @include fixed($right : -8em, $left: inherit);
@@ -22,6 +23,7 @@
   }
 
 }
+
 
 
 
