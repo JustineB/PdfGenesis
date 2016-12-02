@@ -5,11 +5,31 @@
 {% block body %}
     <div class="content" id="design-container">
         <div class="row">
-            <div class="design-tool-container col-sm-3"></div>
+
+            <div class="design-tool-container col-sm-3">
+
+            </div>
+
             <div class="blank-sheet-container col-sm-6">
+
+                <div class="free-space">
+                    <nav class="navbar navbar-default navbar-main">
+                        <div class="container-fluid">
+                            <div class="navbar-header">
+                                <a class="navbar-brand" href="#"> PDF Genesis </a>
+                            </div>
+                        </div>
+                    </nav>
+                </div>
+
                 {% include  'PdfGenesisCoreBundle:design:_edit.html.twig' %}
             </div>
-            <div class="design-tool-container col-sm-3"></div>
+            <div class="design-tool-container col-sm-3">
+                <div class="generate-btn-temporary">
+                    <a class="btn btn-raised btn-warning"> Import </a>
+                    <a class="btn btn-raised btn-success" href="{{ path('generate_pdf') }}"> Generate </a>
+                </div>
+            </div>
         </div>
     </div>
 {% endblock %}

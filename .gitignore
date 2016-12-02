@@ -51,8 +51,7 @@ composer.lock
 */Entity/*~
 
 ### Symfony Patch ###
-/web/bundles/
-/web/uploads/
+/web/medias/
 /web/css/
 /web/js/
 /web/assets/

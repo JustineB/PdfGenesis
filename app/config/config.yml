@@ -74,7 +74,7 @@ assetic:
             formatter: 'Leafo\ScssPhp\Formatter\Compressed'
         jsqueeze:   ~
 
-# app/config/config.yml
+# Knp Menu Configuration
 knp_menu:
     # use "twig: false" to disable the Twig extension and the TwigRenderer
     twig:
@@ -83,6 +83,18 @@ knp_menu:
     templating: false
     # the renderer to use, list is also available by default
     default_renderer: twig
+
+# Knp Snappy Configuration
+knp_snappy:
+    temporary_folder: %kernel.cache_dir%/snappy
+    pdf:
+        enabled:    true
+        binary:     /usr/local/bin/wkhtmltopdf
+        options:    []
+    image:
+        enabled:    true
+        binary:     /usr/local/bin/wkhtmltoimage
+        options:    []
 
 
 

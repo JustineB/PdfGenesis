@@ -27,6 +27,7 @@ class AppKernel extends Kernel
             new PdfGenesis\CoreBundle\PdfGenesisCoreBundle(),
             new Symfony\Bundle\AsseticBundle\AsseticBundle(),
             new Knp\Bundle\MenuBundle\KnpMenuBundle(),
+            new Knp\Bundle\SnappyBundle\KnpSnappyBundle(),
         );
 
         if (in_array($this->getEnvironment(), array('dev', 'test'), true)) {

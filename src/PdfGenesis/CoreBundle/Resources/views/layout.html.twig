@@ -14,6 +14,14 @@
 </head>
 
 <body>
+    <div class="flashbag">
+        {% for flashMessage in app.session.flashbag.get('error') %}
+            {{ flashMessage }}
+        {% endfor %}
+        {% for flashMessage in app.session.flashbag.get('sucess') %}
+            {{ flashMessage }}
+        {% endfor %}
+    </div>
     {% block body %}
     {% endblock %}
 </body>

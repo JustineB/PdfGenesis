@@ -1,3 +1,8 @@
 #pdf_genesis_document_index:
 #    path:     /
 #    defaults: { _controller: PdfGenesisDocumentBundle::index }
+
+
+generate_pdf:
+     path:    /generate-pdf
+     defaults: { _controller: PdfGenesisDocumentBundle:Pdf:generate }
