@@ -5,6 +5,8 @@ namespace PdfGenesis\DocumentBundle\Controller;
 
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\Config\Definition\Exception\Exception;
+use Symfony\Component\HttpFoundation\BinaryFileResponse;
+use Symfony\Component\HttpFoundation\ResponseHeaderBag;
 
 class PdfController extends Controller
 {
@@ -29,7 +31,14 @@ class PdfController extends Controller
             $this->get('session')->getFlashbag()->add('error','error');
         }
 
-        return $this->redirect($this->generateUrl('design'));
+
+
+        $response = new BinaryFileResponse('medias/pdf/file.pdf');
+        $response->setContentDisposition(ResponseHeaderBag::DISPOSITION_ATTACHMENT);
+
+        return $response;
+
+//        return $this->redirect($this->generateUrl('design'));
     }
 
 }

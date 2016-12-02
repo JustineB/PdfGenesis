@@ -5,40 +5,42 @@
   right: 0;
   z-index: 1;
   height: 100%;
+  width: 100%;
+  filter: blur(4px);
   -webkit-filter: blur(4px);
   -moz-filter: blur(4px);
-  -o-filter: blur(4px);
   -ms-filter: blur(4px);
-  filter: blur(4px);
-  background: url(../../bundles/pdfgenesiscore/img/notebook-background.jpg) no-repeat; }
+  -o-filter: blur(4px);
+  background: url(../../bundles/pdfgenesiscore/img/notebook-background.jpg) no-repeat;
+  background-size: 108%; }
 
-.content {
+.index-content {
   position: fixed;
   top: 0;
-  left: 0;
-  right: 0;
+  left: inherit;
+  right: inherit;
   z-index: 9999;
   height: 100%;
-  left: inherit; }
-  .content .border-triangle {
+  width: 100%; }
+  .index-content .border-triangle {
     position: fixed;
     top: 0;
     left: inherit;
-    right: -8em;
+    right: -7em;
     width: 0;
     height: 0;
     border-left: 32em solid transparent;
     border-right: 32em solid transparent;
-    border-top: 37em solid rgba(247, 244, 242, 0.74); }
-    .content .border-triangle .main-triangle {
+    border-top: 36em solid rgba(247, 244, 242, 0.74); }
+    .index-content .border-triangle .main-triangle {
       position: fixed;
       top: 0;
       left: inherit;
       right: -6em;
       width: 0;
       height: 0;
-      border-left: 30em solid transparent;
-      border-right: 30em solid transparent;
+      border-left: 31em solid transparent;
+      border-right: 31em solid transparent;
       border-top: 35em solid rgba(152, 128, 102, 0.55); }
 
 /*# sourceMappingURL=homepage.css.map */
