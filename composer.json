@@ -25,7 +25,9 @@
         "leafo/scssphp": "^0.6.6",
         "patchwork/jsqueeze": "^2.0",
         "knplabs/knp-menu-bundle": "^2.0",
-        "knplabs/knp-snappy-bundle": "~1.4"
+        "knplabs/knp-snappy-bundle": "~1.4",
+        "friendsofsymfony/user-bundle": "~2.0@dev",
+        "friendsofsymfony/jsrouting-bundle": "^1.6"
     },
     "require-dev": {
         "sensio/generator-bundle": "~3.0",
