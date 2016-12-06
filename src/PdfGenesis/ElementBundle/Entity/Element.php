@@ -39,14 +39,14 @@ class Element
     /**
      * @var File
      *
-     * @ORM\ManyToOne(targetEntity="PdfGenesis\ElementBundle\Entity\File", inversedBy="elements")
+     * @ORM\ManyToOne(targetEntity="PdfGenesis\ElementBundle\Entity\File", inversedBy="elements" , cascade={"persist"})
      */
     protected $file;
 
     /**
      * @var Position
      *
-     * @ORM\OneToOne(targetEntity="PdfGenesis\ElementBundle\Entity\Position")
+     * @ORM\OneToOne(targetEntity="PdfGenesis\ElementBundle\Entity\Position", cascade={"persist"})
      * @ORM\JoinColumn(name="position_id", referencedColumnName="id")
      */
     protected $position;
@@ -54,7 +54,7 @@ class Element
     /**
      * @var Size
      *
-     * @ORM\OneToOne(targetEntity="PdfGenesis\ElementBundle\Entity\Size")
+     * @ORM\OneToOne(targetEntity="PdfGenesis\ElementBundle\Entity\Size", cascade={"persist"})
      * @ORM\JoinColumn(name="size_id", referencedColumnName="id")
      */
     protected $size;

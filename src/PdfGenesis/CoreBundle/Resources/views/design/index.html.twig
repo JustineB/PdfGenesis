@@ -26,7 +26,7 @@
             </div>
             <div class="design-tool-container col-sm-3">
                 <div class="generate-btn-temporary">
-                    <a class="btn btn-raised btn-warning"> Import </a>
+                    {{ render(path('import_file')) }}
                     <a class="btn btn-raised btn-success" href="{{ path('generate_pdf') }}"> Generate </a>
                 </div>
             </div>

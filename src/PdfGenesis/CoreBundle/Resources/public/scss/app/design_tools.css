@@ -1,4 +1,9 @@
 .design-tool-container {
   height: 100%; }
+  .design-tool-container #import_path {
+    position: absolute;
+    margin-top: 17px;
+    z-index: 9999;
+    width: 114px; }
 
 /*# sourceMappingURL=design_tools.css.map */

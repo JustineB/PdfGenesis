@@ -236,6 +236,7 @@ class Document
     public function __construct()
     {
         $this->pages = new \Doctrine\Common\Collections\ArrayCollection();
+        $this->createdAt = new \DateTime('now');
     }
 
 }
