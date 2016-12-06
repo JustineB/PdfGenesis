@@ -95,7 +95,7 @@ class Size
         return $this->height;
     }
 
-    public function __construct($width, $height){
+    public function __construct($width = 0, $height = 0){
         $this->width = $width;
         $this->height = $height;
     }

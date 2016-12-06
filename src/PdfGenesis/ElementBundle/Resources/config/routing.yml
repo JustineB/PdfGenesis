@@ -3,6 +3,16 @@
 #    defaults: { _controller: PdfGenesisElementBundle:Default:index }
 
 
-import_file:
-     path :    /import-file
-     defaults: { _controller: PdfGenesisElementBundle:File:import }
+
+
+
+pdf_genesis_element_file:
+    resource: "@PdfGenesisElementBundle/Resources/config/routing/file.yml"
+    prefix:   /file
+
+
+pdf_genesis_element_element:
+    resource: "@PdfGenesisElementBundle/Resources/config/routing/element.yml"
+    prefix:   /
+
+

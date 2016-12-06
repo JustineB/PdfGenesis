@@ -1,0 +1,3 @@
+import_file:
+     path :    /import
+     defaults: { _controller: PdfGenesisElementBundle:File:import }

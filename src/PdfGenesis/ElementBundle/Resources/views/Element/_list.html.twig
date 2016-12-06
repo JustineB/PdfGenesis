@@ -1,0 +1,7 @@
+{% if elements is defined %}
+    {% for item in elements %}
+        {% if item.size != null %}
+            <img src="{{ item.file.path }}" class="element-blank-page" style="width:{{ item.size.width }}px; height:{{ item.size.height }}px">
+        {% endif %}
+    {% endfor %}
+{% endif %}

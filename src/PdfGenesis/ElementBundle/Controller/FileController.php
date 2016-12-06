@@ -27,7 +27,7 @@ class FileController extends Controller
             $file->move( $this->getParameter('files_directory'), $fileName );
 
             $import->setFile($fileName);
-            $import->setPath($this->getParameter('files_directory').$fileName);
+            $import->setPath('../'.$this->getParameter('files_directory').$fileName);
 
             $this->get('event_dispatcher')->dispatch('pdf_genesis.element.create', new FileEvent($import));
 

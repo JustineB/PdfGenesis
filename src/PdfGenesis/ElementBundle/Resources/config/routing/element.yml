@@ -1,0 +1,3 @@
+element_list:
+  path :    /list
+  defaults: { _controller: PdfGenesisElementBundle:Element:list }
