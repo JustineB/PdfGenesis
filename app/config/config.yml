@@ -45,6 +45,8 @@ doctrine:
         user:     "%database_user%"
         password: "%database_password%"
         charset:  UTF8
+        types:
+           json: Sonata\Doctrine\Types\JsonType
         # if using pdo_sqlite as your database driver:
         #   1. add the path in parameters.yml
         #     e.g. database_path: "%kernel.root_dir%/data/data.db3"
@@ -56,6 +58,10 @@ doctrine:
         auto_generate_proxy_classes: "%kernel.debug%"
         naming_strategy: doctrine.orm.naming_strategy.underscore
         auto_mapping: true
+        entity_managers:
+                        default:
+                            mappings:
+                                SonataMediaBundle: ~
 
 # Swiftmailer Configuration
 swiftmailer:
@@ -95,6 +101,39 @@ knp_snappy:
         enabled:    true
         binary:     /usr/local/bin/wkhtmltoimage
         options:    []
+
+
+# Sonata Configuration
+
+sonata_media:
+    # if you don't use default namespace configuration
+    #class:
+    #    media:        MyVendor\MediaBundle\Entity\Media
+    #    gallery:      MyVendor\MediaBundle\Entity\Gallery
+    #    gallery_item: MyVendor\MediaBundle\Entity\GalleryItem
+    db_driver: doctrine_orm # or doctrine_mongodb, doctrine_phpcr it is mandatory to choose one here
+    default_context: default # you need to set a context
+    contexts:
+        default:  # the default context is mandatory
+            providers:
+                - sonata.media.provider.dailymotion
+                - sonata.media.provider.youtube
+                - sonata.media.provider.image
+                - sonata.media.provider.file
+                - sonata.media.provider.vimeo
+
+            formats:
+                small: { width: 100 , quality: 70}
+                big:   { width: 500 , quality: 70}
+
+    cdn:
+        server:
+            path: /uploads/media # http://media.sonata-project.org/
+
+    filesystem:
+        local:
+            directory:  "%kernel.root_dir%/../web/uploads/media"
+            create:     false
 
 
 
