@@ -1,0 +1,156 @@
+<?php
+
+namespace PdfGenesis\ElementBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * File
+ *
+ * @ORM\Table(name="file")
+ * @ORM\Entity(repositoryClass="PdfGenesis\ElementBundle\Repository\FileRepository")
+ */
+class File
+{
+    /**
+     * @var int
+     *
+     * @ORM\Column(name="id", type="integer")
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="AUTO")
+     */
+    private $id;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="file", type="string", length=255)
+     */
+    private $file;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="path", type="string", length=255)
+     */
+    private $path;
+
+
+    /**
+     * @ORM\OneToMany(targetEntity="PdfGenesis\ElementBundle\Entity\Element", mappedBy="file" )
+     */
+    protected $elements;
+
+    /**
+     * Get id
+     *
+     * @return int
+     */
+    public function getId()
+    {
+        return $this->id;
+    }
+
+    /**
+     * Set file
+     *
+     * @param string $file
+     *
+     * @return File
+     */
+    public function setFile($file)
+    {
+        $this->file = $file;
+
+        return $this;
+    }
+
+    /**
+     * Get file
+     *
+     * @return string
+     */
+    public function getFile()
+    {
+        return $this->file;
+    }
+
+    /**
+     * Set path
+     *
+     * @param string $path
+     *
+     * @return File
+     */
+    public function setPath($path)
+    {
+        $this->path = $path;
+
+        return $this;
+    }
+
+    /**
+     * Get path
+     *
+     * @return string
+     */
+    public function getPath()
+    {
+        return $this->path;
+    }
+
+    /**
+     * Set elements
+     *
+     * @param \PdfGenesis\ElementBundle\Entity\Element $elements
+     *
+     * @return File
+     */
+    public function setElements(\PdfGenesis\ElementBundle\Entity\Element $elements = null)
+    {
+        $this->elements = $elements;
+
+        return $this;
+    }
+
+    /**
+     * Get elements
+     *
+     * @return \PdfGenesis\ElementBundle\Entity\Element
+     */
+    public function getElements()
+    {
+        return $this->elements;
+    }
+    /**
+     * Constructor
+     */
+    public function __construct()
+    {
+        $this->elements = new \Doctrine\Common\Collections\ArrayCollection();
+    }
+
+    /**
+     * Add element
+     *
+     * @param \PdfGenesis\ElementBundle\Entity\Element $element
+     *
+     * @return File
+     */
+    public function addElement(\PdfGenesis\ElementBundle\Entity\Element $element)
+    {
+        $this->elements[] = $element;
+
+        return $this;
+    }
+
+    /**
+     * Remove element
+     *
+     * @param \PdfGenesis\ElementBundle\Entity\Element $element
+     */
+    public function removeElement(\PdfGenesis\ElementBundle\Entity\Element $element)
+    {
+        $this->elements->removeElement($element);
+    }
+}

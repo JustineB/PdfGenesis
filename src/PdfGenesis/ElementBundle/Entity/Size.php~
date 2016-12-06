@@ -1,0 +1,74 @@
+<?php
+
+namespace PdfGenesis\ElementBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * Size
+ *
+ * @ORM\Table(name="size")
+ * @ORM\Entity(repositoryClass="PdfGenesis\ElementBundle\Repository\SizeRepository")
+ */
+class Size
+{
+    /**
+     * @var int
+     *
+     * @ORM\Column(name="id", type="integer")
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="AUTO")
+     */
+    private $id;
+
+    /**
+     * @var double
+     *
+     * @ORM\Column(name="width", type="double")
+     */
+    private $width;
+
+
+    /**
+     * @var double
+     *
+     * @ORM\Column(name="height", type="double")
+     */
+    private $height;
+
+
+    /**
+     * Get id
+     *
+     * @return int
+     */
+    public function getId()
+    {
+        return $this->id;
+    }
+
+    /**
+     * Set width
+     *
+     * @param float $width
+     *
+     * @return Size
+     */
+    public function setWidth($width)
+    {
+        $this->width = $width;
+
+        return $this;
+    }
+
+    /**
+     * Get width
+     *
+     * @return float
+     */
+    public function getWidth()
+    {
+        return $this->width;
+    }
+}
+
