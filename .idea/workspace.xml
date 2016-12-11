@@ -1,7 +1,148 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
+<<<<<<< Updated upstream
     <list default="true" id="9067ebc0-2873-4ba2-a8d6-16124f7f4b87" name="Default" comment="" />
+=======
+    <list default="true" id="9067ebc0-2873-4ba2-a8d6-16124f7f4b87" name="Default" comment="">
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/PdfGenesis/CoreBundle/DataFixtures/ORM/LoadPositionData.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/PdfGenesis/CoreBundle/DataFixtures/ORM/LoadSizeData.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/PdfGenesis/CoreBundle/Resources/public/css/materialDesign/bootstrap-material-design.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/PdfGenesis/CoreBundle/Resources/public/css/materialDesign/ripples.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/PdfGenesis/CoreBundle/Resources/public/fonts/bootstrap/glyphicons-halflings-regular.eot" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/PdfGenesis/CoreBundle/Resources/public/fonts/bootstrap/glyphicons-halflings-regular.svg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/PdfGenesis/CoreBundle/Resources/public/fonts/bootstrap/glyphicons-halflings-regular.ttf" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/PdfGenesis/CoreBundle/Resources/public/fonts/bootstrap/glyphicons-halflings-regular.woff" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/PdfGenesis/CoreBundle/Resources/public/fonts/bootstrap/glyphicons-halflings-regular.woff2" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/PdfGenesis/CoreBundle/Resources/public/img/notebook-background.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/PdfGenesis/CoreBundle/Resources/public/js/app/import_process.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/PdfGenesis/CoreBundle/Resources/public/js/boostrap/bootstrap-sprockets.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/PdfGenesis/CoreBundle/Resources/public/js/boostrap/bootstrap.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/PdfGenesis/CoreBundle/Resources/public/js/boostrap/bootstrap.min.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/PdfGenesis/CoreBundle/Resources/public/js/boostrap/bootstrap/affix.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/PdfGenesis/CoreBundle/Resources/public/js/boostrap/bootstrap/alert.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/PdfGenesis/CoreBundle/Resources/public/js/boostrap/bootstrap/button.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/PdfGenesis/CoreBundle/Resources/public/js/boostrap/bootstrap/carousel.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/PdfGenesis/CoreBundle/Resources/public/js/boostrap/bootstrap/collapse.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/PdfGenesis/CoreBundle/Resources/public/js/boostrap/bootstrap/dropdown.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/PdfGenesis/CoreBundle/Resources/public/js/boostrap/bootstrap/modal.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/PdfGenesis/CoreBundle/Resources/public/js/boostrap/bootstrap/popover.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/PdfGenesis/CoreBundle/Resources/public/js/boostrap/bootstrap/scrollspy.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/PdfGenesis/CoreBundle/Resources/public/js/boostrap/bootstrap/tab.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/PdfGenesis/CoreBundle/Resources/public/js/boostrap/bootstrap/tooltip.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/PdfGenesis/CoreBundle/Resources/public/js/boostrap/bootstrap/transition.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/PdfGenesis/CoreBundle/Resources/public/js/jquery/jquery.min.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/PdfGenesis/CoreBundle/Resources/public/js/materialDesign/material.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/PdfGenesis/CoreBundle/Resources/public/js/materialDesign/ripples.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/PdfGenesis/CoreBundle/Resources/public/scss/_mixins.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/PdfGenesis/CoreBundle/Resources/public/scss/_mixins.css.map" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/PdfGenesis/CoreBundle/Resources/public/scss/app/_color.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/PdfGenesis/CoreBundle/Resources/public/scss/app/_color.css.map" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/PdfGenesis/CoreBundle/Resources/public/scss/app/_color.scss" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/PdfGenesis/CoreBundle/Resources/public/scss/app/_mixins.scss" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/PdfGenesis/CoreBundle/Resources/public/scss/app/design_edit.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/PdfGenesis/CoreBundle/Resources/public/scss/app/design_edit.css.map" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/PdfGenesis/CoreBundle/Resources/public/scss/app/design_edit.scss" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/PdfGenesis/CoreBundle/Resources/public/scss/app/design_tools.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/PdfGenesis/CoreBundle/Resources/public/scss/app/design_tools.css.map" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/PdfGenesis/CoreBundle/Resources/public/scss/app/design_tools.scss" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/PdfGenesis/CoreBundle/Resources/public/scss/app/homepage.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/PdfGenesis/CoreBundle/Resources/public/scss/app/homepage.css.map" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/PdfGenesis/CoreBundle/Resources/public/scss/app/homepage.scss" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/PdfGenesis/CoreBundle/Resources/public/scss/app/main.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/PdfGenesis/CoreBundle/Resources/public/scss/app/main.css.map" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/PdfGenesis/CoreBundle/Resources/public/scss/app/main.scss" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/PdfGenesis/CoreBundle/Resources/public/scss/app/menu.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/PdfGenesis/CoreBundle/Resources/public/scss/app/menu.css.map" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/PdfGenesis/CoreBundle/Resources/public/scss/app/menu.scss" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/PdfGenesis/CoreBundle/Resources/public/scss/bootstrap/_bootstrap-compass.scss" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/PdfGenesis/CoreBundle/Resources/public/scss/bootstrap/_bootstrap-mincer.scss" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/PdfGenesis/CoreBundle/Resources/public/scss/bootstrap/_bootstrap-sprockets.scss" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/PdfGenesis/CoreBundle/Resources/public/scss/bootstrap/_bootstrap.scss" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/PdfGenesis/CoreBundle/Resources/public/scss/bootstrap/bootstrap/_alerts.scss" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/PdfGenesis/CoreBundle/Resources/public/scss/bootstrap/bootstrap/_badges.scss" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/PdfGenesis/CoreBundle/Resources/public/scss/bootstrap/bootstrap/_breadcrumbs.scss" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/PdfGenesis/CoreBundle/Resources/public/scss/bootstrap/bootstrap/_button-groups.scss" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/PdfGenesis/CoreBundle/Resources/public/scss/bootstrap/bootstrap/_buttons.scss" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/PdfGenesis/CoreBundle/Resources/public/scss/bootstrap/bootstrap/_carousel.scss" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/PdfGenesis/CoreBundle/Resources/public/scss/bootstrap/bootstrap/_close.scss" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/PdfGenesis/CoreBundle/Resources/public/scss/bootstrap/bootstrap/_code.scss" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/PdfGenesis/CoreBundle/Resources/public/scss/bootstrap/bootstrap/_component-animations.scss" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/PdfGenesis/CoreBundle/Resources/public/scss/bootstrap/bootstrap/_dropdowns.scss" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/PdfGenesis/CoreBundle/Resources/public/scss/bootstrap/bootstrap/_forms.scss" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/PdfGenesis/CoreBundle/Resources/public/scss/bootstrap/bootstrap/_glyphicons.scss" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/PdfGenesis/CoreBundle/Resources/public/scss/bootstrap/bootstrap/_grid.scss" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/PdfGenesis/CoreBundle/Resources/public/scss/bootstrap/bootstrap/_input-groups.scss" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/PdfGenesis/CoreBundle/Resources/public/scss/bootstrap/bootstrap/_jumbotron.scss" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/PdfGenesis/CoreBundle/Resources/public/scss/bootstrap/bootstrap/_labels.scss" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/PdfGenesis/CoreBundle/Resources/public/scss/bootstrap/bootstrap/_list-group.scss" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/PdfGenesis/CoreBundle/Resources/public/scss/bootstrap/bootstrap/_media.scss" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/PdfGenesis/CoreBundle/Resources/public/scss/bootstrap/bootstrap/_mixins.scss" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/PdfGenesis/CoreBundle/Resources/public/scss/bootstrap/bootstrap/_modals.scss" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/PdfGenesis/CoreBundle/Resources/public/scss/bootstrap/bootstrap/_navbar.scss" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/PdfGenesis/CoreBundle/Resources/public/scss/bootstrap/bootstrap/_navs.scss" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/PdfGenesis/CoreBundle/Resources/public/scss/bootstrap/bootstrap/_normalize.scss" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/PdfGenesis/CoreBundle/Resources/public/scss/bootstrap/bootstrap/_pager.scss" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/PdfGenesis/CoreBundle/Resources/public/scss/bootstrap/bootstrap/_pagination.scss" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/PdfGenesis/CoreBundle/Resources/public/scss/bootstrap/bootstrap/_panels.scss" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/PdfGenesis/CoreBundle/Resources/public/scss/bootstrap/bootstrap/_popovers.scss" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/PdfGenesis/CoreBundle/Resources/public/scss/bootstrap/bootstrap/_print.scss" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/PdfGenesis/CoreBundle/Resources/public/scss/bootstrap/bootstrap/_progress-bars.scss" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/PdfGenesis/CoreBundle/Resources/public/scss/bootstrap/bootstrap/_responsive-embed.scss" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/PdfGenesis/CoreBundle/Resources/public/scss/bootstrap/bootstrap/_responsive-utilities.scss" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/PdfGenesis/CoreBundle/Resources/public/scss/bootstrap/bootstrap/_scaffolding.scss" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/PdfGenesis/CoreBundle/Resources/public/scss/bootstrap/bootstrap/_tables.scss" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/PdfGenesis/CoreBundle/Resources/public/scss/bootstrap/bootstrap/_theme.scss" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/PdfGenesis/CoreBundle/Resources/public/scss/bootstrap/bootstrap/_thumbnails.scss" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/PdfGenesis/CoreBundle/Resources/public/scss/bootstrap/bootstrap/_tooltip.scss" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/PdfGenesis/CoreBundle/Resources/public/scss/bootstrap/bootstrap/_type.scss" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/PdfGenesis/CoreBundle/Resources/public/scss/bootstrap/bootstrap/_utilities.scss" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/PdfGenesis/CoreBundle/Resources/public/scss/bootstrap/bootstrap/_variables.scss" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/PdfGenesis/CoreBundle/Resources/public/scss/bootstrap/bootstrap/_wells.scss" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/PdfGenesis/CoreBundle/Resources/public/scss/bootstrap/bootstrap/mixins/_alerts.scss" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/PdfGenesis/CoreBundle/Resources/public/scss/bootstrap/bootstrap/mixins/_background-variant.scss" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/PdfGenesis/CoreBundle/Resources/public/scss/bootstrap/bootstrap/mixins/_border-radius.scss" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/PdfGenesis/CoreBundle/Resources/public/scss/bootstrap/bootstrap/mixins/_buttons.scss" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/PdfGenesis/CoreBundle/Resources/public/scss/bootstrap/bootstrap/mixins/_center-block.scss" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/PdfGenesis/CoreBundle/Resources/public/scss/bootstrap/bootstrap/mixins/_clearfix.scss" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/PdfGenesis/CoreBundle/Resources/public/scss/bootstrap/bootstrap/mixins/_forms.scss" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/PdfGenesis/CoreBundle/Resources/public/scss/bootstrap/bootstrap/mixins/_gradients.scss" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/PdfGenesis/CoreBundle/Resources/public/scss/bootstrap/bootstrap/mixins/_grid-framework.scss" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/PdfGenesis/CoreBundle/Resources/public/scss/bootstrap/bootstrap/mixins/_grid.scss" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/PdfGenesis/CoreBundle/Resources/public/scss/bootstrap/bootstrap/mixins/_hide-text.scss" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/PdfGenesis/CoreBundle/Resources/public/scss/bootstrap/bootstrap/mixins/_image.scss" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/PdfGenesis/CoreBundle/Resources/public/scss/bootstrap/bootstrap/mixins/_labels.scss" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/PdfGenesis/CoreBundle/Resources/public/scss/bootstrap/bootstrap/mixins/_list-group.scss" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/PdfGenesis/CoreBundle/Resources/public/scss/bootstrap/bootstrap/mixins/_nav-divider.scss" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/PdfGenesis/CoreBundle/Resources/public/scss/bootstrap/bootstrap/mixins/_nav-vertical-align.scss" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/PdfGenesis/CoreBundle/Resources/public/scss/bootstrap/bootstrap/mixins/_opacity.scss" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/PdfGenesis/CoreBundle/Resources/public/scss/bootstrap/bootstrap/mixins/_pagination.scss" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/PdfGenesis/CoreBundle/Resources/public/scss/bootstrap/bootstrap/mixins/_panels.scss" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/PdfGenesis/CoreBundle/Resources/public/scss/bootstrap/bootstrap/mixins/_progress-bar.scss" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/PdfGenesis/CoreBundle/Resources/public/scss/bootstrap/bootstrap/mixins/_reset-filter.scss" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/PdfGenesis/CoreBundle/Resources/public/scss/bootstrap/bootstrap/mixins/_reset-text.scss" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/PdfGenesis/CoreBundle/Resources/public/scss/bootstrap/bootstrap/mixins/_resize.scss" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/PdfGenesis/CoreBundle/Resources/public/scss/bootstrap/bootstrap/mixins/_responsive-visibility.scss" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/PdfGenesis/CoreBundle/Resources/public/scss/bootstrap/bootstrap/mixins/_size.scss" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/PdfGenesis/CoreBundle/Resources/public/scss/bootstrap/bootstrap/mixins/_tab-focus.scss" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/PdfGenesis/CoreBundle/Resources/public/scss/bootstrap/bootstrap/mixins/_table-row.scss" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/PdfGenesis/CoreBundle/Resources/public/scss/bootstrap/bootstrap/mixins/_text-emphasis.scss" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/PdfGenesis/CoreBundle/Resources/public/scss/bootstrap/bootstrap/mixins/_text-overflow.scss" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/PdfGenesis/CoreBundle/Resources/public/scss/bootstrap/bootstrap/mixins/_vendor-prefixes.scss" afterPath="" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/composer.lock" afterPath="$PROJECT_DIR$/composer.lock" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/PdfGenesis/CoreBundle/Resources/config/services.yml" afterPath="$PROJECT_DIR$/src/PdfGenesis/CoreBundle/Resources/config/services.yml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/PdfGenesis/CoreBundle/Resources/views/assets/__stylesheets.html.twig" afterPath="$PROJECT_DIR$/src/PdfGenesis/CoreBundle/Resources/views/assets/__stylesheets.html.twig" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/PdfGenesis/DocumentBundle/Controller/PdfController.php" afterPath="$PROJECT_DIR$/src/PdfGenesis/DocumentBundle/Controller/PdfController.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/PdfGenesis/ElementBundle/Controller/FileController.php" afterPath="$PROJECT_DIR$/src/PdfGenesis/ElementBundle/Controller/FileController.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/PdfGenesis/ElementBundle/Entity/Element.php" afterPath="$PROJECT_DIR$/src/PdfGenesis/ElementBundle/Entity/Element.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/PdfGenesis/ElementBundle/Entity/File.php" afterPath="$PROJECT_DIR$/src/PdfGenesis/ElementBundle/Entity/File.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/PdfGenesis/ElementBundle/Entity/Position.php" afterPath="$PROJECT_DIR$/src/PdfGenesis/ElementBundle/Entity/Position.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/PdfGenesis/ElementBundle/Entity/Size.php" afterPath="$PROJECT_DIR$/src/PdfGenesis/ElementBundle/Entity/Size.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/PdfGenesis/ElementBundle/EventListener/ElementListener.php" afterPath="$PROJECT_DIR$/src/PdfGenesis/ElementBundle/EventListener/ElementListener.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/PdfGenesis/ElementBundle/Resources/views/Element/_list.html.twig" afterPath="$PROJECT_DIR$/src/PdfGenesis/ElementBundle/Resources/views/Element/_list.html.twig" />
+    </list>
+>>>>>>> Stashed changes
     <ignored path="Pdf_Genesis.iws" />
     <ignored path=".idea/workspace.xml" />
     <ignored path=".idea/dataSources.local.xml" />
@@ -24,8 +165,13 @@
       <file leaf-file-name="FileController.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/PdfGenesis/ElementBundle/Controller/FileController.php">
           <provider selected="true" editor-type-id="text-editor">
+<<<<<<< Updated upstream
             <state relative-caret-position="420">
               <caret line="28" column="40" selection-start-line="28" selection-start-column="40" selection-end-line="28" selection-end-column="40" />
+=======
+            <state relative-caret-position="115">
+              <caret line="30" column="36" selection-start-line="30" selection-start-column="36" selection-end-line="30" selection-end-column="36" />
+>>>>>>> Stashed changes
               <folding>
                 <element signature="e#55#96#0#PHP" expanded="true" />
               </folding>
@@ -33,11 +179,89 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="_edit.html.twig" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/PdfGenesis/CoreBundle/Resources/views/design/_edit.html.twig">
+      <file leaf-file-name="File.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/PdfGenesis/ElementBundle/Entity/File.php">
           <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="165">
+              <caret line="42" column="0" selection-start-line="42" selection-start-column="0" selection-end-line="42" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="AssetExtension.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/PdfGenesis/CoreBundle/Twig/AssetExtension.php">
+          <provider selected="true" editor-type-id="text-editor">
+<<<<<<< Updated upstream
             <state relative-caret-position="45">
-              <caret line="3" column="33" selection-start-line="3" selection-start-column="33" selection-end-line="3" selection-end-column="33" />
+              <caret line="3" column="140" selection-start-line="3" selection-start-column="140" selection-end-line="3" selection-end-column="140" />
+              <folding />
+=======
+            <state relative-caret-position="315">
+              <caret line="21" column="23" selection-start-line="21" selection-start-column="23" selection-end-line="21" selection-end-column="23" />
+              <folding>
+                <element signature="e#46#93#0#PHP" expanded="true" />
+              </folding>
+>>>>>>> Stashed changes
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="layout.html.twig" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/PdfGenesis/CoreBundle/Resources/views/layout.html.twig">
+          <provider selected="true" editor-type-id="text-editor">
+<<<<<<< Updated upstream
+            <state relative-caret-position="1455">
+              <caret line="97" column="61" selection-start-line="97" selection-start-column="61" selection-end-line="97" selection-end-column="61" />
+=======
+            <state relative-caret-position="30">
+              <caret line="2" column="6" selection-start-line="2" selection-start-column="6" selection-end-line="2" selection-end-column="6" />
+>>>>>>> Stashed changes
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="__stylesheets.html.twig" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/PdfGenesis/CoreBundle/Resources/views/assets/__stylesheets.html.twig">
+          <provider selected="true" editor-type-id="text-editor">
+<<<<<<< Updated upstream
+            <state relative-caret-position="445">
+              <caret line="97" column="54" selection-start-line="97" selection-start-column="54" selection-end-line="97" selection-end-column="54" />
+=======
+            <state relative-caret-position="420">
+              <caret line="28" column="0" selection-start-line="28" selection-start-column="0" selection-end-line="28" selection-end-column="0" />
+>>>>>>> Stashed changes
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="services.yml" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/PdfGenesis/CoreBundle/Resources/config/services.yml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="105">
+              <caret line="7" column="19" selection-start-line="7" selection-start-column="19" selection-end-line="7" selection-end-column="19" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ElementListener.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/PdfGenesis/ElementBundle/EventListener/ElementListener.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="300">
+              <caret line="39" column="37" selection-start-line="39" selection-start-column="37" selection-end-line="39" selection-end-column="37" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="PdfController.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/PdfGenesis/DocumentBundle/Controller/PdfController.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="453">
+              <caret line="36" column="9" selection-start-line="36" selection-start-column="9" selection-end-line="36" selection-end-column="9" />
               <folding />
             </state>
           </provider>
@@ -46,80 +270,13 @@
       <file leaf-file-name="_list.html.twig" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/PdfGenesis/ElementBundle/Resources/views/Element/_list.html.twig">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="45">
-              <caret line="3" column="140" selection-start-line="3" selection-start-column="140" selection-end-line="3" selection-end-column="140" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Position.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/PdfGenesis/ElementBundle/Entity/Position.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1455">
-              <caret line="97" column="61" selection-start-line="97" selection-start-column="61" selection-end-line="97" selection-end-column="61" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Size.php" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/PdfGenesis/ElementBundle/Entity/Size.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="445">
-              <caret line="97" column="54" selection-start-line="97" selection-start-column="54" selection-end-line="97" selection-end-column="54" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="routing.yml" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/PdfGenesis/ElementBundle/Resources/config/routing.yml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="165">
-              <caret line="11" column="0" selection-start-line="11" selection-start-column="0" selection-end-line="11" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="file.yml" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/PdfGenesis/ElementBundle/Resources/config/routing/file.yml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="11" selection-start-line="0" selection-start-column="11" selection-end-line="0" selection-end-column="11" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="element.yml" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/PdfGenesis/ElementBundle/Resources/config/routing/element.yml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="15">
-              <caret line="1" column="17" selection-start-line="1" selection-start-column="17" selection-end-line="1" selection-end-column="17" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="ElementController.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/PdfGenesis/ElementBundle/Controller/ElementController.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="285">
-              <caret line="20" column="66" selection-start-line="20" selection-start-column="66" selection-end-line="20" selection-end-column="66" />
-              <folding>
-                <element signature="e#56#113#0#PHP" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Page.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/PdfGenesis/DocumentBundle/Entity/Page.php">
-          <provider selected="true" editor-type-id="text-editor">
+<<<<<<< Updated upstream
             <state relative-caret-position="930">
               <caret line="63" column="38" selection-start-line="63" selection-start-column="23" selection-end-line="63" selection-end-column="38" />
+=======
+            <state relative-caret-position="75">
+              <caret line="5" column="246" selection-start-line="5" selection-start-column="246" selection-end-line="5" selection-end-column="246" />
+>>>>>>> Stashed changes
               <folding />
             </state>
           </provider>
@@ -133,26 +290,20 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/PdfGenesis/CoreBundle/Resources/public/scss/app/menu.scss" />
-        <option value="$PROJECT_DIR$/src/PdfGenesis/CoreBundle/Resources/config/routing/main.yml" />
         <option value="$PROJECT_DIR$/src/PdfGenesis/CoreBundle/Controller/DefaultController.php" />
         <option value="$PROJECT_DIR$/src/PdfGenesis/CoreBundle/Resources/public/scss/app/_color.scss" />
-        <option value="$PROJECT_DIR$/src/PdfGenesis/CoreBundle/Resources/views/assets/__stylesheets.html.twig" />
-        <option value="$PROJECT_DIR$/src/PdfGenesis/CoreBundle/Resources/public/scss/app/design_edit.scss" />
         <option value="$PROJECT_DIR$/src/PdfGenesis/CoreBundle/Resources/public/scss/app/_mixins.scss" />
         <option value="$PROJECT_DIR$/src/PdfGenesis/CoreBundle/Resources/views/homepage/index.html.twig" />
         <option value="$PROJECT_DIR$/src/PdfGenesis/CoreBundle/Resources/public/scss/app/homepage.scss" />
         <option value="$PROJECT_DIR$/src/PdfGenesis/DocumentBundle/Resources/config/routing.yml" />
         <option value="$PROJECT_DIR$/src/PdfGenesis/CoreBundle/Resources/views/layout.html.twig" />
         <option value="$PROJECT_DIR$/.gitignore" />
-        <option value="$PROJECT_DIR$/src/PdfGenesis/DocumentBundle/Controller/PdfController.php" />
         <option value="$PROJECT_DIR$/src/PdfGenesis/CoreBundle/Entity/User.php" />
         <option value="$PROJECT_DIR$/app/config/security.yml" />
         <option value="$PROJECT_DIR$/composer.json" />
         <option value="$PROJECT_DIR$/app/AppKernel.php" />
         <option value="$PROJECT_DIR$/src/PdfGenesis/DocumentBundle/Entity/Library.php" />
         <option value="$PROJECT_DIR$/src/PdfGenesis/DocumentBundle/Entity/Page.php" />
-        <option value="$PROJECT_DIR$/src/PdfGenesis/ElementBundle/Entity/File.php" />
         <option value="$PROJECT_DIR$/src/PdfGenesis/ElementBundle/Form/fileType.php" />
         <option value="$PROJECT_DIR$/app/config/routing.yml" />
         <option value="$PROJECT_DIR$/src/PdfGenesis/CoreBundle/Resources/config/routing.yml" />
@@ -168,22 +319,28 @@
         <option value="$PROJECT_DIR$/src/PdfGenesis/CoreBundle/DataFixtures/ORM/LoadSizeData.php" />
         <option value="$PROJECT_DIR$/src/PdfGenesis/CoreBundle/DataFixtures/ORM/LoadPageData.php" />
         <option value="$PROJECT_DIR$/src/PdfGenesis/CoreBundle/DependencyInjection/PdfGenesisCoreExtension.php" />
-        <option value="$PROJECT_DIR$/src/PdfGenesis/CoreBundle/Resources/config/services.yml" />
         <option value="$PROJECT_DIR$/app/config/config.yml" />
         <option value="$PROJECT_DIR$/src/PdfGenesis/DocumentBundle/Entity/Document.php" />
         <option value="$PROJECT_DIR$/app/config/parameters.yml.dist" />
         <option value="$PROJECT_DIR$/app/config/parameters.yml" />
-        <option value="$PROJECT_DIR$/src/PdfGenesis/ElementBundle/EventListener/ElementListener.php" />
-        <option value="$PROJECT_DIR$/src/PdfGenesis/ElementBundle/Entity/Element.php" />
         <option value="$PROJECT_DIR$/src/PdfGenesis/ElementBundle/Resources/config/routing.yml" />
         <option value="$PROJECT_DIR$/src/PdfGenesis/ElementBundle/Resources/config/routing/element.yml" />
-        <option value="$PROJECT_DIR$/src/PdfGenesis/CoreBundle/Resources/views/design/_edit.html.twig" />
         <option value="$PROJECT_DIR$/src/PdfGenesis/ElementBundle/Controller/ElementController.php" />
         <option value="$PROJECT_DIR$/src/PdfGenesis/ElementBundle/Resources/config/routing/file.yml" />
-        <option value="$PROJECT_DIR$/src/PdfGenesis/ElementBundle/Controller/FileController.php" />
-        <option value="$PROJECT_DIR$/src/PdfGenesis/ElementBundle/Resources/views/Element/_list.html.twig" />
-        <option value="$PROJECT_DIR$/src/PdfGenesis/ElementBundle/Entity/Position.php" />
         <option value="$PROJECT_DIR$/src/PdfGenesis/ElementBundle/Entity/Size.php" />
+        <option value="$PROJECT_DIR$/src/PdfGenesis/ElementBundle/Entity/Position.php" />
+        <option value="$PROJECT_DIR$/src/PdfGenesis/ElementBundle/EventListener/ElementListener.php" />
+        <option value="$PROJECT_DIR$/src/PdfGenesis/ElementBundle/Entity/Element.php" />
+        <option value="$PROJECT_DIR$/src/PdfGenesis/DocumentBundle/Controller/PdfController.php" />
+        <option value="$PROJECT_DIR$/src/PdfGenesis/CoreBundle/Resources/views/design/_edit.html.twig" />
+        <option value="$PROJECT_DIR$/src/PdfGenesis/CoreBundle/Twig/AssetExtenstion.php" />
+        <option value="$PROJECT_DIR$/src/PdfGenesis/CoreBundle/Resources/config/services.yml" />
+        <option value="$PROJECT_DIR$/src/PdfGenesis/CoreBundle/Twig/AssetExtension.php" />
+        <option value="$PROJECT_DIR$/src/PdfGenesis/ElementBundle/Controller/FileController.php" />
+        <option value="$PROJECT_DIR$/src/PdfGenesis/ElementBundle/Entity/File.php" />
+        <option value="$PROJECT_DIR$/src/PdfGenesis/CoreBundle/Resources/public/scss/app/design_edit.scss" />
+        <option value="$PROJECT_DIR$/src/PdfGenesis/ElementBundle/Resources/views/Element/_list.html.twig" />
+        <option value="$PROJECT_DIR$/src/PdfGenesis/CoreBundle/Resources/views/assets/__stylesheets.html.twig" />
       </list>
     </option>
   </component>
@@ -246,12 +403,18 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+<<<<<<< Updated upstream
+=======
+      <pane id="Scratches" />
+      <pane id="Scope" />
+>>>>>>> Stashed changes
       <pane id="ProjectPane">
         <subPane>
           <PATH>
             <PATH_ELEMENT>
               <option name="myItemId" value="Pdf_Genesis" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+<<<<<<< Updated upstream
             </PATH_ELEMENT>
           </PATH>
           <PATH>
@@ -644,6 +807,8 @@
             <PATH_ELEMENT>
               <option name="myItemId" value="views" />
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+=======
+>>>>>>> Stashed changes
             </PATH_ELEMENT>
           </PATH>
           <PATH>
@@ -653,30 +818,6 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="Pdf_Genesis" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="PdfGenesis" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="CoreBundle" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Resources" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="views" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="design" />
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
           </PATH>
@@ -690,19 +831,25 @@
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
+              <option name="myItemId" value="web" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Pdf_Genesis" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Pdf_Genesis" />
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="PdfGenesis" />
+              <option name="myItemId" value="web" />
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="CoreBundle" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Resources" />
+              <option name="myItemId" value="bundles" />
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
           </PATH>
@@ -719,6 +866,7 @@
               <option name="myItemId" value="src" />
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
+<<<<<<< Updated upstream
             <PATH_ELEMENT>
               <option name="myItemId" value="PdfGenesis" />
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
@@ -765,6 +913,8 @@
               <option name="myItemId" value="config" />
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
+=======
+>>>>>>> Stashed changes
           </PATH>
           <PATH>
             <PATH_ELEMENT>
@@ -840,8 +990,11 @@
           </PATH>
         </subPane>
       </pane>
+<<<<<<< Updated upstream
       <pane id="Scope" />
       <pane id="Scratches" />
+=======
+>>>>>>> Stashed changes
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -935,13 +1088,23 @@
       <workItem from="1480420136112" duration="12079000" />
       <workItem from="1480507172122" duration="5264000" />
       <workItem from="1480593721924" duration="10369000" />
+<<<<<<< Updated upstream
       <workItem from="1481023389967" duration="14937000" />
       <workItem from="1481480894904" duration="12000" />
+=======
+      <workItem from="1481023389967" duration="15054000" />
+      <workItem from="1481050365743" duration="1264000" />
+      <workItem from="1481476585119" duration="3918000" />
+>>>>>>> Stashed changes
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
+<<<<<<< Updated upstream
     <option name="totallyTimeSpent" value="48216000" />
+=======
+    <option name="totallyTimeSpent" value="53503000" />
+>>>>>>> Stashed changes
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="46" width="1280" height="709" extended-state="0" />
@@ -953,7 +1116,11 @@
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+<<<<<<< Updated upstream
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.35045317" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+=======
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.35196376" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+>>>>>>> Stashed changes
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -982,6 +1149,7 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
+<<<<<<< Updated upstream
     <entry file="file://$PROJECT_DIR$/src/PdfGenesis/CoreBundle/Resources/public/scss/app/main.scss">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -1003,6 +1171,8 @@
         </state>
       </provider>
     </entry>
+=======
+>>>>>>> Stashed changes
     <entry file="file://$PROJECT_DIR$/src/PdfGenesis/CoreBundle/Resources/public/scss/app/_color.scss">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="30">
@@ -1035,6 +1205,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="75">
           <caret line="5" column="12" selection-start-line="5" selection-start-column="0" selection-end-line="5" selection-end-column="12" />
+<<<<<<< Updated upstream
         </state>
       </provider>
     </entry>
@@ -1043,6 +1214,8 @@
         <state relative-caret-position="255">
           <caret line="17" column="67" selection-start-line="17" selection-start-column="67" selection-end-line="17" selection-end-column="67" />
           <folding />
+=======
+>>>>>>> Stashed changes
         </state>
       </provider>
     </entry>
@@ -1050,17 +1223,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="376">
           <caret line="52" column="21" selection-start-line="52" selection-start-column="21" selection-end-line="52" selection-end-column="21" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/PdfGenesis/DocumentBundle/Controller/PdfController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="247">
-          <caret line="27" column="0" selection-start-line="27" selection-start-column="0" selection-end-line="27" selection-end-column="0" />
-          <folding>
-            <element signature="e#57#114#0#PHP" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1082,15 +1244,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-127">
           <caret line="119" column="5" selection-start-line="119" selection-start-column="5" selection-end-line="119" selection-end-column="5" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/PdfGenesis/ElementBundle/Entity/File.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-712">
-          <caret line="70" column="21" selection-start-line="70" selection-start-column="21" selection-end-line="70" selection-end-column="21" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1105,6 +1258,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="196">
           <caret line="17" column="79" selection-start-line="17" selection-start-column="79" selection-end-line="17" selection-end-column="79" />
+<<<<<<< Updated upstream
         </state>
       </provider>
     </entry>
@@ -1112,6 +1266,11 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="241">
           <caret line="27" column="52" selection-start-line="27" selection-start-column="52" selection-end-line="27" selection-end-column="52" />
+=======
+          <folding>
+            <element signature="e#50#90#0#PHP" expanded="false" />
+          </folding>
+>>>>>>> Stashed changes
         </state>
       </provider>
     </entry>
@@ -1140,6 +1299,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="165">
           <caret line="11" column="0" selection-start-line="11" selection-start-column="0" selection-end-line="11" selection-end-column="0" />
+<<<<<<< Updated upstream
         </state>
       </provider>
     </entry>
@@ -1154,9 +1314,13 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="270">
           <caret line="18" column="26" selection-start-line="18" selection-start-column="26" selection-end-line="18" selection-end-column="26" />
+=======
+>>>>>>> Stashed changes
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/PdfGenesis/CoreBundle/DataFixtures/ORM/LoadSizeData.php" />
+    <entry file="file://$PROJECT_DIR$/src/PdfGenesis/CoreBundle/DataFixtures/ORM/LoadPositionData.php" />
     <entry file="file://$PROJECT_DIR$/src/PdfGenesis/ElementBundle/Entity/ElementInterface.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="120">
@@ -1168,7 +1332,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="275">
           <caret line="26" column="38" selection-start-line="26" selection-start-column="16" selection-end-line="26" selection-end-column="38" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1176,6 +1339,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="9" selection-start-line="0" selection-start-column="9" selection-end-line="0" selection-end-column="9" />
+<<<<<<< Updated upstream
         </state>
       </provider>
     </entry>
@@ -1191,6 +1355,8 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="45">
           <caret line="3" column="32" selection-start-line="3" selection-start-column="32" selection-end-line="3" selection-end-column="32" />
+=======
+>>>>>>> Stashed changes
         </state>
       </provider>
     </entry>
@@ -1226,7 +1392,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="136">
           <caret line="225" column="6" selection-start-line="225" selection-start-column="6" selection-end-line="225" selection-end-column="6" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1248,6 +1413,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="180">
           <caret line="12" column="38" selection-start-line="12" selection-start-column="38" selection-end-line="12" selection-end-column="38" />
+<<<<<<< Updated upstream
         </state>
       </provider>
     </entry>
@@ -1258,6 +1424,8 @@
           <folding>
             <element signature="e#58#98#0#PHP" expanded="false" />
           </folding>
+=======
+>>>>>>> Stashed changes
         </state>
       </provider>
     </entry>
@@ -1275,18 +1443,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/PdfGenesis/ElementBundle/Entity/Element.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="720">
-          <caret line="56" column="94" selection-start-line="56" selection-start-column="94" selection-end-line="56" selection-end-column="94" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/PdfGenesis/DocumentBundle/Entity/Page.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="930">
           <caret line="63" column="38" selection-start-line="63" selection-start-column="23" selection-end-line="63" selection-end-column="38" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1294,15 +1454,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="15">
           <caret line="1" column="17" selection-start-line="1" selection-start-column="17" selection-end-line="1" selection-end-column="17" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/PdfGenesis/CoreBundle/Resources/views/design/_edit.html.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="45">
-          <caret line="3" column="33" selection-start-line="3" selection-start-column="33" selection-end-line="3" selection-end-column="33" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1310,7 +1461,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="165">
           <caret line="11" column="0" selection-start-line="11" selection-start-column="0" selection-end-line="11" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1318,50 +1468,178 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="11" selection-start-line="0" selection-start-column="11" selection-end-line="0" selection-end-column="11" />
-          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/PdfGenesis/ElementBundle/Controller/ElementController.php">
       <provider selected="true" editor-type-id="text-editor">
+<<<<<<< Updated upstream
+        <state relative-caret-position="720">
+          <caret line="56" column="94" selection-start-line="56" selection-start-column="94" selection-end-line="56" selection-end-column="94" />
+=======
         <state relative-caret-position="285">
           <caret line="20" column="66" selection-start-line="20" selection-start-column="66" selection-end-line="20" selection-end-column="66" />
           <folding>
-            <element signature="e#56#113#0#PHP" expanded="true" />
+            <element signature="e#56#113#0#PHP" expanded="false" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/PdfGenesis/ElementBundle/Controller/FileController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="420">
-          <caret line="28" column="40" selection-start-line="28" selection-start-column="40" selection-end-line="28" selection-end-column="40" />
-          <folding>
-            <element signature="e#55#96#0#PHP" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/PdfGenesis/ElementBundle/Resources/views/Element/_list.html.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="45">
-          <caret line="3" column="140" selection-start-line="3" selection-start-column="140" selection-end-line="3" selection-end-column="140" />
-          <folding />
+>>>>>>> Stashed changes
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/PdfGenesis/ElementBundle/Entity/Position.php">
       <provider selected="true" editor-type-id="text-editor">
+<<<<<<< Updated upstream
+        <state relative-caret-position="930">
+          <caret line="63" column="38" selection-start-line="63" selection-start-column="23" selection-end-line="63" selection-end-column="38" />
+=======
         <state relative-caret-position="1455">
-          <caret line="97" column="61" selection-start-line="97" selection-start-column="61" selection-end-line="97" selection-end-column="61" />
+          <caret line="97" column="64" selection-start-line="97" selection-start-column="64" selection-end-line="97" selection-end-column="64" />
+>>>>>>> Stashed changes
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/PdfGenesis/ElementBundle/Entity/Size.php">
       <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1455">
+          <caret line="97" column="58" selection-start-line="97" selection-start-column="58" selection-end-line="97" selection-end-column="58" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/PdfGenesis/CoreBundle/Resources/views/design/index.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="405">
+          <caret line="27" column="52" selection-start-line="27" selection-start-column="52" selection-end-line="27" selection-end-column="52" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/PdfGenesis/ElementBundle/Entity/Element.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="220">
+          <caret line="30" column="0" selection-start-line="30" selection-start-column="0" selection-end-line="30" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/PdfGenesis/CoreBundle/Resources/views/design/_edit.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="45">
+          <caret line="3" column="0" selection-start-line="3" selection-start-column="0" selection-end-line="3" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/config/config.yml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="90">
+          <caret line="15" column="20" selection-start-line="15" selection-start-column="20" selection-end-line="15" selection-end-column="35" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/PdfGenesis/ElementBundle/EventListener/ElementListener.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="300">
+          <caret line="39" column="37" selection-start-line="39" selection-start-column="37" selection-end-line="39" selection-end-column="37" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/PdfGenesis/DocumentBundle/Controller/PdfController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="453">
+          <caret line="36" column="9" selection-start-line="36" selection-start-column="9" selection-end-line="36" selection-end-column="9" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/PdfGenesis/CoreBundle/Resources/config/services.yml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="105">
+          <caret line="7" column="19" selection-start-line="7" selection-start-column="19" selection-end-line="7" selection-end-column="19" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/PdfGenesis/ElementBundle/Controller/FileController.php">
+      <provider selected="true" editor-type-id="text-editor">
+<<<<<<< Updated upstream
+        <state relative-caret-position="420">
+          <caret line="28" column="40" selection-start-line="28" selection-start-column="40" selection-end-line="28" selection-end-column="40" />
+=======
+        <state relative-caret-position="115">
+          <caret line="30" column="36" selection-start-line="30" selection-start-column="36" selection-end-line="30" selection-end-column="36" />
+>>>>>>> Stashed changes
+          <folding>
+            <element signature="e#55#96#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/PdfGenesis/ElementBundle/Entity/File.php">
+      <provider selected="true" editor-type-id="text-editor">
+<<<<<<< Updated upstream
+        <state relative-caret-position="45">
+          <caret line="3" column="140" selection-start-line="3" selection-start-column="140" selection-end-line="3" selection-end-column="140" />
+          <folding />
+=======
+        <state relative-caret-position="165">
+          <caret line="42" column="0" selection-start-line="42" selection-start-column="0" selection-end-line="42" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/PdfGenesis/CoreBundle/Twig/AssetExtension.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="315">
+          <caret line="21" column="23" selection-start-line="21" selection-start-column="23" selection-end-line="21" selection-end-column="23" />
+          <folding>
+            <element signature="e#46#93#0#PHP" expanded="true" />
+          </folding>
+>>>>>>> Stashed changes
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/PdfGenesis/CoreBundle/Resources/views/layout.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="30">
+          <caret line="2" column="6" selection-start-line="2" selection-start-column="6" selection-end-line="2" selection-end-column="6" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/PdfGenesis/CoreBundle/Resources/public/scss/app/design_edit.scss">
+      <provider selected="true" editor-type-id="text-editor">
+<<<<<<< Updated upstream
+        <state relative-caret-position="1455">
+          <caret line="97" column="61" selection-start-line="97" selection-start-column="61" selection-end-line="97" selection-end-column="61" />
+=======
+        <state relative-caret-position="240">
+          <caret line="16" column="0" selection-start-line="16" selection-start-column="0" selection-end-line="16" selection-end-column="21" />
+>>>>>>> Stashed changes
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/PdfGenesis/ElementBundle/Resources/views/Element/_list.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="75">
+          <caret line="5" column="246" selection-start-line="5" selection-start-column="246" selection-end-line="5" selection-end-column="246" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/PdfGenesis/CoreBundle/Resources/views/assets/__stylesheets.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+<<<<<<< Updated upstream
         <state relative-caret-position="445">
           <caret line="97" column="54" selection-start-line="97" selection-start-column="54" selection-end-line="97" selection-end-column="54" />
+=======
+        <state relative-caret-position="420">
+          <caret line="28" column="0" selection-start-line="28" selection-start-column="0" selection-end-line="28" selection-end-column="0" />
+>>>>>>> Stashed changes
           <folding />
         </state>
       </provider>

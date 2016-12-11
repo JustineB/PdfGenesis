@@ -15,12 +15,17 @@ class PdfController extends Controller
 
         //flashbag temporaire changer le nom du doc avec l'user actuel si anonyme dans le fichier des
         // anonyme
+
+        $pdf_name = 'medias/pdf/file'. time() .'.pdf';
+
+
+
         try{
             $this->get('knp_snappy.pdf')->generateFromHtml(
                 $this->renderView(
                     'PdfGenesisCoreBundle:design:_edit.html.twig'
                 ),
-                'medias/pdf/file.pdf'
+                $pdf_name
             );
 
             $this->get('session')->getFlashbag()->add('success','success');
@@ -32,8 +37,7 @@ class PdfController extends Controller
         }
 
 
-
-        $response = new BinaryFileResponse('medias/pdf/file.pdf');
+        $response = new BinaryFileResponse($pdf_name);
         $response->setContentDisposition(ResponseHeaderBag::DISPOSITION_ATTACHMENT);
 
         return $response;

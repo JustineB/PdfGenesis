@@ -3,3 +3,9 @@ services:
 #    pdf_genesis_core.example:
 #        class: PdfGenesis\CoreBundle\Example
 #        arguments: ["@service_id", "plain_value", "%parameter%"]
+
+    twig.asset_extension:
+         class: PdfGenesis\CoreBundle\Twig\AssetExtension
+         public: false
+         tags:
+            - { name: twig.extension }

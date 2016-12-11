@@ -28,8 +28,8 @@ class ElementListener
         $element->setName(ElementInterface::DEFAULT_NAME);
 
         //todo
-        $position_default = new Position(0,0);
-        $size_default = new Size(200,200);
+        $position_default = new Position();
+        $size_default = new Size();
         $page_default = $this->em->getRepository('PdfGenesisDocumentBundle:Page')->find(1);
 
         $element->setPosition($position_default);

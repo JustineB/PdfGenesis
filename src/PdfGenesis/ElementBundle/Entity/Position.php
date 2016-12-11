@@ -95,7 +95,7 @@ class Position
         return $this->latitude;
     }
 
-    public function __construct($latitude = 0, $longitude = 0){
+    public function __construct($latitude = 150, $longitude = 220){
         $this->latitude = $latitude;
         $this->longitude = $longitude;
     }

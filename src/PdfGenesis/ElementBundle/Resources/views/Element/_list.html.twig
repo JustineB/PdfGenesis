@@ -1,7 +1,9 @@
+{#<img src="{{ asset('') }}">#}
+
 {% if elements is defined %}
     {% for item in elements %}
-        {% if item.size != null %}
-            <img src="{{ item.file.path }}" class="element-blank-page" style="width:{{ item.size.width }}px; height:{{ item.size.height }}px">
+        {% if item.size != null and item.position != null %}
+            <img src="{{ image64(item.file.path) }}" class="element-blank-page" style="width:{{ item.size.width }}px; height:{{ item.size.height }}px; top:{{ item.position.latitude }}px; left:{{ item.position.longitude }}px;   position: absolute; ">
         {% endif %}
     {% endfor %}
 {% endif %}

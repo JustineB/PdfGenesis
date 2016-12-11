@@ -37,6 +37,13 @@ class File
 
 
     /**
+     * @var string
+     *
+     * @ORM\Column(name="path_encoder", type="string", length=255)
+     */
+    private $pathEncoder;
+
+    /**
      * @ORM\OneToMany(targetEntity="PdfGenesis\ElementBundle\Entity\Element", mappedBy="file" )
      */
     protected $elements;
@@ -121,5 +128,36 @@ class File
     public function getElements()
     {
         return $this->elements;
+    }
+    /**
+     * Constructor
+     */
+    public function __construct()
+    {
+        $this->elements = new \Doctrine\Common\Collections\ArrayCollection();
+    }
+
+    /**
+     * Add element
+     *
+     * @param \PdfGenesis\ElementBundle\Entity\Element $element
+     *
+     * @return File
+     */
+    public function addElement(\PdfGenesis\ElementBundle\Entity\Element $element)
+    {
+        $this->elements[] = $element;
+
+        return $this;
+    }
+
+    /**
+     * Remove element
+     *
+     * @param \PdfGenesis\ElementBundle\Entity\Element $element
+     */
+    public function removeElement(\PdfGenesis\ElementBundle\Entity\Element $element)
+    {
+        $this->elements->removeElement($element);
     }
 }
