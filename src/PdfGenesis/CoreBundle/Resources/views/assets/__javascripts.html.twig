@@ -10,3 +10,12 @@
     "bundles/pdfgenesiscore/js/jquery/*" %}
     <script src="{{ asset_url }}"></script>
 {% endjavascripts %}
+
+
+<script src="http://code.interactjs.io/v1.2.6/interact.min.js"></script>
+
+{% javascripts filter="?jsqueeze" output="js/app.js"
+    "bundles/pdfgenesiscore/js/app/*" %}
+    <script src="{{ asset_url }}"></script>
+{% endjavascripts %}
+
