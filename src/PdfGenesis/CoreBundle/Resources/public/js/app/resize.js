@@ -1,10 +1,9 @@
-
 interact('.resize-drag')
     .resizable({
         preserveAspectRatio: true,
         edges: {left: true, right: true, bottom: true, top: true},
 
-        onend: function(event){
+        onend: function (event) {
 
             console.log(event);
 
@@ -37,25 +36,23 @@ interact('.resize-drag')
         target.textContent = Math.round(event.rect.width) + '×' + Math.round(event.rect.height);
 
 
-
     });
 
 
-
-function ajaxElementSizeChange(id, width, height){
+function ajaxElementSizeChange(id, width, height) {
 
     $.ajax({
-       method: 'post',
-       url: Routing.generate('element_ajax_size_change'),
-       data: {'id' : id, 'width': width, 'height' : height},
-       success: function (data) {
-           if(data == false){
-               alert(' error ! an error occurs .. ');
-           }
-       },
-       error: function(){
-           alert(' error ! an error occurs .. ');
-       }
+        method: 'post',
+        url: Routing.generate('element_ajax_size_change'),
+        data: {'id': id, 'width': width, 'height': height},
+        success: function (data) {
+            if (data == false) {
+                alert(' error ! an error occurs .. ');
+            }
+        },
+        error: function () {
+            alert(' error ! an error occurs .. ');
+        }
     });
 
 

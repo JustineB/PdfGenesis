@@ -1,25 +1,19 @@
-{% javascripts filter="?jsqueeze" output="js/bootstrapMaterialDesign.js"
-"bundles/pdfgenesiscore/js/boostrap/*"
-"bundles/pdfgenesiscore/js/materialDesign/*" %}
-<script src="{{ asset_url }}"></script>
-{% endjavascripts %}
 
+<script src="https://code.jquery.com/jquery-2.2.4.min.js"
+        integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
 
-{% javascripts filter="?jsqueeze" output="js/jquery.js"
-"bundles/pdfgenesiscore/js/jquery/*" %}
-<script src="{{ asset_url }}"></script>
-{% endjavascripts %}
-
-
-
-{% javascripts filter="?jsqueeze" output="js/interact.js"
+{% javascripts 'bundles/pdfgenesiscore/js/boostrap/*'
+"bundles/pdfgenesiscore/js/materialDesign/*"
 "bundles/pdfgenesiscore/js/interact/*" %}
 <script src="{{ asset_url }}"></script>
 {% endjavascripts %}
 
-
 {% javascripts filter="?jsqueeze" output="js/app.js"
-"bundles/pdfgenesiscore/js/app/*" %}
+"bundles/pdfgenesiscore/js/app/draggable.js"
+"bundles/pdfgenesiscore/js/app/helper.js"
+"bundles/pdfgenesiscore/js/app/import_process.js"
+"bundles/pdfgenesiscore/js/app/validation.js"
+"bundles/pdfgenesiscore/js/app/resize.js" %}
 <script src="{{ asset_url }}"></script>
 {% endjavascripts %}
 

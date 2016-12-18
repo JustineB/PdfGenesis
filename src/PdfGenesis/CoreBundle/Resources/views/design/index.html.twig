@@ -1,6 +1,6 @@
 {% extends 'PdfGenesisCoreBundle::layout.html.twig' %}
 
-
+{% set documentType = "Document" %}
 
 {% block body %}
     <div class="content" id="design-container">
@@ -23,8 +23,14 @@
                 </div>
 
                 <div class="top-describing">
-                    <div id="doc-title"> {{ document.title }}</div>
-                    <div id="doc-description"> {{ document.description }} </div>
+                    <div id="doc-title">
+                        <div class="top-label">Title : </div>
+                        {{ document.title }}
+                    </div>
+                    <div id="doc-description">
+                        <div class="top-label">Description : </div>
+                        {{ document.description }}
+                    </div>
                 </div>
 
                 {% include  'PdfGenesisCoreBundle:design:_edit.html.twig' %}
@@ -34,12 +40,12 @@
                     {{ render(path('import_file')) }}
                     <a class="btn btn-raised btn-success" href="{{ path('generate_pdf') }}"> Generate </a>
 
-                    <a class="btn btn-raised btn-info" data-toggle="modal" data-target="#title_description"> Title & Description </a>
-
+                    <a class="btn btn-raised btn-info" data-toggle="modal" data-target="#title-description-{{ documentType }}"> Title & Description </a>
                 </div>
             </div>
         </div>
     </div>
 
-    {% include 'PdfGenesisDocumentBundle:Modal:_title_description.html.twig' %}
+    {% include 'PdfGenesisDocumentBundle:Modal:_title_description_modal.html.twig' with {'id' : document.id  , 'type' : documentType } %}
+
 {% endblock %}

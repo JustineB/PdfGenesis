@@ -1,0 +1,17 @@
+<form action="{{ path('document_update_title_description',{'id' : id , 'type' : type }) }}" method="post"
+      class="form form-title-description form-title-description-{{ type }} form-modal"
+      id="form-title-description-{{ type }}-{{ id }}">
+
+    <div class="form-group">
+        <div class="form-label">
+            {{ form_label(form.title) }}
+        </div>
+            {{ form_widget(form.title) }}
+    </div>
+    <div class="form-group">
+        <div class="form-label">
+            {{ form_label(form.description) }}
+        </div>
+            {{ form_widget(form.description) }}
+    </div>
+</form>

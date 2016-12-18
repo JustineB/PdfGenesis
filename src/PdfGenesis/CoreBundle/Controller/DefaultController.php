@@ -21,8 +21,6 @@ class DefaultController extends Controller
             // proposez de reprendre un projet ou d'en créer un autre
         }
 
-        $this->get('session')->clear('document');
-
         if(!$this->get('session')->has('document')){
 
             $document = $this->container->get('pdfgenesis.document_manager');
@@ -30,10 +28,12 @@ class DefaultController extends Controller
             $em->persist($document);
             $em->flush();
 
-            $this->get('session')->set('document', $document);
+            $this->get('session')->set('document', $document->getId());
         }
 
-        $document = $this->get('session')->get('document');
+        $documentId = $this->get('session')->get('document');
+
+        $document = $em->getRepository('PdfGenesisDocumentBundle:Document')->find($documentId);
 
         return $this->render('PdfGenesisCoreBundle:design:index.html.twig', array(
             'document' => $document
