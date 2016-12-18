@@ -1,6 +1,4 @@
-
-// target elements with the "draggable" class
-interact('.draggable')
+interact('.resize-drag')
     .draggable({
         // enable inertial throwing
         inertia: true,
@@ -8,7 +6,7 @@ interact('.draggable')
         restrict: {
             restriction: "parent",
             endOnly: true,
-            elementRect: { top: 0, left: 0, bottom: 1, right: 1 }
+            elementRect: {top: 0, left: 0, bottom: 1, right: 1}
         },
         // enable autoScroll
         autoScroll: true,
@@ -22,7 +20,7 @@ interact('.draggable')
             textEl && (textEl.textContent =
                 'moved a distance of '
                 + (Math.sqrt(event.dx * event.dx +
-                    event.dy * event.dy)|0) + 'px');
+                    event.dy * event.dy) | 0) + 'px');
 
             elementPositionResolver(event.target);
         }
@@ -32,7 +30,7 @@ interact('.draggable')
  *
  * @param event
  */
-function dragMoveListener (event) {
+function dragMoveListener(event) {
     var target = event.target,
         // keep the dragged position in the data-x/data-y attributes
         x = (parseFloat(target.getAttribute('data-x')) || 0) + event.dx,
@@ -56,7 +54,7 @@ window.dragMoveListener = dragMoveListener;
  *
  * @param target
  */
-function elementPositionResolver(target){
+function elementPositionResolver(target) {
 
     var id = target.getAttribute('data-id'),
 
@@ -69,7 +67,7 @@ function elementPositionResolver(target){
         x_new = x_init + x_diff,
         y_new = y_init + y_diff;
 
-    ajaxElementPositionChange(id,x_new,y_new);
+    ajaxElementPositionChange(id, x_new, y_new);
 }
 
 
@@ -79,21 +77,21 @@ function elementPositionResolver(target){
  * @param x
  * @param y
  */
-function ajaxElementPositionChange(id,x,y){
+function ajaxElementPositionChange(id, x, y) {
 
 
     $.ajax({
-       method: 'post',
-       url: Routing.generate('element_ajax_position_change'),
-       data: {'id' : id, 'x' : x, 'y' : y},
-       success: function(data){
-           if(data == false){
-               alert('Une erreur c\'est produite veuillez nous excusez !');
-           }
-       },
-       error: function (){
-           alert('Une erreur c\'est produite veuillez nous excusez !');
-       }
+        method: 'post',
+        url: Routing.generate('element_ajax_position_change'),
+        data: {'id': id, 'x': x, 'y': y},
+        success: function (data) {
+            if (data == false) {
+                alert('Une erreur c\'est produite veuillez nous excusez !');
+            }
+        },
+        error: function () {
+            alert('Une erreur c\'est produite veuillez nous excusez !');
+        }
     });
 }
 

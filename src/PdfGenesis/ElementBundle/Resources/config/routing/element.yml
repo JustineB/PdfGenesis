@@ -7,3 +7,10 @@ element_ajax_position_change:
   defaults: { _controller: PdfGenesisElementBundle:Element:ajaxPositionChange }
   options:
       expose: true
+
+
+element_ajax_size_change:
+  path :    /ajax-size-change
+  defaults: { _controller: PdfGenesisElementBundle:Element:ajaxSizeChange }
+  options:
+      expose: true

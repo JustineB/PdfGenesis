@@ -57,4 +57,32 @@ class ElementController extends Controller
         return JsonResponse::create(true);
     }
 
+
+    /**
+     * @param Request $request
+     * @return JsonResponse
+     */
+    public function ajaxSizeChangeAction(Request $request){
+
+        $em = $this->getDoctrine()->getManager();
+
+        $id = $request->get('id');
+        $width = $request->get('width');
+        $height = $request->get('height');
+
+        $element = $em->getRepository('PdfGenesisElementBundle:Element')->find($id);
+
+        if(!$element){
+            return JsonResponse::create(false);
+        }
+
+        $element->getSize()->setWidth($width);
+        $element->getSize()->setHeight($height);
+
+        $em->persist($element);
+        $em->flush();
+
+        return JsonResponse::create(true);
+    }
+
 }
