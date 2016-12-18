@@ -1,21 +1,26 @@
-
 {% javascripts filter="?jsqueeze" output="js/bootstrapMaterialDesign.js"
-    "bundles/pdfgenesiscore/js/boostrap/*"
-    "bundles/pdfgenesiscore/js/materialDesign/*" %}
-    <script src="{{ asset_url }}"></script>
+"bundles/pdfgenesiscore/js/boostrap/*"
+"bundles/pdfgenesiscore/js/materialDesign/*" %}
+<script src="{{ asset_url }}"></script>
 {% endjavascripts %}
 
 
 {% javascripts filter="?jsqueeze" output="js/jquery.js"
-    "bundles/pdfgenesiscore/js/jquery/*" %}
-    <script src="{{ asset_url }}"></script>
+"bundles/pdfgenesiscore/js/jquery/*" %}
+<script src="{{ asset_url }}"></script>
+{% endjavascripts %}
+
+<script src="{{ asset('bundles/fosjsrouting/js/router.js') }}"></script>
+<script src="{{ path('fos_js_routing_js', { callback: 'fos.Router.setData' }) }}"></script>
+
+{% javascripts filter="?jsqueeze" output="js/interact.js"
+"bundles/pdfgenesiscore/js/interact/*" %}
+<script src="{{ asset_url }}"></script>
 {% endjavascripts %}
 
 
-<script src="http://code.interactjs.io/v1.2.6/interact.min.js"></script>
-
 {% javascripts filter="?jsqueeze" output="js/app.js"
-    "bundles/pdfgenesiscore/js/app/*" %}
-    <script src="{{ asset_url }}"></script>
+"bundles/pdfgenesiscore/js/app/*" %}
+<script src="{{ asset_url }}"></script>
 {% endjavascripts %}
 

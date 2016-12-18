@@ -3,7 +3,9 @@
 
 namespace PdfGenesis\ElementBundle\Controller;
 
+use PdfGenesis\ElementBundle\Entity\Element;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
+use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\HttpFoundation\Request;
 
 class ElementController extends Controller
@@ -25,6 +27,34 @@ class ElementController extends Controller
            'elements' => $elements
        ));
 
+    }
+
+
+    /**
+     * @param Request $request
+     * @return JsonResponse
+     */
+    public function ajaxPositionChangeAction(Request $request){
+
+        $em = $this->getDoctrine()->getManager();
+
+        $id = $request->get('id');
+        $latitude = $request->get('y');
+        $longitude = $request->get('x');
+
+        $element = $em->getRepository('PdfGenesisElementBundle:Element')->find($id);
+
+        if(!$element){
+            return JsonResponse::create(false);
+        }
+
+        $element->getPosition()->setLatitude($latitude);
+        $element->getPosition()->setLongitude($longitude);
+
+        $em->persist($element);
+        $em->flush();
+
+        return JsonResponse::create(true);
     }
 
 }
