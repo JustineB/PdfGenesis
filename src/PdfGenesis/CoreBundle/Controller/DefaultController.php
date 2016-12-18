@@ -2,6 +2,7 @@
 
 namespace PdfGenesis\CoreBundle\Controller;
 
+use PdfGenesis\DocumentBundle\Entity\Document;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 
 class DefaultController extends Controller
@@ -11,8 +12,31 @@ class DefaultController extends Controller
         return $this->render('PdfGenesisCoreBundle:homepage:index.html.twig');
     }
 
+
     public function designAction()
     {
-        return $this->render('PdfGenesisCoreBundle:design:index.html.twig');
+        $em = $this->getDoctrine()->getEntityManager();
+
+        if(!$this->get('security.authorization_checker')->isGranted('IS_AUTHENTICATED_ANONYMOUSLY')){
+            // proposez de reprendre un projet ou d'en créer un autre
+        }
+
+        $this->get('session')->clear('document');
+
+        if(!$this->get('session')->has('document')){
+
+            $document = $this->container->get('pdfgenesis.document_manager');
+
+            $em->persist($document);
+            $em->flush();
+
+            $this->get('session')->set('document', $document);
+        }
+
+        $document = $this->get('session')->get('document');
+
+        return $this->render('PdfGenesisCoreBundle:design:index.html.twig', array(
+            'document' => $document
+        ));
     }
 }

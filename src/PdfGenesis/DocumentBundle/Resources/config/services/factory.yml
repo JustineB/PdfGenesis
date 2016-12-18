@@ -1,0 +1,10 @@
+services:
+    # ...
+
+    pdfgenesis.document_manager_factory:
+        class:     PdfGenesis\DocumentBundle\Factory\DocumentFactory
+
+    pdfgenesis.document_manager:
+        class:     PdfGenesis\DocumentBundle\Entity\Document
+        factory:   'pdfgenesis.document_manager_factory:createDocument'
+        arguments: ["@doctrine.orm.entity_manager"]

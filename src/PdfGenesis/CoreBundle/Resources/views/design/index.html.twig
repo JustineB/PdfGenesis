@@ -12,7 +12,7 @@
 
             <div class="blank-sheet-container col-sm-6">
 
-                <div class="free-space">
+                <div class="top-nav">
                     <nav class="navbar navbar-default navbar-main">
                         <div class="container-fluid">
                             <div class="navbar-header">
@@ -22,14 +22,24 @@
                     </nav>
                 </div>
 
+                <div class="top-describing">
+                    <div id="doc-title"> {{ document.title }}</div>
+                    <div id="doc-description"> {{ document.description }} </div>
+                </div>
+
                 {% include  'PdfGenesisCoreBundle:design:_edit.html.twig' %}
             </div>
             <div class="design-tool-container col-sm-3">
                 <div class="generate-btn-temporary">
                     {{ render(path('import_file')) }}
                     <a class="btn btn-raised btn-success" href="{{ path('generate_pdf') }}"> Generate </a>
+
+                    <a class="btn btn-raised btn-info" data-toggle="modal" data-target="#title_description"> Title & Description </a>
+
                 </div>
             </div>
         </div>
     </div>
+
+    {% include 'PdfGenesisDocumentBundle:Modal:_title_description.html.twig' %}
 {% endblock %}
