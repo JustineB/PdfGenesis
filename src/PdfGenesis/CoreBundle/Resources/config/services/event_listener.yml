@@ -2,6 +2,8 @@ services:
      pdf_genesis.event_listener.element:
          class: PdfGenesis\ElementBundle\EventListener\ElementListener
          arguments: ["@doctrine.orm.entity_manager"]
+         calls:
+            - [ setContainer,[ @service_container ] ]
          tags:
             - { name: kernel.event_listener, event: pdf_genesis.element.create, method: create }
 

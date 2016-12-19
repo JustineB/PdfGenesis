@@ -12,12 +12,12 @@ class ElementController extends Controller
 {
 
     public function listAction(Request $request){
-        $pageNumber = $request->get('page_number');
+        $pageId = $request->get('page_id');
 
         $em = $this->getDoctrine()->getEntityManager();
 
-       if($pageNumber){
-           $page = $em->getRepository('PdfGenesisDocumentBundle:Page')->findByPaginationOrder($pageNumber);
+       if($pageId){
+           $page = $em->getRepository('PdfGenesisDocumentBundle:Page')->find($pageId);
            $elements = $em->getRepository('PdfGenesisElementBundle:Element')->findByPage($page);
        }else{
            $elements = $em->getRepository('PdfGenesisElementBundle:Element')->findAll();
