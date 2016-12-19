@@ -1,4 +1,19 @@
-<div class="blank-sheet">
-    {{ render(path('element_list')) }}
-</div>
+
+{% for page in pages %}
+    {% if page.activate == true %}
+        <div class="blank-sheet">
+            {{ render(path('element_list', {'id' : page.id })) }}
+        </div>
+
+        <div class="page-info" >
+            <div class="page-describing">
+                <span> {{ page.title }} </span>
+            </div>
+            <div class="page-index">
+                <span>{{ page.paginationOrder }}</span>
+            </div>
+        </div>
+    {% endif %}
+{% endfor %}
+
 

@@ -45,6 +45,20 @@ class Page
     protected $elements;
 
     /**
+     * @var boolean
+     *
+     * @ORM\Column(name="activate", type="boolean")
+     */
+    protected $activate;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="title", type="string")
+     */
+    protected $title;
+
+    /**
      * Get id
      *
      * @return int
@@ -143,7 +157,57 @@ class Page
      */
     public function __construct()
     {
+        $this->title = DocumentInterface::DEFAULT_TITLE;
+        $this->activate = false;
         $this->elements = new \Doctrine\Common\Collections\ArrayCollection();
     }
 
+
+    /**
+     * Set activate
+     *
+     * @param boolean $activate
+     *
+     * @return Page
+     */
+    public function setActivate($activate)
+    {
+        $this->activate = $activate;
+
+        return $this;
+    }
+
+    /**
+     * Get activate
+     *
+     * @return boolean
+     */
+    public function getActivate()
+    {
+        return $this->activate;
+    }
+
+    /**
+     * Set title
+     *
+     * @param string $title
+     *
+     * @return Page
+     */
+    public function setTitle($title)
+    {
+        $this->title = $title;
+
+        return $this;
+    }
+
+    /**
+     * Get title
+     *
+     * @return string
+     */
+    public function getTitle()
+    {
+        return $this->title;
+    }
 }

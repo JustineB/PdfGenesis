@@ -33,8 +33,9 @@
                     </div>
                 </div>
 
-                {% include  'PdfGenesisCoreBundle:design:_edit.html.twig' %}
+                {% include  'PdfGenesisCoreBundle:design:_edit.html.twig' with {'pages' : document.pages } %}
             </div>
+
             <div class="design-tool-container col-sm-3">
                 <div class="generate-btn-temporary">
                     {{ render(path('import_file')) }}

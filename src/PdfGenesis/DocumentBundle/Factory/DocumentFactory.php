@@ -15,7 +15,10 @@ class DocumentFactory{
         $document->setTitle(DocumentInterface::DEFAULT_TITLE);
 
         $page = new Page();
+
+        $page->setDocument($document);
         $page->setPaginationOrder(1);
+        $page->setActivate(true);
 
         $document->addPage($page);
 
