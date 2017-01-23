@@ -1,0 +1,13 @@
+
+{% for page in pages %}
+    {% if page.activate == true %}
+        <div class="page-info" >
+            <div class="page-describing">
+                <span> {{ page.title }} </span>
+            </div>
+            <div class="page-index">
+                <span>{{ page.paginationOrder }}</span>
+            </div>
+        </div>
+    {% endif %}
+{% endfor %}

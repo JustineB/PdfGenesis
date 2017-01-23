@@ -39,7 +39,7 @@
             <div class="design-tool-container col-sm-3">
                 <div class="generate-btn-temporary">
                     {{ render(path('import_file')) }}
-                    <a class="btn btn-raised btn-success" href="{{ path('generate_pdf') }}"> Generate </a>
+                    <a class="btn btn-raised btn-success" href="{{ path('generate_pdf', {'id': document.id }) }}"> Generate </a>
 
                     <a class="btn btn-raised btn-info" data-toggle="modal" data-target="#title-description-{{ documentType }}"> Title & Description </a>
                 </div>

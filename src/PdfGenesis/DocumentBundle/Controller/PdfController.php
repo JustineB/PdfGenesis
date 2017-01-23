@@ -6,24 +6,31 @@ namespace PdfGenesis\DocumentBundle\Controller;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\Config\Definition\Exception\Exception;
 use Symfony\Component\HttpFoundation\BinaryFileResponse;
+use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\ResponseHeaderBag;
 
 class PdfController extends Controller
 {
 
-    public function generateAction(){
+    public function generateAction(Request $request){
 
         //flashbag temporaire changer le nom du doc avec l'user actuel si anonyme dans le fichier des
         // anonyme
 
+        $id = $request->get('id');
+        $document = $this->getDoctrine()->getRepository('PdfGenesisDocumentBundle:Document')->find($id);
+
         $pdf_name = 'medias/pdf/file'. time() .'.pdf';
 
 
-
         try{
+
+
             $this->get('knp_snappy.pdf')->generateFromHtml(
                 $this->renderView(
-                    'PdfGenesisCoreBundle:design:_edit.html.twig'
+                    'PdfGenesisCoreBundle:design:_blank_sheet.html.twig',
+                    array( 'pages' => $document->getPages() )
+
                 ),
                 $pdf_name
             );
@@ -39,6 +46,9 @@ class PdfController extends Controller
 
         $response = new BinaryFileResponse($pdf_name);
         $response->setContentDisposition(ResponseHeaderBag::DISPOSITION_ATTACHMENT);
+
+
+        // Le nom ect à jarter !!! differencier
 
         return $response;
 

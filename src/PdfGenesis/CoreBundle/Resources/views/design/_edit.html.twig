@@ -1,19 +1,7 @@
 
-{% for page in pages %}
-    {% if page.activate == true %}
-        <div class="blank-sheet">
-            {{ render(path('element_list', {'page_id' : page.id })) }}
-        </div>
+{% include 'PdfGenesisCoreBundle:design:_blank_sheet.html.twig' with {'pages' : pages}  %}
 
-        <div class="page-info" >
-            <div class="page-describing">
-                <span> {{ page.title }} </span>
-            </div>
-            <div class="page-index">
-                <span>{{ page.paginationOrder }}</span>
-            </div>
-        </div>
-    {% endif %}
-{% endfor %}
+{% include 'PdfGenesisCoreBundle:design:_page_info.html.twig' with {'pages' : pages}  %}
+
 
 
