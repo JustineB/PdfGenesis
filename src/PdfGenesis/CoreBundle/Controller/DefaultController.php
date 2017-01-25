@@ -22,7 +22,6 @@ class DefaultController extends Controller
         }
 
         if(!$this->get('session')->has('document')){
-
             $document = $this->container->get('pdfgenesis.document_manager');
 
             $em->persist($document);

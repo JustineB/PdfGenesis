@@ -7,6 +7,14 @@ generate_pdf:
      path:    /generate-pdf
      defaults: { _controller: PdfGenesisDocumentBundle:Pdf:generate }
 
+generate_new_page:
+     path:   /generate-page
+     defaults: { _controller: PdfGenesisDocumentBundle:Document:newPage }
+
+change_page:
+     path:   /change-page
+     defaults: { _controller: PdfGenesisDocumentBundle:Document:changePage }
+
 document_update_title_description:
      path:    /update-title-description
      defaults: { _controller: PdfGenesisDocumentBundle:Document:updateTitleDescription }

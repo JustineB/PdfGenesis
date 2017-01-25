@@ -28,7 +28,7 @@ class PdfController extends Controller
 
             $this->get('knp_snappy.pdf')->generateFromHtml(
                 $this->renderView(
-                    'PdfGenesisCoreBundle:design:_blank_sheet.html.twig',
+                    'PdfGenesisCoreBundle:design:_pdf_document.html.twig',
                     array( 'pages' => $document->getPages() )
 
                 ),

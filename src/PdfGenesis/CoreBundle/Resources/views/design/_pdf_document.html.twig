@@ -1,8 +1,6 @@
 
 {% for page in pages %}
-    {% if page.activate == true %}
         <div class="blank-sheet">
             {{ render(path('element_list', {'page_id' : page.id })) }}
         </div>
-    {% endif %}
 {% endfor %}

@@ -24,4 +24,5 @@ class DocumentFactory{
 
         return $document;
     }
+
 }

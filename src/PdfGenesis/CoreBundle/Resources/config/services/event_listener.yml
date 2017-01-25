@@ -7,7 +7,11 @@ services:
          tags:
             - { name: kernel.event_listener, event: pdf_genesis.element.create, method: create }
 
-
+     pdf_genesis.event_listener.page:
+         class: PdfGenesis\DocumentBundle\EventListener\PageListener
+         arguments:  ["@doctrine.orm.entity_manager"]
+         tags:
+            - { name: kernel.event_listener, event: pdf_genesis.page.activate, method: activate }
 #    pdf_genesis_core.example:
 #        class: PdfGenesis\CoreBundle\Example
 #        arguments: ["@service_id", "plain_value", "%parameter%"]

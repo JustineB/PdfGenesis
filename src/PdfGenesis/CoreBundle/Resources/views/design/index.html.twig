@@ -34,6 +34,14 @@
                 </div>
 
                 {% include  'PdfGenesisCoreBundle:design:_edit.html.twig' with {'pages' : document.pages } %}
+                <div class="change-page-section">
+                    <a href="{{ path('change_page', {'id' : document.id, 'change_number' : -1 }) }}">
+                        <i class="material-icons">keyboard_arrow_left</i>
+                    </a>
+                    <a href="{{ path('change_page', {'id' : document.id, 'change_number' : 1 }) }}">
+                        <i class="material-icons">keyboard_arrow_right</i>
+                    </a>
+                </div>
             </div>
 
             <div class="design-tool-container col-sm-3">
@@ -42,6 +50,8 @@
                     <a class="btn btn-raised btn-success" href="{{ path('generate_pdf', {'id': document.id }) }}"> Generate </a>
 
                     <a class="btn btn-raised btn-info" data-toggle="modal" data-target="#title-description-{{ documentType }}"> Title & Description </a>
+
+                    <a class="btn btn-raised btn-danger"  href="{{ path('generate_new_page', {'id': document.id }) }}"> New page</a>
                 </div>
             </div>
         </div>
