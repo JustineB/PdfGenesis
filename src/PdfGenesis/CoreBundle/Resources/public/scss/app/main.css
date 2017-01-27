@@ -1,4 +1,16 @@
 li {
   list-style-type: none; }
 
+.navbar-brand {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1;
+  height: 100%;
+  width: 100%;
+  background: url(../../bundles/pdfgenesiscore/img/logo.png) no-repeat;
+  background-size: 37%;
+  margin-top: 20px; }
+
 /*# sourceMappingURL=main.css.map */

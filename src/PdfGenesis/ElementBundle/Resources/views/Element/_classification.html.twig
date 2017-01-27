@@ -1,0 +1,13 @@
+<div class="classification-section">
+    {% if elements is defined %}
+        {% for item in elements %}
+            {% if item.size != null and item.position != null and item.name != null %}
+                <div class="element-part">
+                    <a class="element-link">
+                        <i class="material-icons">list</i> {{ item.name }}
+                    </a>
+                </div>
+            {% endif %}
+        {% endfor %}
+    {% endif %}
+</div>

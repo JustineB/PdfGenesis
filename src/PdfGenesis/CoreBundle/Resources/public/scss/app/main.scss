@@ -5,5 +5,13 @@ li{
   list-style-type: none;
 }
 
+.navbar-brand{
+  @include background(1);
+
+  background: url(../../bundles/pdfgenesiscore/img/logo.png) no-repeat;
+  background-size: 37%;
+  margin-top:20px;
+}
+
 
 

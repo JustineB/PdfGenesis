@@ -29,6 +29,40 @@ class ElementController extends Controller
 
     }
 
+    public function classificationAction(Request $request){
+        $documentId = $request->get('id');
+
+        $em = $this->getDoctrine()->getEntityManager();
+
+        if($documentId){
+            $document = $em->getRepository('PdfGenesisDocumentBundle:Document')->find($documentId);
+
+            $activatePage = null;
+
+            foreach ($document->getPages() as $page){
+                if($page->getActivate()){
+                    $activatePage = $page;
+                }
+            }
+
+            if($activatePage !== null){
+                $elements = $activatePage->getElements();
+            }else{
+                $elements = null;
+            }
+
+        }else{
+            $elements = null;
+
+//            $elements = $em->getRepository('PdfGenesisElementBundle:Element')->findAll();
+        }
+
+
+        return $this->render('PdfGenesisElementBundle:Element:_classification.html.twig',array(
+            'elements' => $elements
+        ));
+    }
+
 
     /**
      * @param Request $request

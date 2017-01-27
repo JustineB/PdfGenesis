@@ -2,6 +2,11 @@ element_list:
   path :    /list
   defaults: { _controller: PdfGenesisElementBundle:Element:list }
 
+#a voir pour eviter les doublons de classes
+element_list_classification:
+  path :    /list-classification
+  defaults: { _controller: PdfGenesisElementBundle:Element:classification }
+
 element_ajax_position_change:
   path :    /ajax-position-change
   defaults: { _controller: PdfGenesisElementBundle:Element:ajaxPositionChange }

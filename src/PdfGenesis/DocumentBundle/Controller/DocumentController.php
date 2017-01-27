@@ -110,7 +110,7 @@ class DocumentController extends Controller
         $paginationOrder = $activatePage->getPaginationOrder();
         $changePage = $paginationOrder + $value;
 
-        if($changePage < 0 || $changePage > sizeof($document->getPages()) ){
+        if($changePage <= 0 || $changePage > sizeof($document->getPages()) ){
             return $this->redirect($this->generateUrl('design'));
         }
 
@@ -126,6 +126,8 @@ class DocumentController extends Controller
 
     /**
      * @param Document $document
+     *
+     * Mettre cette fonction independante dans un controller
      * @return mixed|null
      */
     public function getActivatePage(Document $document){

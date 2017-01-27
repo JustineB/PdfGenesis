@@ -7,7 +7,13 @@
         <div class="row">
 
             <div class="design-tool-container col-sm-3">
-
+                <div class="classification-section">
+                    <a href="" class="element-mark-link">
+                        <div class="element-mark">
+                            {{ render(path('element_list_classification', {'id' : document.id })) }}
+                        </div>
+                    </a>
+                </div>
             </div>
 
             <div class="blank-sheet-container col-sm-6">
@@ -16,7 +22,7 @@
                     <nav class="navbar navbar-default navbar-main">
                         <div class="container-fluid">
                             <div class="navbar-header">
-                                <a class="navbar-brand" href="#"> PDF Genesis </a>
+                                <a class="navbar-brand" href="{{ path('homepage') }}">  </a>PDF GENESIS
                             </div>
                         </div>
                     </nav>
