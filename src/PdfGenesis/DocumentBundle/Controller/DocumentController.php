@@ -22,6 +22,19 @@ use Symfony\Component\HttpFoundation\Request;
 class DocumentController extends Controller
 {
 
+    public function newAction(Request $request){
+
+        $em = $this->getDoctrine()->getManager();
+
+        $document = $this->container->get('pdfgenesis.document_manager');
+
+        $em->persist($document);
+        $em->flush();
+
+        $this->get('session')->set('document', $document->getId());
+
+        return $this->redirect($this->generateUrl('design'));
+    }
     /**
      * @param Request $request
      * @return \Symfony\Component\HttpFoundation\RedirectResponse|\Symfony\Component\HttpFoundation\Response

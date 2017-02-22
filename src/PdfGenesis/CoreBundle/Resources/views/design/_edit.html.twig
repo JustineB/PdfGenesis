@@ -9,9 +9,18 @@
             <div class="page-describing">
                 <span> {{ page.title }} </span>
             </div>
-            <div class="page-index">
-                <span>{{ page.paginationOrder }}</span>
+            <div class="change-page-section">
+                <a href="{{ path('change_page', {'id' : document.id, 'change_number' : -1 }) }}">
+                    <i class="material-icons">keyboard_arrow_left</i>
+                </a>
+                <div class="page-index">
+                    <span>{{ page.paginationOrder }}</span>
+                </div>
+                <a href="{{ path('change_page', {'id' : document.id, 'change_number' : 1 }) }}">
+                    <i class="material-icons">keyboard_arrow_right</i>
+                </a>
             </div>
+
         </div>
     {% endif %}
 {% endfor %}

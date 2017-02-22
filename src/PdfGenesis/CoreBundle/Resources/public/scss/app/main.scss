@@ -5,13 +5,35 @@ li{
   list-style-type: none;
 }
 
-.navbar-brand{
-  @include background(1);
+#design-container{
+  .navbar-header{
+    margin-top:20px;
+    .navbar-brand{
+      //@include background(1);
 
-  background: url(../../bundles/pdfgenesiscore/img/logo.png) no-repeat;
-  background-size: 37%;
-  margin-top:20px;
+      background: url(../../bundles/pdfgenesiscore/img/logo.png) no-repeat;
+      background-size: 97%;
+      //margin-top:20px;
+    }
+  }
+
+
 }
 
+.change-page-section{
+  margin-bottom:30px;
+  float: left;
+  width: 100%;
+  a,div{
+    float: left !important;
+    width: 33%;
+  }
+  .page-index{
+    width:30%;
+  }
+}
 
+.page-describing{
+  margin: 20px 200px;
+}
 

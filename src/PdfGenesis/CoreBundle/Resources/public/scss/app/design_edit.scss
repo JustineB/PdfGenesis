@@ -5,7 +5,7 @@
 .blank-sheet{
   @include center();
 
-  height: 600px;
+  height: 750px;
   background-color: $white;
 }
 
@@ -13,3 +13,49 @@
   height: 100px;
 }
 
+.design-tool-container-left{
+  a{
+    float: none;
+    display: inline-block;
+    margin: 40px 0px;
+    width: 100%;
+  }
+}
+
+.design-tool-container-right{
+  .element-part {
+    margin: 9px 0px;
+  }
+}
+
+
+.design-tool-container{
+  padding-left: 68px;
+  height: 155vh !important;
+  padding-top: 35vh;
+  background-color: rgba(236, 134, 43, 0.12);
+}
+
+.blank-sheet-container{
+  padding-right: 90px;
+  padding-left: 90px;
+}
+
+
+.top-describing{
+  border: 2px solid gray;
+  padding: 10px;
+  margin-bottom: 20px;
+  text-align: center;
+  background-color: rgba(226, 208, 193, 0.42);
+}
+
+#design-container{
+  a{
+    color: #c18b27;
+  }
+
+  .navbar-header{
+    color: #c18b27;
+  }
+}

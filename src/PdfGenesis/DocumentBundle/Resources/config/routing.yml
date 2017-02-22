@@ -2,6 +2,10 @@
 #    path:     /
 #    defaults: { _controller: PdfGenesisDocumentBundle::index }
 
+new_document:
+     path:    /new-document
+     defaults: { _controller: PdfGenesisDocumentBundle:Document:new }
+
 
 generate_pdf:
      path:    /generate-pdf

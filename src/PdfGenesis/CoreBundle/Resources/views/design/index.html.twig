@@ -6,7 +6,9 @@
     <div class="content" id="design-container">
         <div class="row">
 
-            <div class="design-tool-container col-sm-3">
+            <div class="design-tool-container col-sm-2 design-tool-container-right">
+                <div class="title-section"><h4>Elements</h4></div>
+
                 <div class="classification-section">
                     <a href="" class="element-mark-link">
                         <div class="element-mark">
@@ -16,7 +18,7 @@
                 </div>
             </div>
 
-            <div class="blank-sheet-container col-sm-6">
+            <div class="blank-sheet-container col-sm-8">
 
                 <div class="top-nav">
                     <nav class="navbar navbar-default navbar-main">
@@ -40,24 +42,19 @@
                 </div>
 
                 {% include  'PdfGenesisCoreBundle:design:_edit.html.twig' with {'pages' : document.pages } %}
-                <div class="change-page-section">
-                    <a href="{{ path('change_page', {'id' : document.id, 'change_number' : -1 }) }}">
-                        <i class="material-icons">keyboard_arrow_left</i>
-                    </a>
-                    <a href="{{ path('change_page', {'id' : document.id, 'change_number' : 1 }) }}">
-                        <i class="material-icons">keyboard_arrow_right</i>
-                    </a>
-                </div>
+
             </div>
 
-            <div class="design-tool-container col-sm-3">
+            <div class="design-tool-container design-tool-container-left col-sm-2">
                 <div class="generate-btn-temporary">
                     {{ render(path('import_file')) }}
-                    <a class="btn btn-raised btn-success" href="{{ path('generate_pdf', {'id': document.id }) }}"> Generate </a>
+                    <a class="" href="{{ path('generate_pdf', {'id': document.id }) }}"><i class="material-icons">file_download</i> Generate</a>
 
-                    <a class="btn btn-raised btn-info" data-toggle="modal" data-target="#title-description-{{ documentType }}"> Title & Description </a>
+                    <a class="" data-toggle="modal" data-target="#title-description-{{ documentType }}"><i class="material-icons">format_size</i> Title & Description </a>
 
-                    <a class="btn btn-raised btn-danger"  href="{{ path('generate_new_page', {'id': document.id }) }}"> New page</a>
+                    <a class=""  href="{{ path('generate_new_page', {'id': document.id }) }}"><i class="material-icons">add</i> New page</a>
+
+                    <a class=""  href="{{ path('new_document') }}"><i class="material-icons">format_align_justify</i> New document</a>
                 </div>
             </div>
         </div>
