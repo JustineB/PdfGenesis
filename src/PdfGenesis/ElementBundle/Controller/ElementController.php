@@ -119,4 +119,27 @@ class ElementController extends Controller
         return JsonResponse::create(true);
     }
 
+
+    /**
+     * Voir si on peux pas rassembler les fonctions ajax et faire une sorte de factory
+     *
+     * @param Request $request
+     * @return JsonResponse
+     */
+    public function ajaxNameChangeAction(Request $request){
+        $em = $this->getDoctrine()->getManager();
+
+        $id = $request->get('id');
+        $name = $request->get('name');
+
+        $element = $em->getRepository('PdfGenesisElementBundle:Element')->find($id);
+
+        $element->setName($name);
+
+        $em->persist($element);
+        $em->flush();
+
+        return JsonResponse::create(true);
+    }
+
 }

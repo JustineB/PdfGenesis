@@ -3,8 +3,9 @@
         {% for item in elements %}
             {% if item.size != null and item.position != null and item.name != null %}
                 <div class="element-part">
-                    <a class="element-link">
-                        <i class="material-icons">list</i> {{ item.name }}
+                    <a class="element-link" data-id="{{ item.id }}">
+                        <i class="material-icons">list</i>
+                        <p class="element-text">{{ item.name }}</p>
                     </a>
                 </div>
             {% endif %}

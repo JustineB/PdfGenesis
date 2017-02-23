@@ -7,6 +7,7 @@ element_list_classification:
   path :    /list-classification
   defaults: { _controller: PdfGenesisElementBundle:Element:classification }
 
+
 element_ajax_position_change:
   path :    /ajax-position-change
   defaults: { _controller: PdfGenesisElementBundle:Element:ajaxPositionChange }
@@ -17,5 +18,12 @@ element_ajax_position_change:
 element_ajax_size_change:
   path :    /ajax-size-change
   defaults: { _controller: PdfGenesisElementBundle:Element:ajaxSizeChange }
+  options:
+      expose: true
+
+
+element_ajax_name_change:
+  path :    /ajax-change-name
+  defaults: { _controller: PdfGenesisElementBundle:Element:ajaxNameChange }
   options:
       expose: true
