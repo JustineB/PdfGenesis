@@ -89,11 +89,13 @@ knp_snappy:
     temporary_folder: %kernel.cache_dir%/snappy
     pdf:
         enabled:    true
-        binary:     /usr/local/bin/wkhtmltopdf
+        binary:     '"C:\Program Files\wkhtmltopdf\bin\wkhtmltopdf.exe"'
+    #   binary:     /usr/bin/wkhtmltopdf
         options:    []
     image:
         enabled:    true
-        binary:     /usr/local/bin/wkhtmltoimage
+        binary:     '"C:\Program Files\wkhtmltopdf\bin\wkhtmltoimage.exe"'
+    #   binary:     /usr/bin/wkhtmltoimage
         options:    []
 
 
@@ -102,6 +104,9 @@ fos_user:
     db_driver: orm # other valid values are 'mongodb' and 'couchdb'
     firewall_name: main
     user_class: PdfGenesis\CoreBundle\Entity\User
+    from_email:
+                address:        justine.benezra@gmail.com
+                sender_name:    Pdf Genesis service
 
 
 

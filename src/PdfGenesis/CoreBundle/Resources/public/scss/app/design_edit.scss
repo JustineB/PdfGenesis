@@ -1,17 +1,20 @@
 @import 'mixins';
 @import 'color';
 
+#design-container{
+  background-color: $background-color;
+  .blank-sheet{
+    @include center();
 
-.blank-sheet{
-  @include center();
+    height: 60em;
+    background-color: $white;
+  }
 
-  height: 750px;
-  background-color: $white;
+  .free-space{
+    height: 100px;
+  }
 }
 
-.free-space{
-  height: 100px;
-}
 
 .design-tool-container-left{
   a{

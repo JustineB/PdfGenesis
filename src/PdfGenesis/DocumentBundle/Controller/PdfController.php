@@ -25,8 +25,20 @@ class PdfController extends Controller
 
         try{
 
+            $snappy = $this->get('knp_snappy.pdf');
 
-            $this->get('knp_snappy.pdf')->generateFromHtml(
+            $options = [
+                'margin-top'    => 0,
+                'margin-right'  => 0,
+                'margin-bottom' => 0,
+                'margin-left'   => 0,
+            ];
+
+            foreach ($options as $margin => $value) {
+                $snappy->setOption($margin, $value);
+            }
+
+            $snappy->generateFromHtml(
                 $this->renderView(
                     'PdfGenesisCoreBundle:design:_pdf_document.html.twig',
                     array( 'pages' => $document->getPages() )
@@ -34,6 +46,7 @@ class PdfController extends Controller
                 ),
                 $pdf_name
             );
+
 
             $this->get('session')->getFlashbag()->add('success','success');
 
