@@ -1,7 +1,7 @@
 <div class="classification-section">
     {% if elements is defined %}
         {% for item in elements %}
-            {% if item.size != null and item.position != null and item.name != null %}
+            {% if item.size != null and item.position != null  %}
                 <div class="element-part">
                     <a class="element-link" data-id="{{ item.id }}">
                         <i class="material-icons">list</i>

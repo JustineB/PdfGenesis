@@ -9,3 +9,13 @@ function inputResolver(id, class_name, value, input_type){
 
     return input_res;
 }
+
+function staticTextResolver(class_name, value){
+    var input = STATIC_TEXT_BUILDER,
+        static_text_res = input.replace("%value%",value );
+
+    static_text_res = static_text_res.replace("%class-static%",class_name );
+
+    return static_text_res;
+
+}
