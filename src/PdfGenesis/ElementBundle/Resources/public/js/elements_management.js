@@ -14,13 +14,11 @@ $(document).ready(function(){
        var value = $(this).val(),
            id = $(this).data('id');
 
-       console.log($(this).val())
-
        if(e.keyCode == 13){
-
-           ajaxNameChangeElement(value,id);
-           staticTextTransformation($(this),'element-text');
-
+           if(emptyInputControl($(this))){
+               ajaxNameChangeElement(value,id);
+               staticTextTransformation($(this),'element-text');
+           }
        }
     });
 

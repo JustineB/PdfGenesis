@@ -1,0 +1,2 @@
+var ERROR_RED = '#dc0707';
+var GLOBAL_ICON_COLOR = '#c18b27';
