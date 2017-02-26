@@ -1,6 +1,6 @@
 $(document).ready(function(){
 
-
+    /** Transform static text in input to allow the name change  */
     $(document).on('dblclick','.element-link',function(){
 
        var id = $(this).data('id'),
@@ -9,7 +9,7 @@ $(document).ready(function(){
        inputTransformation($element, id, 'element-text', 'text');
     });
 
-
+    /** Submit the name's element change  */
     $(document).on('keyup','.element-text-input',function(e){
        var value = $(this).val(),
            id = $(this).data('id');
@@ -22,15 +22,26 @@ $(document).ready(function(){
        }
     });
 
+    /**  */
+    $(document).on('click','.element-part',function(){
+       var id= $(this).find('.element-link').data('id');
 
+       focusOnDesignElement(id);
+    });
+
+    $(document).on('click','.element-blank-page',function(){
+       var id = $(this).data('id');
+
+       focusOnDesignElement(id);
+    });
+
+
+    /** Sort the element list on the tool container */
     $( "#element-list" ).sortable( {out: function( event, ui ) {
         var $list = $('#element-list');
 
         elementSort($list);
-
     }} );
-
-
 });
 
 
@@ -99,4 +110,20 @@ function elementSort($list){
         $('.element-blank-page[data-id="'+id+'"]').css('z-index',z_index);
         z_index--;
     }
+}
+
+/**
+ *
+ * @param id
+ */
+function focusOnDesignElement(id){
+
+    $('.element-blank-page').each(function(){
+       $(this).removeClass('element-select');
+    });
+
+    $( ".element-blank-page" ).promise().done(function() {
+        $('.element-blank-page[data-id="'+id+'"]').addClass('element-select');
+    });
+
 }
