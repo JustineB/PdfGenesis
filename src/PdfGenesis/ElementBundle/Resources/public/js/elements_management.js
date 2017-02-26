@@ -23,6 +23,14 @@ $(document).ready(function(){
     });
 
 
+    $( "#element-list" ).sortable( {out: function( event, ui ) {
+        var $list = $('#element-list');
+
+        elementSort($list);
+
+    }} );
+
+
 });
 
 
@@ -46,6 +54,13 @@ function staticTextTransformation($element, class_name){
 }
 
 
+/**
+ *
+ * @param $element
+ * @param id
+ * @param class_name
+ * @param input_type
+ */
 function inputTransformation($element, id, class_name, input_type){
 
     var value;
@@ -65,4 +80,23 @@ function inputTransformation($element, id, class_name, input_type){
     $element.remove();
     $element_parent.append(input_html);
 
+}
+
+
+/**
+ *
+ * @param $list
+ */
+function elementSort($list){
+
+    var $elements = $list.find('li'),
+        z_index = $elements.length,
+        id = 0;
+
+    for(var i=0 ; i < $elements.length; i++){
+
+        id = $('#element-list li:eq('+ i +')').find('.element-link').data('id');
+        $('.element-blank-page[data-id="'+id+'"]').css('z-index',z_index);
+        z_index--;
+    }
 }

@@ -1,14 +1,16 @@
 <div class="classification-section">
-    {% if elements is defined %}
-        {% for item in elements %}
-            {% if item.size != null and item.position != null  %}
-                <div class="element-part">
-                    <a class="element-link" data-id="{{ item.id }}">
-                        <i class="material-icons">list</i>
-                        <p class="element-text">{{ item.name }}</p>
-                    </a>
-                </div>
-            {% endif %}
-        {% endfor %}
-    {% endif %}
+    <ul id="element-list">
+        {% if elements is defined %}
+            {% for item in elements %}
+                {% if item.size != null and item.position != null  %}
+                    <li class="element-part">
+                        <a class="element-link" data-id="{{ item.id }}">
+                            <i class="material-icons">list</i>
+                            <p class="element-text">{{ item.name }}</p>
+                        </a>
+                    </li>
+                {% endif %}
+            {% endfor %}
+        {% endif %}
+    </ul>
 </div>
