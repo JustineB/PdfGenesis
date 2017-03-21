@@ -2,9 +2,11 @@
 <script src="https://code.jquery.com/jquery-2.2.4.min.js"
         integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
 
+<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+
 {% javascripts 'bundles/pdfgenesiscore/js/boostrap/*'
 "bundles/pdfgenesiscore/js/materialDesign/*"
-"bundles/pdfgenesiscore/js/interact/*" %}
+"bundles/pdfgenesiscore/js/interact/interact.js" %}
 <script src="{{ asset_url }}"></script>
 {% endjavascripts %}
 
@@ -23,6 +25,12 @@
 
 <script src="{{ asset('bundles/fosjsrouting/js/router.js') }}"></script>
 <script src="{{ path('fos_js_routing_js', { callback: 'fos.Router.setData' }) }}"></script>
+
+<script>
+    $( function() {
+        $( "#tabs" ).tabs();
+    } );
+</script>
 
 
 {% include 'PdfGenesisElementBundle:assets:__javascripts.html.twig' %}

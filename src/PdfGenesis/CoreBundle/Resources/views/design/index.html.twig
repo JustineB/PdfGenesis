@@ -25,6 +25,7 @@
                         <div class="container-fluid">
                             <div class="navbar-header">
                                 <a class="navbar-brand" href="{{ path('homepage') }}">  </a>PDF GENESIS
+                                <div class="login-action"><a data-toggle="modal" data-target="#login-modal">{{ 'Login'|trans }} / {{ 'Sign up'|trans }}</a></div>
                             </div>
                         </div>
                     </nav>
@@ -61,5 +62,6 @@
     </div>
 
     {% include 'PdfGenesisDocumentBundle:Modal:_title_description_modal.html.twig' with {'id' : document.id  , 'type' : documentType } %}
+    {% include 'PdfGenesisCoreBundle:user:login_modal.html.twig' %}
 
 {% endblock %}

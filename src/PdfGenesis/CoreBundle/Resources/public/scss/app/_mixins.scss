@@ -58,3 +58,9 @@
   border-top: $size+4em solid $color;
 
 }
+
+@mixin plainWidth($width: 100%){
+  width: $width;
+  margin: 0;
+  padding: 0;
+}

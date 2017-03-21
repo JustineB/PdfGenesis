@@ -1,0 +1,26 @@
+@import "color";
+@import "mixins";
+
+#login-modal{
+  #tabs{
+    border:none;
+    .ui-tabs-nav{
+      @include plainWidth();
+      li{
+       @include plainWidth(50%);
+        a{
+          width: 100%;
+        }
+
+        &.active{
+          background: $active-box;
+          box-shadow: 0 2px 14px $active-box-shadow;
+          border: none;
+          a{
+            color: $text-color;
+          }
+        }
+      }
+    }
+  }
+}

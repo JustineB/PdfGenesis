@@ -29,9 +29,9 @@ $(document).ready(function(){
        focusOnDesignElement(id);
     });
 
+
     $(document).on('click','.element-blank-page',function(){
        var id = $(this).data('id');
-
        focusOnDesignElement(id);
     });
 
