@@ -3,9 +3,7 @@
 <head>
     <title> PDF Genesis </title>
 
-    {% block javascripts %}
-        {% include 'PdfGenesisCoreBundle:assets:__javascripts.html.twig' %}
-    {% endblock %}
+
 
     {% block stylesheets %}
         {% include 'PdfGenesisCoreBundle:assets:__stylesheets.html.twig' %}
@@ -23,6 +21,10 @@
         {% endfor %}
     </div>
     {% block body %}
+    {% endblock %}
+
+    {% block javascripts %}
+        {% include 'PdfGenesisCoreBundle:assets:__javascripts.html.twig' %}
     {% endblock %}
 </body>
 </html>

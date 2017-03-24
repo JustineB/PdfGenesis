@@ -2,22 +2,100 @@
 @import "mixins";
 
 #login-modal{
-  #tabs{
-    border:none;
-    .ui-tabs-nav{
-      @include plainWidth();
-      li{
-       @include plainWidth(50%);
-        a{
-          width: 100%;
-        }
 
+    .modal-content{
+      width: 90%;
+
+    .modal-body{
+      #tabs{
+        width: 70%;
+        margin: auto;
+        border:none;
+        .ui-tabs-nav{
+           height: 3em;
+          @include plainWidth();
+          li{
+           height: 3em;
+
+            @include plainWidth(50%);
+            a{
+             width: 100%;
+             height: 100%;
+              border: 1px solid #dadada !important;
+              &:focus{
+                outline: none;
+              }
+
+            }
+
+
+           &.ui-state-active{
+             background: $active-box;
+             box-shadow: 0 2px 14px $active-box-shadow;
+              border: none;
+              a{
+
+                color: $text-color;
+             }
+           }
+          }
+        }
+      }
+      form{
+        width: 80%;
+        margin: auto;
+        .form-group{
+          margin: 10px ;
+          height: 4em;
+        }
+      }
+    }
+
+
+
+
+    .login-social{
+      margin-top: 15px;
+      div{
+        margin: 5px auto;
+        width: 50%;
+        text-align: center;
+        &#facebook{
+          background: $facebook;
+        }
+        &#google{
+          background: $google;
+        }
+        a{
+          margin: 0;
+          font-size: 9pt;
+          font-weight: 500;
+          width: 100%;
+          height: 100%;
+          color: white;
+        }
+      }
+    }
+
+    .login-table{
+      li{
+        display: none;
         &.active{
-          background: $active-box;
-          box-shadow: 0 2px 14px $active-box-shadow;
-          border: none;
-          a{
-            color: $text-color;
+          display: block !important;
+        }
+      }
+    }
+
+    #register-form{
+      form{
+        .inputs{
+          margin-top: 15px;
+          .form-group{
+            .control-label{
+              font-size: 13px !important;
+              color: $floating-text-color !important;
+            }
+            margin: 0 10px;
           }
         }
       }

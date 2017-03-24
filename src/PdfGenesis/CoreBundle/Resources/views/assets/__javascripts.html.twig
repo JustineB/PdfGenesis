@@ -13,6 +13,7 @@
 {% javascripts filter="?jsqueeze" output="js/app.js"
 "bundles/pdfgenesiscore/js/app/draggable.js"
 "bundles/pdfgenesiscore/js/app/helper.js"
+"bundles/pdfgenesiscore/js/app/login.js"
 "bundles/pdfgenesiscore/js/app/import_process.js"
 "bundles/pdfgenesiscore/js/app/validation.js"
 "bundles/pdfgenesiscore/js/app/color.js"
@@ -27,10 +28,12 @@
 <script src="{{ path('fos_js_routing_js', { callback: 'fos.Router.setData' }) }}"></script>
 
 <script>
-    $( function() {
+    $(function () {
+        $.material.init();
         $( "#tabs" ).tabs();
-    } );
+    });
 </script>
+
 
 
 {% include 'PdfGenesisElementBundle:assets:__javascripts.html.twig' %}

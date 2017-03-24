@@ -1,4 +1,12 @@
 
-.update-modal{
+.modal{
     z-index: 99999999;
+  .modal-footer{
+    .center-modal-submit{
+      margin: auto;
+      width: 50%;
+      text-align: center;
+      padding: 0;
+    }
+  }
 }
