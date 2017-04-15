@@ -24,8 +24,7 @@
                     <nav class="navbar navbar-default navbar-main">
                         <div class="container-fluid">
                             <div class="navbar-header">
-                                <a class="navbar-brand" href="{{ path('homepage') }}">  </a>PDF GENESIS
-                                <div class="login-action"><a data-toggle="modal" data-target="#login-modal">{{ 'Login'|trans }} / {{ 'Sign up'|trans }}</a></div>
+                                <a class="navbar-brand" href="{{ path('homepage') }}"> </a>PDF GENESIS
                             </div>
                         </div>
                     </nav>
@@ -33,35 +32,45 @@
 
                 <div class="top-describing">
                     <div id="doc-title">
-                        <div class="top-label">Title : </div>
+                        <div class="top-label">Title :</div>
                         {{ document.title }}
                     </div>
                     <div id="doc-description">
-                        <div class="top-label">Description : </div>
+                        <div class="top-label">Description :</div>
                         {{ document.description }}
                     </div>
                 </div>
 
-                {% include  'PdfGenesisCoreBundle:design:_edit.html.twig' with {'pages' : document.pages } %}
+                {% include  'PdfGenesisCoreBundle:Design:_edit.html.twig' with {'pages' : document.pages } %}
 
             </div>
 
             <div class="design-tool-container design-tool-container-left col-sm-2">
+                {% if is_granted('IS_AUTHENTICATED_ANONYMOUSLY') %}
+                    <div class="login-action"><a data-toggle="modal" data-target="#login-modal">{{ 'Login'|trans }}
+                            / {{ 'Sign up'|trans }}</a></div>
+                {% endif %}
                 <div class="generate-btn-temporary">
                     {{ render(path('import_file')) }}
-                    <a class="" href="{{ path('generate_pdf', {'id': document.id }) }}"><i class="material-icons">file_download</i> Generate</a>
+                    <a class="" href="{{ path('generate_pdf', {'id': document.id }) }}"><i class="material-icons">file_download</i>
+                        Generate</a>
 
-                    <a class="" data-toggle="modal" data-target="#title-description-{{ documentType }}"><i class="material-icons">format_size</i> Title & Description </a>
+                    <a class="" data-toggle="modal" data-target="#title-description-{{ documentType }}"><i
+                                class="material-icons">format_size</i> Title & Description </a>
 
-                    <a class=""  href="{{ path('generate_new_page', {'id': document.id }) }}"><i class="material-icons">add</i> New page</a>
+                    <a class="" href="{{ path('generate_new_page', {'id': document.id }) }}"><i class="material-icons">add</i>
+                        New page</a>
 
-                    <a class=""  href="{{ path('new_document') }}"><i class="material-icons">format_align_justify</i> New document</a>
+                    <a class="" href="{{ path('new_document') }}"><i class="material-icons">format_align_justify</i> New
+                        document</a>
                 </div>
             </div>
         </div>
     </div>
+    <div class="modal-block">
+        {% include 'PdfGenesisDocumentBundle:Modal:_title_description_modal.html.twig' with {'id' : document.id  , 'type' : documentType } %}
+        {% include 'PdfGenesisCoreBundle:Security:login_modal.html.twig' %}
 
-    {% include 'PdfGenesisDocumentBundle:Modal:_title_description_modal.html.twig' with {'id' : document.id  , 'type' : documentType } %}
-    {% include 'PdfGenesisCoreBundle:user:login_modal.html.twig' %}
+    </div>
 
 {% endblock %}

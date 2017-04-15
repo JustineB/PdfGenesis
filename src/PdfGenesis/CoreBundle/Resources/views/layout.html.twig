@@ -6,25 +6,54 @@
 
 
     {% block stylesheets %}
-        {% include 'PdfGenesisCoreBundle:assets:__stylesheets.html.twig' %}
+        {% include 'PdfGenesisCoreBundle:Assets:__stylesheets.html.twig' %}
     {% endblock %}
 
 </head>
 
 <body>
-    <div class="flashbag">
-        {% for flashMessage in app.session.flashbag.get('error') %}
+<div class="flashbag">
+    {% for flashMessage in app.session.flashbag.get('error') %}
+        <div class="alert alert-dismissible alert-danger">
+            <button type="button" class="close" data-dismiss="alert">×</button>
             {{ flashMessage }}
-        {% endfor %}
-        {% for flashMessage in app.session.flashbag.get('sucess') %}
+        </div>
+    {% endfor %}
+    {% for flashMessage in app.session.flashbag.get('success') %}
+        <div class="alert alert-dismissible alert-success">
+            <button type="button" class="close" data-dismiss="alert">×</button>
             {{ flashMessage }}
-        {% endfor %}
-    </div>
-    {% block body %}
-    {% endblock %}
+        </div>
+    {% endfor %}
+</div>
 
+{% block body %}
+{% endblock %}
+
+<div class="javascripts">
     {% block javascripts %}
-        {% include 'PdfGenesisCoreBundle:assets:__javascripts.html.twig' %}
+        {% include 'PdfGenesisCoreBundle:Assets:__javascripts.html.twig' %}
+
+
+        {% for flashMessage in app.session.flashbag.get('registration_confirmed') %}
+        <script>
+            $(document).ready(function () {
+                registrationConfirmation();
+
+                $("#"+CONFIRMATION_REGISTER_CLASS).on("hidden", function () {
+                    $("#"+CONFIRMATION_REGISTER_CLASS).remove();
+                });
+            });
+        </script>
+        {% endfor %}
+        {% for flashMessage in app.session.flashbag.get('registration_error') %}
+        <script>
+            $(document).ready(function () {
+                registrationError();
+            });
+        </script>
+        {% endfor %}
     {% endblock %}
+</div>
 </body>
 </html>

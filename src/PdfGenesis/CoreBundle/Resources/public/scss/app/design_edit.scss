@@ -2,7 +2,7 @@
 @import 'color';
 
 #design-container{
-  background-color: $background-color;
+  background-color: $background-design-container;
   .blank-sheet{
     @include center();
 
@@ -36,7 +36,7 @@
   padding-left: 68px;
   height: 155vh !important;
   padding-top: 35vh;
-  background-color: rgba(236, 134, 43, 0.12);
+  background-color: $background-design-tool-container;
 }
 
 .blank-sheet-container{
@@ -46,11 +46,11 @@
 
 
 .top-describing{
-  border: 2px solid gray;
+  border: 2px solid $box-border;
   padding: 10px;
   margin-bottom: 20px;
   text-align: center;
-  background-color: rgba(226, 208, 193, 0.42);
+  background-color: $background-design-tool-container;
 }
 
 #design-container{

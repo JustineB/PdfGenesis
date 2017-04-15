@@ -11,3 +11,19 @@ $(document).ready(function(){
     });
 
 });
+
+
+function registrationError(){
+    $('#login-modal').modal('show');
+    forceLoginChoice('ui-id-2');
+    $('#tabs #tabs-2').append(resolveErrorForm());
+}
+
+function registrationConfirmation(){
+    var modal = confirmationRegistrationModal();
+    $('body').append(modal);
+
+    $('body').promise().done(function(){
+        $('#'+CONFIRMATION_REGISTER_CLASS).modal('show');
+    });
+}

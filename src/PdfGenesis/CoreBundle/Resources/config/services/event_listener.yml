@@ -12,6 +12,14 @@ services:
          arguments:  ["@doctrine.orm.entity_manager"]
          tags:
             - { name: kernel.event_listener, event: pdf_genesis.page.activate, method: activate }
+
+     fos_user.listener.flash:
+         class: PdfGenesis\CoreBundle\EventListener\FlashListener
+         arguments:  ["@session", "@translator"]
+         tags:
+            - {name: kernel.event_subscriber }
+
+
 #    pdf_genesis_core.example:
 #        class: PdfGenesis\CoreBundle\Example
 #        arguments: ["@service_id", "plain_value", "%parameter%"]

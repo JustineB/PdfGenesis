@@ -40,7 +40,7 @@ class PdfController extends Controller
 
             $snappy->generateFromHtml(
                 $this->renderView(
-                    'PdfGenesisCoreBundle:design:_pdf_document.html.twig',
+                    'PdfGenesisCoreBundle:Design:_pdf_document.html.twig',
                     array( 'pages' => $document->getPages() )
 
                 ),

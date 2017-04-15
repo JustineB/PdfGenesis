@@ -4,12 +4,13 @@ namespace PdfGenesis\CoreBundle\Controller;
 
 use PdfGenesis\DocumentBundle\Entity\Document;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
+use Symfony\Component\HttpFoundation\Request;
 
 class DefaultController extends Controller
 {
     public function indexAction()
     {
-        return $this->render('PdfGenesisCoreBundle:homepage:index.html.twig');
+        return $this->render('PdfGenesisCoreBundle:Homepage:index.html.twig');
     }
 
 
@@ -34,8 +35,8 @@ class DefaultController extends Controller
 
         $document = $em->getRepository('PdfGenesisDocumentBundle:Document')->find($documentId);
 
-        return $this->render('PdfGenesisCoreBundle:design:index.html.twig', array(
-            'document' => $document
+        return $this->render('PdfGenesisCoreBundle:Design:index.html.twig', array(
+            'document' => $document,
         ));
 
 
