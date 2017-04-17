@@ -1,0 +1,14 @@
+<div>
+    <div class="document-element">
+        <ul>
+            <li>{{ document.title }}</li>
+            <li>{{ document.description }}</li>
+            <li>{{ document.createdAt | date('d-m-Y') }}</li>
+        </ul>
+    </div>
+    <div class="document-action" data-id="{{ document.id }}">
+        <a class="upload-document"><span class="glyphicon glyphicon-download-alt" aria-hidden="true"></span></a>
+        <a class="edit-document"><span class="glyphicon glyphicon-edit" aria-hidden="true"></span></a>
+        <a class="delete-document"><span class="glyphicon glyphicon-trash" aria-hidden="true"></span></a>
+    </div>
+</div>

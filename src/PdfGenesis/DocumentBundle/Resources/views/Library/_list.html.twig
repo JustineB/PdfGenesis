@@ -1,0 +1,14 @@
+<div class="droppable-zone">
+    <ul>
+        {% for document in library.documents %}
+            <li>
+                {% include "PdfGenesisDocumentBundle:Document:_element.html.twig" with {'document' : document} %}
+            </li>
+        {% endfor %}
+    </ul>
+    {% if library.documents is empty %}
+        <div class="empty-message">
+            Aucun document à afficher pour le moment !
+        </div>
+    {% endif %}
+</div>

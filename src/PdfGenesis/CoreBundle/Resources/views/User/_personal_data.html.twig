@@ -1,0 +1,14 @@
+<div class="personal-data">
+    {% if user is defined and user is not null %}
+        <div class="profile-picture">
+            <div id="picture"></div>
+        </div>
+        <div class="data">
+            <ul>
+                <li> <strong>Pseudo : </strong> {{ user.username }} </li>
+                <li> <strong>Email : </strong> {{ user.email }} </li>
+            </ul>
+        </div>
+        <div class="info-plus"> Member since {{ user.createdAt | date('d-m-Y') }}</div>
+    {% endif %}
+</div>

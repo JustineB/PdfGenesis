@@ -104,6 +104,9 @@ fos_user:
     db_driver: orm # other valid values are 'mongodb' and 'couchdb'
     firewall_name: main
     user_class: PdfGenesis\CoreBundle\Entity\User
+    registration:
+            confirmation:
+                enabled: true
     from_email:
                 address:        justine.benezra@gmail.com
                 sender_name:    Pdf Genesis service

@@ -19,7 +19,14 @@ class MenuBuilder implements ContainerAwareInterface{
 
         $menu->addChild('concept', array('uri' => '#concept'));
         $menu->addChild('design', array('uri' => '#design'));
-        $menu->addChild('login-sign-up', array('uri' => '#'));
+
+        if($this->container->get('security.authorization_checker')->isGranted('ROLE_USER')){
+            $menu->addChild('account', array('route' => 'user_index'))->setLabel('My account');
+        }else{
+            $menu->addChild('login-sign-up', array('uri' => '#'));
+
+        }
+
 
         foreach ($menu->getChildren() as $child){
             $label = $this->container->get('translator')->trans('pdf-genesis.menu.'.$child->getName());

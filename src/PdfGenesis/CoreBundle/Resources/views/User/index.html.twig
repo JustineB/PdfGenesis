@@ -1,0 +1,28 @@
+{% extends 'PdfGenesisCoreBundle::layout.html.twig' %}
+
+{% block body %}
+    <div id="user-section" class="content">
+        <nav class="navbar navbar-default navbar-main">
+            <div class="container-fluid">
+                <div class="navbar-header">
+                    <a class="navbar-brand" href="#"> PDF Genesis </a>
+                </div>
+                {{ knp_menu_render('PdfGenesisCoreBundle:MenuBuilder:mainMenu' , {'style': 'navbar-right', 'allow_safe_labels': true}) | raw  }}
+            </div>
+        </nav>
+        <div class="section-title">
+            <h2> Mon compte : </h2>
+        </div>
+        <div class="user-content">
+            <div>
+                {{ render(path('user_data')) }}
+            </div>
+            <div class="dynamic-library">
+
+                {{ render(path('user_library')) }}
+
+            </div>
+        </div>
+    </div>
+
+{% endblock %}

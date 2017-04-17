@@ -1,0 +1,11 @@
+user_index:
+    path:     /
+    defaults: { _controller: PdfGenesisCoreBundle:User:index }
+
+user_data:
+    path:     /personal-data
+    defaults: { _controller: PdfGenesisCoreBundle:User:getData }
+
+user_library:
+    path:     /get-library
+    defaults: { _controller: PdfGenesisCoreBundle:User:getLibrary }

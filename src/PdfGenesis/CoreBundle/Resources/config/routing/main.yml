@@ -6,3 +6,7 @@ design:
     path:     /design
     defaults: { _controller: PdfGenesisCoreBundle:Default:design }
 
+user:
+    resource: "@PdfGenesisCoreBundle/Resources/config/routing/user.yml"
+    prefix:   /user
+
