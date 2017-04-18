@@ -146,4 +146,8 @@ class Library
         $this->documents = new \Doctrine\Common\Collections\ArrayCollection();
     }
 
+    public function hasDocument(Document $document){
+        return $this->documents->contains($document);
+    }
+
 }

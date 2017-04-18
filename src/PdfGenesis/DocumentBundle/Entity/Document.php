@@ -4,6 +4,8 @@ namespace PdfGenesis\DocumentBundle\Entity;
 
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\ORM\Mapping as ORM;
+use PdfGenesis\DocumentBundle\Entity\Document\DocumentImage;
+use PdfGenesis\DocumentBundle\Entity\Document\DocumentPDF;
 
 /**
  * Document
@@ -64,6 +66,22 @@ class Document
      * @ORM\OneToMany(targetEntity="PdfGenesis\DocumentBundle\Entity\Page", mappedBy="document" , cascade={"persist"})
      */
     protected $pages;
+
+    /**
+     * @var DocumentImage
+     *
+     * @ORM\OneToOne(targetEntity="PdfGenesis\DocumentBundle\Entity\Document\DocumentImage", cascade={"all"})
+     * @ORM\JoinColumn(name="image", referencedColumnName="id")
+     */
+    protected $documentImg;
+
+    /**
+     * @var DocumentPDF
+     *
+     * @ORM\OneToOne(targetEntity="PdfGenesis\DocumentBundle\Entity\Document\DocumentPDF", cascade={"all"})
+     * @ORM\JoinColumn(name="pdf", referencedColumnName="id")
+     */
+    protected $documentPdf;
 
     /**
      * Get id
@@ -237,6 +255,38 @@ class Document
     {
         $this->pages = new \Doctrine\Common\Collections\ArrayCollection();
         $this->createdAt = new \DateTime('now');
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getDocumentPdf()
+    {
+        return $this->documentPdf;
+    }
+
+    /**
+     * @param DocumentPDF $documentPdf
+     */
+    public function setDocumentPdf(DocumentPDF $documentPdf)
+    {
+        $this->documentPdf = $documentPdf;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getDocumentImg()
+    {
+        return $this->documentImg;
+    }
+
+    /**
+     * @param DocumentImage $documentImg
+     */
+    public function setDocumentImg(DocumentImage $documentImg)
+    {
+        $this->documentImg = $documentImg;
     }
 
 }

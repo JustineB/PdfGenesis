@@ -22,13 +22,7 @@ class FileController extends Controller
 
             $file = $import->getPath();
 
-            $fileName = md5(uniqid()).'.'.$file->guessExtension();
-            $path = $this->getParameter('files_directory').$fileName;
-
-            $file->move( $this->getParameter('files_directory'), $fileName );
-
-            $import->setFile($fileName);
-            $import->setPath($path);
+            $import = $this->get('pdf_genesis.file_updater')->updateFile($file,$import, 'elements/');
 
             $this->get('event_dispatcher')->dispatch('pdf_genesis.element.create', new FileEvent($import));
 

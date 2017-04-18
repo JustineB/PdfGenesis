@@ -187,9 +187,9 @@ class DocumentController extends Controller
             return false;
         }
 
-        $user->getLibrary()->addDocument($document);
+    //    $user->getLibrary()->addDocument($document);
 
-        $document->setLibrary($user->getLibrary());
+      //  $document->setLibrary($user->getLibrary());
 
         $this->get("event_dispatcher")->dispatch(
             DocumentBundleEvents::SAVE_DOCUMENT, new DocumentEvent($document)

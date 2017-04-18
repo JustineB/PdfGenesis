@@ -3,6 +3,10 @@
 namespace PdfGenesis\DocumentBundle\Controller;
 
 
+use PdfGenesis\DocumentBundle\Entity\Document\DocumentImage;
+use PdfGenesis\DocumentBundle\Entity\Document\DocumentPDF;
+use PdfGenesis\DocumentBundle\Event\DocumentBundleEvents;
+use PdfGenesis\DocumentBundle\Event\DocumentEvent;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\Config\Definition\Exception\Exception;
 use Symfony\Component\HttpFoundation\BinaryFileResponse;
@@ -20,12 +24,19 @@ class PdfController extends Controller
         $id = $request->get('id');
         $document = $this->getDoctrine()->getRepository('PdfGenesisDocumentBundle:Document')->find($id);
 
-        $pdf_name = 'medias/pdf/file'. time() .'.pdf';
+        $pdf_extension = "medias/pdf/";
+        $pdf_img_extension = "medias/pdf/img/";
+
+        $pdf_name = 'file'. time() .'.pdf';
+        $img_name = 'file'. time() .'.jpg';
 
 
         try{
 
             $snappy = $this->get('knp_snappy.pdf');
+            $snappy_image = $this->get('knp_snappy.image');
+
+
 
             $options = [
                 'margin-top'    => 0,
@@ -38,15 +49,21 @@ class PdfController extends Controller
                 $snappy->setOption($margin, $value);
             }
 
-            $snappy->generateFromHtml(
-                $this->renderView(
-                    'PdfGenesisCoreBundle:Design:_pdf_document.html.twig',
-                    array( 'pages' => $document->getPages() )
+            $view = $this->renderView('PdfGenesisCoreBundle:Design:_pdf_document.html.twig',array( 'pages' => $document->getPages() ));
 
-                ),
-                $pdf_name
-            );
+            $snappy->generateFromHtml( $view, $pdf_extension.$pdf_name);
+            $snappy_image->generateFromHtml($view, $pdf_img_extension.$img_name);
 
+
+            if(null != $user = $this->getUser()){
+                $documentPDF = $this->get('pdf_genesis.file_updater')->updateFile($pdf_name,new DocumentPDF(), 'pdf');
+                $documentImage = $this->get('pdf_genesis.file_updater')->updateFile($img_name,new DocumentImage(), 'pdf/img');
+
+                $document->setDocumentPdf($documentPDF);
+                $document->setDocumentImg($documentImage);
+
+                $this->get("event_dispatcher")->dispatch(DocumentBundleEvents::SAVE_DOCUMENT, new DocumentEvent($document));
+            }
 
             $this->get('session')->getFlashbag()->add('success','success');
 
@@ -57,7 +74,7 @@ class PdfController extends Controller
         }
 
 
-        $response = new BinaryFileResponse($pdf_name);
+        $response = new BinaryFileResponse($pdf_extension.$pdf_name);
         $response->setContentDisposition(ResponseHeaderBag::DISPOSITION_ATTACHMENT);
 
 

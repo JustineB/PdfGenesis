@@ -1,0 +1,5 @@
+services:
+     pdf_genesis.file_updater:
+         class: PdfGenesis\CoreBundle\Util\FileUpdater
+         calls:
+               - [ setContainer,[ @service_container ] ]
