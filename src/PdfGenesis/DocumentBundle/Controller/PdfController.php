@@ -56,8 +56,8 @@ class PdfController extends Controller
 
 
             if(null != $user = $this->getUser()){
-                $documentPDF = $this->get('pdf_genesis.file_updater')->updateFile($pdf_name,new DocumentPDF(), 'pdf');
-                $documentImage = $this->get('pdf_genesis.file_updater')->updateFile($img_name,new DocumentImage(), 'pdf/img');
+                $documentPDF = $this->get('pdf_genesis.file_updater')->updateFile($pdf_name,new DocumentPDF(), 'pdf/');
+                $documentImage = $this->get('pdf_genesis.file_updater')->updateFile($img_name,new DocumentImage(), 'pdf/img/');
 
                 $document->setDocumentPdf($documentPDF);
                 $document->setDocumentImg($documentImage);

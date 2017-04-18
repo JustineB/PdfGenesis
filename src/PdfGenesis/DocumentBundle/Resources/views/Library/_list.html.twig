@@ -1,7 +1,7 @@
 <div class="droppable-zone">
     <ul>
         {% for document in library.documents %}
-            <li>
+            <li class="library-element">
                 {% include "PdfGenesisDocumentBundle:Document:_element.html.twig" with {'document' : document} %}
             </li>
         {% endfor %}
