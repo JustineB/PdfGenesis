@@ -17,8 +17,8 @@ class MenuBuilder implements ContainerAwareInterface{
                 'class' => 'nav navbar-nav'
             )));
 
-        $menu->addChild('concept', array('uri' => '#concept'));
-        $menu->addChild('design', array('uri' => '#design'));
+        $menu->addChild('concept', array('route' => 'homepage'));
+        $menu->addChild('design', array('route' => 'design'));
 
         if($this->container->get('security.authorization_checker')->isGranted('ROLE_USER')){
             $menu->addChild('account', array('route' => 'user_index'))->setLabel('My account');

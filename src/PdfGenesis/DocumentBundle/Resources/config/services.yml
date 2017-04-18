@@ -2,3 +2,9 @@ services:
 #    pdf_genesis_document.example:
 #        class: PdfGenesis\DocumentBundle\Example
 #        arguments: ["@service_id", "plain_value", "%parameter%"]
+
+     pdf_genesis_document.subscriber:
+         class:  PdfGenesis\DocumentBundle\EventListener\DocumentSubscriber
+         arguments:  ["@doctrine.orm.entity_manager"]
+         tags:
+          - {name: kernel.event_subscriber }

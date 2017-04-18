@@ -38,8 +38,6 @@ class DefaultController extends Controller
         return $this->render('PdfGenesisCoreBundle:Design:index.html.twig', array(
             'document' => $document,
         ));
-
-
     }
 
 

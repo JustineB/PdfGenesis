@@ -13,11 +13,14 @@ namespace PdfGenesis\DocumentBundle\Controller;
 
 use PdfGenesis\DocumentBundle\Entity\Document;
 use PdfGenesis\DocumentBundle\Entity\Page;
+use PdfGenesis\DocumentBundle\Event\DocumentBundleEvents;
+use PdfGenesis\DocumentBundle\Event\DocumentEvent;
 use PdfGenesis\DocumentBundle\Event\PageEvent;
 use PdfGenesis\DocumentBundle\Form\TitleDescriptionForm;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\Config\Definition\Exception\Exception;
 use Symfony\Component\HttpFoundation\Request;
+use Symfony\Component\HttpFoundation\Response;
 
 class DocumentController extends Controller
 {
@@ -176,6 +179,24 @@ class DocumentController extends Controller
         }
 
         return $targetPage;
+    }
+
+
+    public function saveDocumentAction(Document $document){
+        if(null == $user = $this->getUser()){
+            return false;
+        }
+
+        $user->getLibrary()->addDocument($document);
+
+        $document->setLibrary($user->getLibrary());
+
+        $this->get("event_dispatcher")->dispatch(
+            DocumentBundleEvents::SAVE_DOCUMENT, new DocumentEvent($document)
+        );
+
+        // trouver une solution pour rendre indé
+        return $this->redirect($this->generateUrl('design'));
     }
 
 }

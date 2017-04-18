@@ -54,7 +54,7 @@ class Document
     /**
      * @var Library
      *
-     * @ORM\ManyToOne(targetEntity="PdfGenesis\DocumentBundle\Entity\Library", inversedBy="documents")
+     * @ORM\ManyToOne(targetEntity="PdfGenesis\DocumentBundle\Entity\Library", inversedBy="documents", cascade={"persist"})
      */
     protected $library;
 

@@ -22,6 +22,10 @@ document_update_title_description:
      path:    /update-title-description
      defaults: { _controller: PdfGenesisDocumentBundle:Document:updateTitleDescription }
 
+document_save:
+     path:    /save-document/{id}
+     defaults: { _controller: PdfGenesisDocumentBundle:Document:saveDocument }
+
 
 library_index:
      path:  /library/{id}

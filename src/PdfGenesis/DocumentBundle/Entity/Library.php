@@ -42,7 +42,7 @@ class Library
     /**
      * @var ArrayCollection
      *
-     * @ORM\OneToMany(targetEntity="PdfGenesis\DocumentBundle\Entity\Document", mappedBy="library" )
+     * @ORM\OneToMany(targetEntity="PdfGenesis\DocumentBundle\Entity\Document", mappedBy="library")
      */
     protected $documents;
 
