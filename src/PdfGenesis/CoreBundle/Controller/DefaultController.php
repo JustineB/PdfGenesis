@@ -14,22 +14,29 @@ class DefaultController extends Controller
     }
 
 
-    public function designAction()
+    public function designAction(Request $request)
     {
         $em = $this->getDoctrine()->getEntityManager();
+        $documentId = $request->get('id_document');
 
-        if(!$this->get('security.authorization_checker')->isGranted('IS_AUTHENTICATED_ANONYMOUSLY')){
+        if(null == $documentId && $this->get('security.authorization_checker')->isGranted('ROLE_USER')){
             // proposez de reprendre un projet ou d'en créer un autre
         }
 
-        if(!$this->get('session')->has('document')){
-            $document = $this->container->get('pdfgenesis.document_manager');
 
-            $em->persist($document);
-            $em->flush();
+        if($documentId != null || !$this->get('session')->has('document')){
 
-            $this->get('session')->set('document', $document->getId());
+            if($documentId == null){
+                $document = $this->container->get('pdfgenesis.document_manager');
+                $em->persist($document);
+                $em->flush();
+
+                $documentId = $document->getId();
+            }
+
+            $this->get('session')->set('document',$documentId );
         }
+
 
         $documentId = $this->get('session')->get('document');
 

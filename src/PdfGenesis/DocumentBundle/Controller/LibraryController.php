@@ -16,7 +16,6 @@ use Symfony\Component\HttpFoundation\Response;
 class LibraryController extends Controller {
 
     public function indexAction(User $user){
-
         $library = $user->getLibrary();
 
         return $this->render('PdfGenesisDocumentBundle:Library:_list.html.twig', array( 'library' => $library));

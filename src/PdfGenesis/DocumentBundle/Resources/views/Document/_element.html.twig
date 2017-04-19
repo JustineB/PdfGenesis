@@ -1,11 +1,14 @@
 <div>
     <div class="document-element">
-        <img src="{{ image64(document.documentImg.path) }}" alt="{{ document.title }}"/>
-        <ul>
-            <li>{{ document.title }}</li>
-            <li>{{ document.description }}</li>
-            <li>{{ document.createdAt | date('d-m-Y') }}</li>
-        </ul>
+        <a href="{{ path('design',{'id_document' : document.id}) }}">
+            <img src="{{ image64(document.documentImg.path) }}" alt="{{ document.title }}"/>
+            <ul>
+                <li>{{ document.title }}</li>
+                <li>{{ document.description }}</li>
+                <li>{{ document.createdAt | date('d-m-Y') }}</li>
+            </ul>
+        </a>
+
     </div>
     <div class="document-action" data-id="{{ document.id }}">
         <a class="upload-document"><span class="glyphicon glyphicon-download-alt" aria-hidden="true"></span></a>
