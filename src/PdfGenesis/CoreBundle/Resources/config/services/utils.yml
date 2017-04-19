@@ -3,3 +3,10 @@ services:
          class: PdfGenesis\CoreBundle\Util\FileUpdater
          calls:
                - [ setContainer,[ @service_container ] ]
+
+
+     pdf_genesis.pdf_generator:
+         class: PdfGenesis\CoreBundle\Util\PdfGenerator
+         arguments: ["@security.token_storage"]
+         calls:
+               - [ setContainer,[ @service_container ] ]

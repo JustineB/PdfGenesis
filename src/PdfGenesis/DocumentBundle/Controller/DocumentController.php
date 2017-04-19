@@ -187,13 +187,11 @@ class DocumentController extends Controller
             return false;
         }
 
-    //    $user->getLibrary()->addDocument($document);
+        $event = new DocumentEvent($document);
 
-      //  $document->setLibrary($user->getLibrary());
+        $this->container->get("event_dispatcher")->dispatch(DocumentBundleEvents::GENERATE_DOCUMENT, $event);
+        $this->container->get("event_dispatcher")->dispatch(DocumentBundleEvents::SAVE_DOCUMENT, $event);
 
-        $this->get("event_dispatcher")->dispatch(
-            DocumentBundleEvents::SAVE_DOCUMENT, new DocumentEvent($document)
-        );
 
         // trouver une solution pour rendre indé
         return $this->redirect($this->generateUrl('design'));

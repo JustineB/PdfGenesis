@@ -6,5 +6,7 @@ services:
      pdf_genesis_document.subscriber:
          class:  PdfGenesis\DocumentBundle\EventListener\DocumentSubscriber
          arguments:  ["@doctrine.orm.entity_manager", "@security.token_storage"]
+         calls:
+          - [ setContainer,[ @service_container ] ]
          tags:
           - {name: kernel.event_subscriber }

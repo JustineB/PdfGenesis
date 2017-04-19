@@ -268,7 +268,7 @@ class Document
     /**
      * @param DocumentPDF $documentPdf
      */
-    public function setDocumentPdf(DocumentPDF $documentPdf)
+    public function setDocumentPdf(DocumentPDF $documentPdf = null)
     {
         $this->documentPdf = $documentPdf;
     }
@@ -284,7 +284,7 @@ class Document
     /**
      * @param DocumentImage $documentImg
      */
-    public function setDocumentImg(DocumentImage $documentImg)
+    public function setDocumentImg(DocumentImage $documentImg = null)
     {
         $this->documentImg = $documentImg;
     }

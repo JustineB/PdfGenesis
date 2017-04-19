@@ -34,4 +34,13 @@ class FileUpdater{
 
         return $file_object;
     }
+
+    public function deleteFile($fichiers){
+
+        foreach($fichiers as $fichier){
+            if( file_exists ( $fichier))
+                unlink( $fichier ) ;
+        }
+
+    }
 }
