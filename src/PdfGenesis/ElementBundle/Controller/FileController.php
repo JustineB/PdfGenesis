@@ -2,7 +2,10 @@
 
 namespace PdfGenesis\ElementBundle\Controller;
 
+use PdfGenesis\ElementBundle\Entity\Element;
 use PdfGenesis\ElementBundle\Entity\File;
+use PdfGenesis\ElementBundle\Event\ElementBundleEvents;
+use PdfGenesis\ElementBundle\Event\ElementEvent;
 use PdfGenesis\ElementBundle\Event\FileEvent;
 use PdfGenesis\ElementBundle\Form\ImportType;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
@@ -16,6 +19,7 @@ class FileController extends Controller
     public function importAction(Request $request){
 
         $import = new File();
+        $element = new Element();
         $form = $this->createForm(ImportType::class, $import);
 
         if($form->handleRequest($request)->isSubmitted()){
@@ -24,7 +28,9 @@ class FileController extends Controller
 
             $import = $this->get('pdf_genesis.file_updater')->updateFile($file,$import, 'elements/');
 
-            $this->get('event_dispatcher')->dispatch('pdf_genesis.element.create', new FileEvent($import));
+            $element->setFile($import);
+
+            $this->get('event_dispatcher')->dispatch(ElementBundleEvents::CREATE_ELEMENT, new ElementEvent($element));
 
             return $this->redirect($this->generateUrl('design'));
         }

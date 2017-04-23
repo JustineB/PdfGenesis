@@ -19,6 +19,7 @@ use PdfGenesis\DocumentBundle\Event\PageEvent;
 use PdfGenesis\DocumentBundle\Form\TitleDescriptionForm;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\Config\Definition\Exception\Exception;
+use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 
@@ -184,8 +185,31 @@ class DocumentController extends Controller
 
     public function saveDocumentAction(Document $document){
         if(null == $user = $this->getUser()){
-            return false;
+            //bientôt en ajax
+            return $this->redirect($this->generateUrl('design'));
         }
+
+        $event = new DocumentEvent($document);
+
+        $this->container->get("event_dispatcher")->dispatch(DocumentBundleEvents::GENERATE_DOCUMENT, $event);
+        $this->container->get("event_dispatcher")->dispatch(DocumentBundleEvents::SAVE_DOCUMENT, $event);
+
+        // trouver une solution pour rendre indé
+        return $this->redirect($this->generateUrl('design'));
+    }
+
+
+
+    public function saveDocumentAjaxAction(Request $request){
+        $id_document = $this->get('session')->get('document');
+
+        if(null == $user = $this->getUser() || $id_document == null){
+            //bientôt en ajax
+            return JsonResponse::create(false);
+        }
+
+        $document = $this->getDoctrine()->getManager()
+            ->getRepository('PdfGenesisDocumentBundle:Document')->find($id_document);
 
         $event = new DocumentEvent($document);
 
@@ -194,7 +218,7 @@ class DocumentController extends Controller
 
 
         // trouver une solution pour rendre indé
-        return $this->redirect($this->generateUrl('design'));
+        return JsonResponse::create(true);
     }
 
 }

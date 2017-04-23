@@ -26,6 +26,13 @@ document_save:
      path:    /save-document/{id}
      defaults: { _controller: PdfGenesisDocumentBundle:Document:saveDocument }
 
+document_save_ajax:
+     path:    /save-document_ajax
+     defaults: { _controller: PdfGenesisDocumentBundle:Document:saveDocumentAjax }
+     options:
+           expose: true
+
+
 
 library_index:
      path:  /library/{id}

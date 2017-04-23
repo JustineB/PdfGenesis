@@ -21,6 +21,7 @@ interact('.resize-drag')
                 + (Math.sqrt(event.dx * event.dx +
                     event.dy * event.dy) | 0) + 'px');
 
+            ajaxSaveDocument();
             elementPositionResolver(event.target);
         }
     });
