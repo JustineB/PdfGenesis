@@ -183,7 +183,7 @@ class DocumentController extends Controller
     }
 
 
-    public function saveDocumentAction(Document $document){
+   /* public function saveDocumentAction(Document $document){
         if(null == $user = $this->getUser()){
             //bientôt en ajax
             return $this->redirect($this->generateUrl('design'));
@@ -196,15 +196,27 @@ class DocumentController extends Controller
 
         // trouver une solution pour rendre indé
         return $this->redirect($this->generateUrl('design'));
-    }
+    }*/
+
+   public function updateViewAjaxAction(Document $document){
+       $view = $this->renderView('PdfGenesisDocumentBundle:Document:_update_form.html.twig',array('document' => $document));
+
+       if($view == null){
+           return false;
+       }
+
+       return new JsonResponse($view);
+   }
 
 
 
-    public function saveDocumentAjaxAction(Request $request){
+    /**
+     * @return static
+     */
+    public function saveDocumentAjaxAction(){
         $id_document = $this->get('session')->get('document');
 
         if(null == $user = $this->getUser() || $id_document == null){
-            //bientôt en ajax
             return JsonResponse::create(false);
         }
 
@@ -216,9 +228,27 @@ class DocumentController extends Controller
         $this->container->get("event_dispatcher")->dispatch(DocumentBundleEvents::GENERATE_DOCUMENT, $event);
         $this->container->get("event_dispatcher")->dispatch(DocumentBundleEvents::SAVE_DOCUMENT, $event);
 
-
-        // trouver une solution pour rendre indé
         return JsonResponse::create(true);
+    }
+
+    /**
+     * @param Request $request
+     * @return static
+     */
+    public function dataDocumentAjaxAction(Request $request){
+        $id_document = $request->get('id');
+
+        if(null == $user = $this->getUser() || $id_document == null){
+            return JsonResponse::create(false);
+        }
+
+        $document = $this->getDoctrine()->getManager()
+            ->getRepository('PdfGenesisDocumentBundle:Document')->find($id_document);
+
+
+        $serializedEntity = $this->container->get('jms_serializer')->serialize($document, 'json');
+
+        return new Response($serializedEntity);
     }
 
 }
