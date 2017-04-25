@@ -198,14 +198,24 @@ class DocumentController extends Controller
         return $this->redirect($this->generateUrl('design'));
     }*/
 
-   public function updateViewAjaxAction(Document $document){
-       $view = $this->renderView('PdfGenesisDocumentBundle:Document:_update_form.html.twig',array('document' => $document));
+   public function updateDocumentAjaxAction(Request $request){
 
-       if($view == null){
-           return false;
+       $title = $request->get('title');
+       $description = $request->get('description');
+       $document_id = $request->get('id');
+
+       $document = $this->getDoctrine()->getManager()->getRepository('PdfGenesisDocumentBundle:Document')->find($document_id);
+
+       if($document_id == null){
+           return JsonResponse::create(false);
        }
 
-       return new JsonResponse($view);
+       $document->setDescription($description);
+       $document->setTitle($title);
+
+       $this->container->get("event_dispatcher")->dispatch(DocumentBundleEvents::SAVE_DOCUMENT, new DocumentEvent($document));
+
+       return new JsonResponse(array('id'=> $document_id,'title' =>$title, 'description' => $description ));
    }
 
 

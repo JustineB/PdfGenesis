@@ -3,7 +3,7 @@
         <a href="{{ path('design',{'id_document' : document.id}) }}">
             <img src="{{ image64(document.documentImg.path) }}" alt="{{ document.title }}"/>
             <ul>
-                <li>{{ document.title }}</li>
+                <li class="title">{{ document.title }}</li>
                 <li>{{ document.createdAt | date('d-m-Y') }}</li>
             </ul>
         </a>

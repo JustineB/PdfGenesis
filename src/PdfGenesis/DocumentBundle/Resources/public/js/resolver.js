@@ -9,14 +9,19 @@ function resolveErrorForm(){
 
 function updateDocumentModal(data){
     var modal = MODAL,
-        btn_close = BUTTON_MODAL_CLOSE;
+        btn_close = BUTTON_MODAL_CLOSE,
+        submit = UPDATE_DOCUMENT_SUBMIT;
 
     btn_close = btn_close.replace('%btn_class%','');
 
+    submit = submit.replace('%btn_class%','btn-save-document');
+    submit = submit.replace('%btn_id%',data.id);
+
     modal = modal.replace('%modal_id%',UPDATE_DOCUMENT_CLASS+"-"+data.id);
+    modal = modal.replace('%modal_class%',UPDATE_DOCUMENT_CLASS);
     modal = modal.replace('%modal_header%','Update document');
     modal = modal.replace('%modal_body%',updateContentDocument(data));
-    modal = modal.replace('%modal_footer%',btn_close);
+    modal = modal.replace('%modal_footer%',btn_close+ submit);
 
     return modal;
 }
@@ -25,7 +30,7 @@ function updateContentDocument(data){
     var update_content = UPDATE_DOCUMENT_BODY;
 
     update_content = update_content.replace('%document-id%',data.id);
-    update_content = update_content.replace('%document-name%',data.name);
+    update_content = update_content.replace('%document-name%',data.title);
     update_content = update_content.replace('%document-description%',data.description);
 
     return update_content;

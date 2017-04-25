@@ -28,11 +28,6 @@ document_update_title_description:
 #
 
 
-document_update_ajax:
-     path:    /update-document_ajax/{id}
-     defaults: { _controller: PdfGenesisDocumentBundle:Document:updateViewAjax }
-     options:
-           expose: true
 
 document_save_ajax:
      path:    /save-document_ajax
@@ -43,6 +38,12 @@ document_save_ajax:
 document_data_ajax:
      path:    /data-document_ajax
      defaults: { _controller: PdfGenesisDocumentBundle:Document:dataDocumentAjax }
+     options:
+           expose: true
+
+document_update_ajax:
+     path:    /update-document_ajax
+     defaults: { _controller: PdfGenesisDocumentBundle:Document:updateDocumentAjax }
      options:
            expose: true
 
