@@ -33,6 +33,7 @@ class DocumentSubscriber implements EventSubscriberInterface{
         // Liste des évènements écoutés et méthodes à appeler
         return array(
             DocumentBundleEvents::SAVE_DOCUMENT => 'saveMethod',
+            DocumentBundleEvents::CLEAR_DOCUMENT => 'clearMethod',
             DocumentBundleEvents::GENERATE_DOCUMENT => array(
                 array('generateMethod', 0),
                 array('clearMethod', 10),
@@ -89,6 +90,7 @@ class DocumentSubscriber implements EventSubscriberInterface{
      */
     public function clearMethod(DocumentEvent $event){
         $document = $event->getData();
+
 
         if($document->getDocumentImg() != null && $document->getDocumentPdf() != null){
             $fichiers = array(

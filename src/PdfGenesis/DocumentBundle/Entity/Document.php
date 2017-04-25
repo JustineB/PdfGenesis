@@ -63,7 +63,7 @@ class Document
     /**
      * @var ArrayCollection
      *
-     * @ORM\OneToMany(targetEntity="PdfGenesis\DocumentBundle\Entity\Page", mappedBy="document" , cascade={"persist"})
+     * @ORM\OneToMany(targetEntity="PdfGenesis\DocumentBundle\Entity\Page", mappedBy="document" , cascade={"persist","remove"})
      */
     protected $pages;
 

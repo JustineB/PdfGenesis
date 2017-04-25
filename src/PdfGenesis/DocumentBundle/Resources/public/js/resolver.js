@@ -26,6 +26,25 @@ function updateDocumentModal(data){
     return modal;
 }
 
+function deleteDocumentModal(id){
+    var modal = MODAL,
+        btn_close = BUTTON_MODAL_CLOSE,
+        delete_submit = DELETE_DOCUMENT_SUBMIT;
+
+    btn_close = btn_close.replace('%btn_class%','');
+
+    delete_submit = delete_submit.replace('%btn_class%','btn-delete-document');
+    delete_submit = delete_submit.replace('%btn_id%',id);
+
+    modal = modal.replace('%modal_id%',DELETE_DOCUMENT_CLASS+"-"+id);
+    modal = modal.replace('%modal_class%',DELETE_DOCUMENT_CLASS+"-modal");
+    modal = modal.replace('%modal_header%','Delete document');
+    modal = modal.replace('%modal_body%',DELETE_DOCUMENT_CONTENT);
+    modal = modal.replace('%modal_footer%',btn_close+ delete_submit);
+
+    return modal;
+}
+
 function updateContentDocument(data){
     var update_content = UPDATE_DOCUMENT_BODY;
 

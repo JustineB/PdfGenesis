@@ -20,7 +20,16 @@ var UPDATE_DOCUMENT_BODY = "<form action='' method='post' class='form-horizontal
                                 "<textarea  id='description' class='form-control' name='_description' required='required' > %document-description% </textarea>"+
                                 "</div> </div> </form> ";
 
+var DELETE_DOCUMENT_CONTENT = "Etes vous sure de supprimer ce document ? ";
+
+
 var UPDATE_DOCUMENT_CLASS = "update-document";
 
+var DELETE_DOCUMENT_CLASS = "delete-document";
+
+
+
 var UPDATE_DOCUMENT_SUBMIT = "<button type='button' class='btn btn-secondary %btn_class%' data-dismiss='modal' data-id='%btn_id%'>Save</button>";
+
+var DELETE_DOCUMENT_SUBMIT = "<button type='button' class='btn btn-danger %btn_class%' data-dismiss='modal' data-id='%btn_id%'>Delete</button>";
 

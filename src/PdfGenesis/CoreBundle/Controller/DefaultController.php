@@ -18,15 +18,16 @@ class DefaultController extends Controller
     {
         $em = $this->getDoctrine()->getEntityManager();
         $documentId = $request->get('id_document');
+        $new = $request->get('new');
 
         if(null == $documentId && $this->get('security.authorization_checker')->isGranted('ROLE_USER')){
             // proposez de reprendre un projet ou d'en créer un autre
         }
 
 
-        if($documentId != null || !$this->get('session')->has('document')){
+        if($documentId != null || !$this->get('session')->has('document') || $new != null){
 
-            if($documentId == null){
+            if($documentId == null || $new != null){
                 $document = $this->container->get('pdfgenesis.document_manager');
                 $em->persist($document);
                 $em->flush();
@@ -35,6 +36,8 @@ class DefaultController extends Controller
             }
 
             $this->get('session')->set('document',$documentId );
+
+            return $this->redirect($this->generateUrl('design'));
         }
 
 

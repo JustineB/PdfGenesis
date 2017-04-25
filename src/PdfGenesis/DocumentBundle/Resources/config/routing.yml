@@ -47,6 +47,12 @@ document_update_ajax:
      options:
            expose: true
 
+document_delete_ajax:
+     path:    /delete-document_ajax
+     defaults: { _controller: PdfGenesisDocumentBundle:Document:deleteDocumentAjax }
+     options:
+           expose: true
+
 
 
 library_index:

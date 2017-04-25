@@ -261,4 +261,28 @@ class DocumentController extends Controller
         return new Response($serializedEntity);
     }
 
+    /**
+     * @param Request $request
+     * @return static
+     */
+    public function deleteDocumentAjaxAction(Request $request){
+        $id_document = $request->get('id');
+
+        if(null == $user = $this->getUser() || $id_document == null){
+            return JsonResponse::create(false);
+        }
+
+        $em = $this->getDoctrine()->getManager();
+
+        $document = $em->getRepository('PdfGenesisDocumentBundle:Document')->find($id_document);
+
+        $this->container->get("event_dispatcher")->dispatch(DocumentBundleEvents::CLEAR_DOCUMENT, new DocumentEvent($document));
+
+        $em->remove($document);
+        $em->flush();
+
+
+        return new JsonResponse(array('id'=> $id_document));
+    }
+
 }
