@@ -9,6 +9,10 @@
                 <li> <strong>Email : </strong> {{ user.email }} </li>
             </ul>
         </div>
+        <div><a class="btn btn-success" data-toggle="modal" data-target="#update_user-modal">Changer le mot de passe</a></div>
         <div class="info-plus"> Member since {{ user.createdAt | date('d-m-Y') }}</div>
+        <div class="update-user-modal">
+            {% include 'PdfGenesisCoreBundle:User:_update_modal.html.twig' %}
+        </div>
     {% endif %}
 </div>
