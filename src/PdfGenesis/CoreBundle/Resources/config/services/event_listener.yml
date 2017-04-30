@@ -7,6 +7,14 @@ services:
          tags:
             - {name: kernel.event_subscriber }
 
+     pdf_genesis.event_subscriber.user:
+         class: PdfGenesis\CoreBundle\EventListener\UserSubscriber
+         arguments: ["@doctrine.orm.entity_manager"]
+         calls:
+            - [ setContainer,[ @service_container ] ]
+         tags:
+            - {name: kernel.event_subscriber }
+
      pdf_genesis.event_listener.page:
          class: PdfGenesis\DocumentBundle\EventListener\PageListener
          arguments:  ["@doctrine.orm.entity_manager"]

@@ -9,3 +9,10 @@ user_data:
 user_library:
     path:     /get-library
     defaults: { _controller: PdfGenesisCoreBundle:User:getLibrary }
+
+
+user_ajax_update:
+    path:     /update-user-ajax
+    defaults: { _controller: PdfGenesisCoreBundle:User:udpateUserAjax }
+    options:
+               expose: true

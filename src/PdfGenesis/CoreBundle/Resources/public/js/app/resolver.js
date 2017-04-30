@@ -20,3 +20,20 @@ function confirmationRegistrationModal(){
 
     return modal;
 }
+
+function emailUpdateInput(value, id){
+    var input = UPDATE_INPUT,
+        submit_icon = SUBMIT_ICON;
+
+    submit_icon = submit_icon.replace('%id_action%','email-user-submit');
+
+    input = input.replace('%label_name%','email :');
+    input = input.replace('%type_input%','text');
+    input = input.replace(/'%input_id%'/g,id);
+    input = input.replace('%input_value%',value);
+    input = input.replace('%icons_input%',submit_icon);
+
+    return input;
+
+}
+

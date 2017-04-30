@@ -9,7 +9,11 @@
 namespace PdfGenesis\CoreBundle\Controller;
 
 
+use PdfGenesis\CoreBundle\Event\UserBundleEvents;
+use PdfGenesis\CoreBundle\Event\UserEvent;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
+use Symfony\Component\HttpFoundation\JsonResponse;
+use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 
 class UserController extends Controller {
@@ -52,4 +56,20 @@ class UserController extends Controller {
         return $response;
     }
 
+
+    public function udpateUserAjaxAction(Request $request){
+        $email = $request->get('email');
+        $user = $this->getUser();
+
+        if( null == $user || null == $email){
+            return JsonResponse::create($email);
+        }
+
+        $user->setEmail($email);
+        $user->setEmailCanonical($email);
+
+        $this->get('event_dispatcher')->dispatch(UserBundleEvents::SAVE_USER, new UserEvent($user));
+
+        return JsonResponse::create(true);
+    }
 }
