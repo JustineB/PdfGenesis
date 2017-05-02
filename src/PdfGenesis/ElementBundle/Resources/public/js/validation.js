@@ -5,7 +5,6 @@ function emptyInputControl($element){
     var value = $element.val(),
         $parent = $element.parent();
 
-    console.log($.trim(value).length < 2);
     if($.trim(value).length < 2){
         $parent.css('color',ERROR_RED);
         $parent.append(ERROR_MESSAGE.replace('%message%','deux lettres minimum sont nécessaires'));

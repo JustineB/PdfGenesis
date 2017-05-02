@@ -57,7 +57,7 @@ class UserController extends Controller {
     }
 
 
-    public function udpateUserAjaxAction(Request $request){
+    public function updateUserAjaxAction(Request $request){
         $email = $request->get('email');
         $user = $this->getUser();
 
@@ -71,5 +71,21 @@ class UserController extends Controller {
         $this->get('event_dispatcher')->dispatch(UserBundleEvents::SAVE_USER, new UserEvent($user));
 
         return JsonResponse::create(true);
+    }
+
+    public function importPictureAction(Request $request){
+
+        $file = $request->files->get('picture-download-input');
+        $user = $this->getUser();
+
+        $this->get('event_dispatcher')->dispatch(UserBundleEvents::CLEAR_PICTURE, new UserEvent($user));
+
+        $this->get('pdf_genesis.file_updater')->updateFile($file, $user, 'user/'.$user->getId().'/');
+
+        $this->get('event_dispatcher')->dispatch(UserBundleEvents::SAVE_USER, new UserEvent($user));
+
+        return $this->redirect($this->generateUrl('user_index'));
+
+
     }
 }

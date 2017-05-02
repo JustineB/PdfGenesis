@@ -11,7 +11,12 @@ class FileUpdater{
 
     use ContainerAwareTrait;
 
-
+    /**
+     * @param $file
+     * @param $file_object
+     * @param null $extension_name
+     * @return mixed
+     */
     public function updateFile($file, $file_object, $extension_name = null){
 
         $fileName = $file;

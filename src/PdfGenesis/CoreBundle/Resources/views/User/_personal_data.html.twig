@@ -1,7 +1,21 @@
+
+{% set import_icon = user.path is not null and user.file is not null ? 'full' : 'empty'  %}
+
+
 <div class="personal-data">
     {% if user is defined and user is not null %}
-        <div class="profile-picture">
-            <div id="picture"></div>
+        <div class="profile-picture profile-picture-{{ import_icon }}">
+            <div id="picture">
+                {% if user.path is not null and user.file is not null  %}
+                    <img src="{{ image64(user.path) }}" id="user-picture-path">
+                {% endif %}
+            </div>
+            <div id="picture-download">
+                <i class="material-icons file_download">file_download</i>
+                <i class="material-icons settings">settings</i>
+            </div>
+
+            {% include 'PdfGenesisCoreBundle:User:_picture_form.html.twig' %}
         </div>
         <div class="data">
             <ul>

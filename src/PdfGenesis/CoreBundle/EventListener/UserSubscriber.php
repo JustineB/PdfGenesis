@@ -33,7 +33,11 @@ class UserSubscriber implements EventSubscriberInterface
             UserBundleEvents::SAVE_USER => array(
                 array('sendEmail',10),
                 array('save',0)
-            )
+            ),
+            UserBundleEvents::CLEAR_PICTURE => array(
+                array('save',10),
+                array('clear',0)
+            ),
         );
     }
 
@@ -48,6 +52,19 @@ class UserSubscriber implements EventSubscriberInterface
         $this->em->persist($user);
         $this->em->flush();
 
+    }
+
+    public function clear(UserEvent $event){
+            $user = $event->getData();
+
+            if($user->getPath() != null && $user->getFile() != null) {
+                $fichier = array('path_picture' => $user->getPath());
+
+                $this->container->get('pdf_genesis.file_updater')->deleteFile($fichier);
+
+                $user->setPath(null);
+                $user->setFile(null);
+            }
     }
 
 

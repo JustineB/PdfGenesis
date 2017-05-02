@@ -23,19 +23,92 @@
   .user-content {
     padding: 20px 12% 20px 12%;
     .profile-picture {
+      i{
+        display:none;
+      }
+
       width: 15em;
       height: 15em;
       padding: 4px 4px;
       display: inline-block;
       border: 1px solid grey;
       #picture {
-        width: 100%;
-        height: 100%;
+        position: absolute;
+        width: 201px;
+        height: 199px;
         display: inline-block;
+        box-shadow: 0 2px 10px grey;
         background-color: #b5b5b5;
         border: 1px solid #a2a2a0;
       }
+
+      #picture-download-form{
+        opacity: 0;
+      }
+
+      #user-picture-path{
+        width: 198px;
+        height: 197px;
+      }
+
+      #picture-download{
+        position: absolute;
+      }
+      #picture-download-form{
+        position: relative;
+      }
+
     }
+    
+    .profile-picture-empty{
+
+      i.file_download{
+        display: block;
+      }
+
+      &:hover{
+        #picture-download{
+          width: 201px;
+          height: 199px;
+          display: inline-block;
+          background-color: rgba(0, 0, 0, 0.29);
+          i{
+            text-align: center;
+            width: 100%;
+            vertical-align: middle;
+            line-height: 4em;
+            font-size: 35pt;
+          }
+        }
+        #picture-download-form{
+          opacity: 0;
+          width: 100%;
+          height: 100%;
+          #picture-download-input{
+            cursor: pointer;
+            width: 100%;
+            height: 100%;
+          }
+        }
+
+      }
+    }
+
+    .profile-picture-full{
+      #picture-download-form{
+        width: 28px;
+        cursor: pointer;
+        z-index: 9999999;
+        position: inherit;
+        input[type="file"]{
+          width: 28px;
+        }
+      }
+      i.settings{
+        display: block;
+      }
+    }
+
     .data {
       display: inline-block;
       vertical-align: top;

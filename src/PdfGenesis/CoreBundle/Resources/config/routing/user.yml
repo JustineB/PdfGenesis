@@ -13,6 +13,10 @@ user_library:
 
 user_ajax_update:
     path:     /update-user-ajax
-    defaults: { _controller: PdfGenesisCoreBundle:User:udpateUserAjax }
+    defaults: { _controller: PdfGenesisCoreBundle:User:updateUserAjax }
     options:
                expose: true
+
+import_user_picture:
+     path :    /import-picture
+     defaults: { _controller: PdfGenesisCoreBundle:User:importPicture }

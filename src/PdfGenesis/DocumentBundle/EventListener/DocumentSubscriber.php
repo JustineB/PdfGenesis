@@ -74,13 +74,13 @@ class DocumentSubscriber implements EventSubscriberInterface{
                 'name'=> 'file'. time() .'.jpg')
         );
 
-        $response = $this->container->get('pdf_genesis.pdf_generator')->pdfGenerate($document, $path);
+        $this->container->get('pdf_genesis.pdf_generator')->pdfGenerate($document, $path);
 
-        if($response == false){
+      /*  if($response == false){
             $this->container->get('session')->getFlashbag()->add('error','error');
         } else{
             $this->container->get('session')->getFlashbag()->add('success','success');
-        }
+        }*/
 
         return new DocumentEvent($document);
     }
