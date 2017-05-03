@@ -10,8 +10,8 @@
 
                 <div id="tabs">
                     <ul>
-                        <li><a href="#tabs-1">{{ 'Login'|trans }}</a></li>
-                        <li><a href="#tabs-2">{{ 'Sign up'|trans }}</a></li>
+                        <li><a href="#tabs-1" data-tabs="tabs-1">{{ 'Login'|trans }}</a></li>
+                        <li><a href="#tabs-2" data-tabs="tabs-2">{{ 'Sign up'|trans }}</a></li>
                     </ul>
                     <div id="tabs-1">
                         {{ render(path('fos_user_security_login')) }}
@@ -19,11 +19,15 @@
                     <div id="tabs-2">
                         {{ render(path('fos_user_registration_register')) }}
                     </div>
+                    <div id="tabs-3" class="ui-tabs-panel">
+                        {{ render(path('fos_user_resetting_request')) }}
+                    </div>
                 </div>
 
                 <div class="login-social">
                     <div id="facebook"><a class="btn btn-default">{{ 'login with'|trans }} Facebook</a></div>
                     <div id="google"><a class="btn btn-default">{{ 'login with'|trans }} Google </a></div>
+                    <div id="password"><a data-id="tabs-3" id="psd-tab" class="btn btn-default">Forgot password ?</a></div>
                     {#<div><a class="btn btn-default">{{ 'I already have an account'|trans }}</a></div>
                     <div><a class="btn btn-default">{{ 'Continue anonymously'|trans }}</a></div>
                     #}
@@ -34,11 +38,14 @@
                 {#  <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button> #}
 
                 <ul class="login-table center-modal-submit" id="login-table-choices">
-                    <li class="active" id="ui-id-1"><a class="btn btn-raised active" id="login-form-submit"
+                    <li class="active" id="ui-id-1" data-tabs="tabs-1"><a class="btn btn-raised active" id="login-form-submit"
                                                        onclick="$('#login-form').submit();">{{ 'Connexion'|trans }}</a>
                     </li>
-                    <li id="ui-id-2"><a class="btn btn-raised btn-default" id="register-form-submit"
+                    <li id="ui-id-2" data-tabs="tabs-2"><a class="btn btn-raised btn-default" id="register-form-submit"
                                         onclick="$('#register-form').submit();">{{ 'Register'|trans }}</a></li>
+                    <li id="ui-id-3" data-tabs="tabs-3">
+                        <a id="back-login-form"><i class="material-icons">arrow_back</i> back </a>
+                        <a class="btn btn-raised btn-default" id="resetting-form-submit">Mot de passe oublié</a></li>
                 </ul>
 
             </div>

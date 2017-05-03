@@ -1,0 +1,13 @@
+{% trans_default_domain 'FOSUserBundle' %}
+
+{% set last_username = last_username is not defined ? '' : last_username %}
+
+<form action="{{ path('fos_user_resetting_send_email') }}" method="POST" class="fos_user_resetting_request form-horizontal">
+    <div class="form-group is-empty">
+        <label for="username" class="floating-label control-label">{{ 'resetting.request.username'|trans }}</label>
+        <input type="text" id="username" name="username" class="form-control" value="{{ last_username }}" required="required" />
+    </div>
+    {#<div>#}
+        {#<input type="submit" value="{{ 'resetting.request.submit'|trans }}" />#}
+    {#</div>#}
+</form>
