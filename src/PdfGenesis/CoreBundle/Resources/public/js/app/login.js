@@ -5,9 +5,7 @@ $(document).ready(function(){
         var id = $('#tabs .ui-tabs-active a').attr('id');
         resolverLoginChoice(id);
 
-        console.log('a');
-        $('#tabs-3').hide();
-        $('.login-social').show();
+        initLogin();
     });
 
 
@@ -18,28 +16,47 @@ $(document).ready(function(){
        resolverLoginChoice(id);
        resolverContentLoginChoice(id_tabs);
 
-       $('#tabs-3').hide();
-       $('.login-social').show();
+       initLogin();
    });
 
    $(document).on('click','#psd-tab',function(){
        resolverContentLoginChoice($(this).data('id'));
        resolverLoginChoice('ui-id-3');
 
+      /* $('#resetting-form-submit').show();
+       $('.info-resetting').hide();*/
        $('.login-social').hide();
    });
 
    $(document).on('click','#back-login-form',function(){
-       resolverLoginChoice('ui-id-1');
-       resolverContentLoginChoice('tabs-1');
-
-       $('#tabs-3').hide();
-       $('.login-social').show();
+       backLoginForm();
    });
+
+    $(document).on('click','#resetting-form-submit',function(){
+        var username = $('.fos_user_resetting_request').find('#username').val();
+
+        ajaxResetting(username)
+    });
+
+    $(document).on('hidden.bs.modal','#login-modal',function(){
+        backLoginForm();
+    })
 
 
 });
 
+function backLoginForm(){
+    resolverLoginChoice('ui-id-1');
+    resolverContentLoginChoice('tabs-1');
+
+    initLogin();
+}
+
+function initLogin(){
+    $('#tabs-3').hide();
+    $('#info-resetting').hide();
+    $('.login-social').show();
+}
 
 function resolverLoginChoice(id){
 

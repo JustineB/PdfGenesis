@@ -64,3 +64,22 @@ function changeEmailValue(value){
     $USER_EMAIL_DIV.find('text').text(value);
     $('#email-user-edit').data('value',value);
 }
+
+
+function ajaxResetting(username){
+    $.ajax({
+        method: 'post',
+        url: Routing.generate('resetting_ajax_psd'),
+        data: {'username': username},
+        success: function(data){
+            if(data != false){
+                $('#tabs-3 .content').hide();
+                $('#tabs-3 .info-resetting').css('display','block');
+                $('#resetting-form-submit').hide();
+            }
+        },error : function(){
+            console.log('error');
+        }
+
+    });
+}

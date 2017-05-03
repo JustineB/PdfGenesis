@@ -20,7 +20,9 @@
                         {{ render(path('fos_user_registration_register')) }}
                     </div>
                     <div id="tabs-3" class="ui-tabs-panel">
-                        {{ render(path('fos_user_resetting_request')) }}
+                        <div class="content">{{ render(path('fos_user_resetting_request')) }}</div>
+                        <div class="info-resetting" style="display:none;"> Un email pour reintialiser votre mot de passe à été envoyé !</div>
+
                     </div>
                 </div>
 
