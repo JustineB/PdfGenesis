@@ -37,6 +37,20 @@ class User extends BaseUser
     /**
      * @var string
      *
+     * @ORM\Column(name="email_available", type="boolean")
+     */
+    private $emailAvailable;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="email_token", type="string", nullable=true)
+     */
+    private $emailToken;
+
+    /**
+     * @var string
+     *
      * @ORM\Column(name="path_picture", type="string", length=255, nullable=true)
      */
     private $path;
@@ -57,6 +71,7 @@ class User extends BaseUser
 
         $this->createdAt = new \DateTime('now');
         $this->library = new Library();
+        $this->emailAvailable = 1;
     }
 
     /**
@@ -121,5 +136,53 @@ class User extends BaseUser
     public function getPath()
     {
         return $this->path;
+    }
+
+    /**
+     * Set emailAvailable
+     *
+     * @param string $emailAvailable
+     *
+     * @return User
+     */
+    public function setEmailAvailable($emailAvailable)
+    {
+        $this->emailAvailable = $emailAvailable;
+
+        return $this;
+    }
+
+    /**
+     * Get emailAvailable
+     *
+     * @return string
+     */
+    public function getEmailAvailable()
+    {
+        return $this->emailAvailable;
+    }
+
+    /**
+     * Set emailToken
+     *
+     * @param string $emailToken
+     *
+     * @return User
+     */
+    public function setEmailToken($emailToken = null)
+    {
+        $this->emailToken = $emailToken;
+
+        return $this;
+    }
+
+    /**
+     * Get emailToken
+     *
+     * @return string
+     */
+    public function getEmailToken()
+    {
+        return $this->emailToken;
     }
 }

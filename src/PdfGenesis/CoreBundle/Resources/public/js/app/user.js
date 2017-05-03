@@ -23,6 +23,7 @@ $(document).ready(function(){
             emailUpdateAction();
         }
     });
+
 });
 
 function emailUpdateAction(){
@@ -54,7 +55,12 @@ function ajaxUserUpdateEmail(value_email){
 }
 
 function changeEmailValue(value){
-    console.log(value);
+
+    if($('#email-user-edit').data('value') != value){
+        $USER_EMAIL_DIV.find('p').remove();
+        $(EMAIL_UPDATE_WARNING).insertBefore( $USER_EMAIL_DIV.find('strong') );
+    }
+
     $USER_EMAIL_DIV.find('text').text(value);
     $('#email-user-edit').data('value',value);
 }

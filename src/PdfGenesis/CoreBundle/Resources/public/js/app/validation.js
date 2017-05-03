@@ -10,6 +10,11 @@ $(document).ready(function(){
         $form.submit();
     });
 
+
+    $(document).on('hidden.bs.modal','#'+EMAIL_UPDATE_CLASS, function () {
+        $(this).remove();
+    });
+
 });
 
 
@@ -25,5 +30,14 @@ function registrationConfirmation(){
 
     $('body').promise().done(function(){
         $('#'+CONFIRMATION_REGISTER_CLASS).modal('show');
+    });
+}
+
+function callEmailModal(value){
+    var modal = emailUpdateModal(value);
+    $('body').append(modal);
+
+    $('body').promise().done(function(){
+        $('#'+EMAIL_UPDATE_CLASS).modal('show');
     });
 }

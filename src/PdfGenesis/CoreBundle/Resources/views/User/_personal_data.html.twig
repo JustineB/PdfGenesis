@@ -20,7 +20,14 @@
         <div class="data">
             <ul>
                 <li> <strong>Pseudo : </strong> {{ user.username }} </li>
-                <li id="email-user"> <strong>Email : </strong> <text>{{ user.email }} </text> <a id="email-user-edit" data-value="{{ user.email }}"><i class="material-icons">mode_edit</i></a></li>
+
+                <li id="email-user">
+                    {% if user.emailAvailable == 0 %}
+                    <p class="text-warning">
+                        <i class="material-icons">warning</i> Votre email doit être vérifié !
+                    </p>
+                    {% endif %}
+                    <strong>Email : </strong> <text>{{ user.email }} </text> <a id="email-user-edit" data-value="{{ user.email }}"><i class="material-icons">mode_edit</i></a></li>
             </ul>
         </div>
         <div><a class="btn btn-success" data-toggle="modal" data-target="#update_user-modal">Changer le mot de passe</a></div>

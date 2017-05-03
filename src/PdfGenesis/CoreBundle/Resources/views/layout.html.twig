@@ -38,21 +38,31 @@
         {% for flashMessage in app.session.flashbag.get('registration_confirmed') %}
         <script>
             $(document).ready(function () {
+
+            });
+        </script>
+        {% endfor %}
+        <script>
+            $(document).ready(function(){
+                {% for flashMessage in app.session.flashbag.get('user_email_success') %}
+                callEmailModal('success');
+                {% endfor %}
+                {% for flashMessage in app.session.flashbag.get('registration_error') %}
+                registrationError();
+                {% endfor %}
+                {% for flashMessage in app.session.flashbag.get('registration_confirmed') %}
                 registrationConfirmation();
 
-                $("#"+CONFIRMATION_REGISTER_CLASS).on("hidden", function () {
-                    $("#"+CONFIRMATION_REGISTER_CLASS).remove();
+                $("#" + CONFIRMATION_REGISTER_CLASS).on("hidden", function () {
+                    $("#" + CONFIRMATION_REGISTER_CLASS).remove();
                 });
+                {% endfor %}
+                {% for flashMessage in app.session.flashbag.get('user_email_error') %}
+                callEmailModal('error');
+                {% endfor %}
             });
+
         </script>
-        {% endfor %}
-        {% for flashMessage in app.session.flashbag.get('registration_error') %}
-        <script>
-            $(document).ready(function () {
-                registrationError();
-            });
-        </script>
-        {% endfor %}
     {% endblock %}
 </div>
 </body>

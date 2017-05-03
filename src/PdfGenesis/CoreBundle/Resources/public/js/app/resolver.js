@@ -37,3 +37,19 @@ function emailUpdateInput(value, id){
 
 }
 
+
+
+function emailUpdateModal(success){
+    var modal = MODAL,
+        btn_close = BUTTON_MODAL_CLOSE,
+        text = success == 'success' ? EMAIL_TEXT_SUCCESS : EMAIL_TEXT_ERROR;
+
+    btn_close = btn_close.replace('%btn_class%','');
+
+    modal = modal.replace('%modal_id%',EMAIL_UPDATE_CLASS);
+    modal = modal.replace('%modal_header%','Modification d\'email');
+    modal = modal.replace('%modal_body%',text);
+    modal = modal.replace('%modal_footer%',btn_close);
+
+    return modal;
+}
