@@ -30,6 +30,17 @@
 {% block body %}
 {% endblock %}
 
+
+<div class="modal-block">
+    {% block modal %}
+        {% for flashMessage in app.session.flashbag.get('reset_token') %}
+            {% include 'PdfGenesisCoreBundle:Resetting:reset_modal.html.twig' with {'psd_token' : flashMessage } %}
+        {% endfor %}
+    {% endblock %}
+</div>
+
+
+
 <div class="javascripts">
     {% block javascripts %}
         {% include 'PdfGenesisCoreBundle:Assets:__javascripts.html.twig' %}
@@ -60,6 +71,14 @@
                 {% for flashMessage in app.session.flashbag.get('user_email_error') %}
                 callEmailModal('error');
                 {% endfor %}
+
+                $('.modal').each(function(){
+                    if($(this).attr('id') == 'reset-modal'){
+
+                        $(this).modal({backdrop: 'static', keyboard: false})
+
+                    }
+                });
             });
 
         </script>

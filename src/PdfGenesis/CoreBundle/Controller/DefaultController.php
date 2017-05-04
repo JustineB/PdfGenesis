@@ -19,11 +19,22 @@ class DefaultController extends Controller
         $em = $this->getDoctrine()->getEntityManager();
         $documentId = $request->get('id_document');
         $new = $request->get('new');
+        $psdToken = $request->get('mdp_token');
 
         if(null == $documentId && $this->get('security.authorization_checker')->isGranted('ROLE_USER')){
             // proposez de reprendre un projet ou d'en créer un autre
         }
 
+
+        if($psdToken != null){
+            $this->get('session')->getFlashBag()->add('reset_token',$psdToken);
+
+
+           /* $uri = $request->getUri();
+            $url = strtok($uri, '?');
+
+            return $this->redirect($url);*/
+        }
 
         if($documentId != null || !$this->get('session')->has('document') || $new != null){
 

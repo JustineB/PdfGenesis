@@ -23,7 +23,11 @@ import_user_picture:
 
 
 resetting_ajax_psd:
-    path:     /ressetting-psd
+    path:     /resetting-psd
     defaults: { _controller: PdfGenesisCoreBundle:Resetting:sendEmailAjax }
     options:
               expose: true
+
+reset_form:
+    path:     /reset-form/{token}
+    defaults: { _controller: PdfGenesisCoreBundle:Resetting:resetForm }

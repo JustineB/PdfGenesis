@@ -71,10 +71,13 @@
             </div>
         </div>
     </div>
-    <div class="modal-block">
-        {% include 'PdfGenesisDocumentBundle:Modal:_title_description_modal.html.twig' with {'id' : document.id  , 'type' : documentType } %}
-        {% include 'PdfGenesisCoreBundle:Security:login_modal.html.twig' %}
 
-    </div>
 
+{% endblock %}
+
+
+{% block modal %}
+    {{ parent() }}
+    {% include 'PdfGenesisDocumentBundle:Modal:_title_description_modal.html.twig' with {'id' : document.id  , 'type' : documentType } %}
+    {% include 'PdfGenesisCoreBundle:Security:login_modal.html.twig' %}
 {% endblock %}

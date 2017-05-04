@@ -9,3 +9,4 @@ pdf_genesis_element:
 pdf_genesis_document:
     resource: "@PdfGenesisDocumentBundle/Resources/config/routing.yml"
     prefix:   /document
+

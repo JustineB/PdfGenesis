@@ -129,14 +129,23 @@ class ResettingController extends BaseResettingController
      */
     public function resetAction(Request $request, $token)
     {
+        return $this->redirect($this->generateUrl('design',array('mdp_token' => $token)));
+    }
+
+
+
+    public function resetFormAction(Request $request, $token){
         /** @var $formFactory \FOS\UserBundle\Form\Factory\FactoryInterface */
         $formFactory = $this->get('fos_user.resetting.form.factory');
         /** @var $userManager \FOS\UserBundle\Model\UserManagerInterface */
         $userManager = $this->get('fos_user.user_manager');
+
+        $user = $userManager->findUserByConfirmationToken($token);
+
         /** @var $dispatcher \Symfony\Component\EventDispatcher\EventDispatcherInterface */
         $dispatcher = $this->get('event_dispatcher');
 
-        $user = $userManager->findUserByConfirmationToken($token);
+
 
         if (null === $user) {
             throw new NotFoundHttpException(sprintf('The user with "confirmation token" does not exist for value "%s"', $token));
@@ -161,7 +170,7 @@ class ResettingController extends BaseResettingController
             $userManager->updateUser($user);
 
             if (null === $response = $event->getResponse()) {
-                $url = $this->generateUrl('fos_user_profile_show');
+                $url = $this->generateUrl('user_index');
                 $response = new RedirectResponse($url);
             }
 
@@ -173,7 +182,7 @@ class ResettingController extends BaseResettingController
             return $response;
         }
 
-        return $this->render('@FOSUser/Resetting/reset.html.twig', array(
+        return $this->render('@FOSUser/Resetting/reset_content.html.twig', array(
             'token' => $token,
             'form' => $form->createView(),
         ));
