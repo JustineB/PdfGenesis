@@ -9,3 +9,25 @@ user_data:
 user_library:
     path:     /get-library
     defaults: { _controller: PdfGenesisCoreBundle:User:getLibrary }
+
+
+user_ajax_update:
+    path:     /update-user-ajax
+    defaults: { _controller: PdfGenesisCoreBundle:User:updateUserAjax }
+    options:
+               expose: true
+
+import_user_picture:
+     path :    /import-picture
+     defaults: { _controller: PdfGenesisCoreBundle:User:importPicture }
+
+
+resetting_ajax_psd:
+    path:     /resetting-psd
+    defaults: { _controller: PdfGenesisCoreBundle:Resetting:sendEmailAjax }
+    options:
+              expose: true
+
+reset_form:
+    path:     /reset-form/{token}
+    defaults: { _controller: PdfGenesisCoreBundle:Resetting:resetForm }

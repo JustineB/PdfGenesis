@@ -1,0 +1,17 @@
+{% trans_default_domain 'FOSUserBundle' %}
+{% block subject %}
+    {%- autoescape false -%}
+    Modification de votre addresse email - {{ user.username }}
+    {%- endautoescape -%}
+{% endblock %}
+
+{% block body_text %}
+    {% autoescape false %}
+
+    Bonjour {{ user.username  }} !
+
+    Votre addresse email à été modifié, merci de la confirmer en cliquant sur le lien suivant : {{ app.request.getSchemeAndHttpHost() ~ confirmationUrl }}
+
+    {% endautoescape %}
+{% endblock %}
+{% block body_html %}{% endblock %}

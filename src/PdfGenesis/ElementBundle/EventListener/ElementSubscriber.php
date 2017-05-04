@@ -7,10 +7,13 @@ use PdfGenesis\ElementBundle\Entity\Element;
 use PdfGenesis\ElementBundle\Entity\ElementInterface;
 use PdfGenesis\ElementBundle\Entity\Position;
 use PdfGenesis\ElementBundle\Entity\Size;
+use PdfGenesis\ElementBundle\Event\ElementBundleEvents;
+use PdfGenesis\ElementBundle\Event\ElementEvent;
 use PdfGenesis\ElementBundle\Event\FileEvent;
 use Symfony\Component\DependencyInjection\ContainerAwareTrait;
+use Symfony\Component\EventDispatcher\EventSubscriberInterface;
 
-class ElementListener
+class ElementSubscriber implements  EventSubscriberInterface
 {
     use ContainerAwareTrait;
 
@@ -22,12 +25,21 @@ class ElementListener
     }
 
 
-    public function create(FileEvent $event){
-        $file = $event->getData();
 
-        $element = new Element();
+    public static function getSubscribedEvents()
+    {
+        // Liste des évènements écoutés et méthodes à appeler
+        return [
+            ElementBundleEvents::CREATE_ELEMENT => 'create',
+        ];
+    }
 
-        $element->setFile($file);
+    public function create(ElementEvent $event){
+        $element = $event->getData();
+
+      /*  $element = new Element();
+
+        $element->setFile($file);*/
         $element->setName(ElementInterface::DEFAULT_NAME);
 
         //todo
@@ -42,6 +54,8 @@ class ElementListener
 
         $this->em->persist($element);
         $this->em->flush();
+
+        return new ElementEvent($element);
     }
 
 

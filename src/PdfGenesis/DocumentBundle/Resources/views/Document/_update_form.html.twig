@@ -1,0 +1,15 @@
+<form action="" method="post" class="form-horizontal update-document" data-id="{{ document.id }}" xmlns="http://www.w3.org/1999/html">
+        {% if csrf_token %}
+            <input type="hidden" name="_csrf_token" value="{{ csrf_token }}" />
+        {% endif %}
+        <div class="inputs">
+            <div class="form-group">
+                <label for="name" class="floating-label control-label">Titre</label>
+                <input type="text" id="name" name="_name" class="form-control" value="{{ document.name }}" required="required" />
+            </div>
+            <div class="form-group">
+                <label for="description" class="floating-label control-label">Description</label>
+                <textarea  id="description" class="form-control" name="_description" required="required" > {{ document.name }}</textarea>
+            </div>
+        </div>
+</form>

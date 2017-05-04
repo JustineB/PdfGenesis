@@ -1,0 +1,25 @@
+<div class="modal fade" id="update_user-modal">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                {{ render(path('fos_user_change_password')) }}
+            </div>
+            <div class="modal-footer">
+                <ul class="login-table center-modal-submit" id="login-table-choices">
+                    <li class="active" id="ui-id-1"><a class="btn btn-raised active" id="login-form-submit"
+                                                       onclick="$('.fos_user_change_password').submit();">{{ 'Modification'|trans }}</a>
+                    </li>
+                    <li id="ui-id-2"><a class="btn btn-raised btn-default" id="register-form-submit"
+                                        onclick="$('#register-form').submit();">{{ 'Register'|trans }}</a></li>
+                </ul>
+
+            </div>
+        </div>
+    </div>
+</div>
+

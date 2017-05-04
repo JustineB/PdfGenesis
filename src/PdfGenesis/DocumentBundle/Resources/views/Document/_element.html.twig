@@ -1,15 +1,17 @@
-<div>
+<div class="document-element-container" data-id="{{ document.id }}">
     <div class="document-element">
-        <img src="{{ image64(document.documentImg.path) }}" alt="{{ document.title }}"/>
-        <ul>
-            <li>{{ document.title }}</li>
-            <li>{{ document.description }}</li>
-            <li>{{ document.createdAt | date('d-m-Y') }}</li>
-        </ul>
+        <a href="{{ path('design',{'id_document' : document.id}) }}">
+            <img src="{{ image64(document.documentImg.path) }}" alt="{{ document.title }}"/>
+            <ul>
+                <li class="title">{{ document.title }}</li>
+                <li>{{ document.createdAt | date('d-m-Y') }}</li>
+            </ul>
+        </a>
+
     </div>
     <div class="document-action" data-id="{{ document.id }}">
-        <a class="upload-document"><span class="glyphicon glyphicon-download-alt" aria-hidden="true"></span></a>
-        <a class="edit-document"><span class="glyphicon glyphicon-edit" aria-hidden="true"></span></a>
-        <a class="delete-document"><span class="glyphicon glyphicon-trash" aria-hidden="true"></span></a>
+        <a class="upload-document" href="{{ path('generate_pdf',{'id': document.id}) }}"><i class="material-icons">file_download</i></a>
+        <a class="edit-document"><i class="material-icons">mode_edit</i></a>
+        <a class="delete-document"><i class="material-icons">delete</i></a>
     </div>
 </div>

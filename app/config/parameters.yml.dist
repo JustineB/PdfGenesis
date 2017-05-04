@@ -18,4 +18,7 @@ parameters:
     # A secret key that's used to generate certain security-related tokens
     secret:            ThisTokenIsNotSoSecretChangeIt
 
-    files_directory:   'medias/elements/'
+    files_directory:   'medias/'
+
+    email_name_default: PDF Genesis contact
+    mail_address_default: contact@pdfGenesis.com

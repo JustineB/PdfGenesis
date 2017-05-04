@@ -1,14 +1,39 @@
+
+{% set import_icon = user.path is not null and user.file is not null ? 'full' : 'empty'  %}
+
+
 <div class="personal-data">
     {% if user is defined and user is not null %}
-        <div class="profile-picture">
-            <div id="picture"></div>
+        <div class="profile-picture profile-picture-{{ import_icon }}">
+            <div id="picture">
+                {% if user.path is not null and user.file is not null  %}
+                    <img src="{{ image64(user.path) }}" id="user-picture-path">
+                {% endif %}
+            </div>
+            <div id="picture-download">
+                <i class="material-icons file_download">file_download</i>
+                <i class="material-icons settings">settings  </i>
+                <a><div class="settings-picture"> Changer la photo de profile </div></a>
+            </div>
+            {% include 'PdfGenesisCoreBundle:User:_picture_form.html.twig' %}
         </div>
         <div class="data">
             <ul>
                 <li> <strong>Pseudo : </strong> {{ user.username }} </li>
-                <li> <strong>Email : </strong> {{ user.email }} </li>
+
+                <li id="email-user">
+                    {% if user.emailAvailable == 0 %}
+                    <p class="text-warning">
+                        <i class="material-icons">warning</i> Votre email doit être vérifié !
+                    </p>
+                    {% endif %}
+                    <strong>Email : </strong> <text>{{ user.email }} </text> <a id="email-user-edit" data-value="{{ user.email }}"><i class="material-icons">mode_edit</i></a></li>
             </ul>
         </div>
+        <div><a class="btn btn-success" data-toggle="modal" data-target="#update_user-modal">Changer le mot de passe</a></div>
         <div class="info-plus"> Member since {{ user.createdAt | date('d-m-Y') }}</div>
+        <div class="update-user-modal">
+            {% include 'PdfGenesisCoreBundle:User:_update_modal.html.twig' %}
+        </div>
     {% endif %}
 </div>

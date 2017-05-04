@@ -63,7 +63,7 @@ class Document
     /**
      * @var ArrayCollection
      *
-     * @ORM\OneToMany(targetEntity="PdfGenesis\DocumentBundle\Entity\Page", mappedBy="document" , cascade={"persist"})
+     * @ORM\OneToMany(targetEntity="PdfGenesis\DocumentBundle\Entity\Page", mappedBy="document" , cascade={"persist","remove"})
      */
     protected $pages;
 
@@ -268,7 +268,7 @@ class Document
     /**
      * @param DocumentPDF $documentPdf
      */
-    public function setDocumentPdf(DocumentPDF $documentPdf)
+    public function setDocumentPdf(DocumentPDF $documentPdf = null)
     {
         $this->documentPdf = $documentPdf;
     }
@@ -284,7 +284,7 @@ class Document
     /**
      * @param DocumentImage $documentImg
      */
-    public function setDocumentImg(DocumentImage $documentImg)
+    public function setDocumentImg(DocumentImage $documentImg = null)
     {
         $this->documentImg = $documentImg;
     }

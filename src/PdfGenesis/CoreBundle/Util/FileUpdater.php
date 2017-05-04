@@ -11,7 +11,12 @@ class FileUpdater{
 
     use ContainerAwareTrait;
 
-
+    /**
+     * @param $file
+     * @param $file_object
+     * @param null $extension_name
+     * @return mixed
+     */
     public function updateFile($file, $file_object, $extension_name = null){
 
         $fileName = $file;
@@ -19,18 +24,28 @@ class FileUpdater{
         if($file instanceof File){
             $fileNameExtension = $file->guessExtension();
             $fileName = md5(uniqid()).'.'. $fileNameExtension;
+
         }
 
         $base = $this->container->getParameter('files_directory'). $extension_name;
-        $path = $base . $file;
+        $path = $base . $fileName;
 
         if($file instanceof File){
-            $file->move( $base, $file );
+            $file->move( $base, $fileName );
         }
 
         $file_object->setFile($fileName);
         $file_object->setPath($path);
 
         return $file_object;
+    }
+
+    public function deleteFile($fichiers){
+
+        foreach($fichiers as $fichier){
+            if( file_exists ( $fichier))
+                unlink( $fichier ) ;
+        }
+
     }
 }

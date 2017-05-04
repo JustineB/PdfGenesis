@@ -19,6 +19,7 @@
 "bundles/pdfgenesiscore/js/app/color.js"
 "bundles/pdfgenesiscore/js/app/builder.js"
 "bundles/pdfgenesiscore/js/app/resolver.js"
+"bundles/pdfgenesiscore/js/app/user.js"
 "bundles/pdfgenesiscore/js/app/resize.js" %}
 <script src="{{ asset_url }}"></script>
 {% endjavascripts %}
@@ -34,8 +35,10 @@
         $.material.init();
         $( "#tabs" ).tabs();
     });
+
 </script>
 
 
 
 {% include 'PdfGenesisElementBundle:assets:__javascripts.html.twig' %}
+{% include 'PdfGenesisDocumentBundle:Assets:__javascripts.html.twig' %}

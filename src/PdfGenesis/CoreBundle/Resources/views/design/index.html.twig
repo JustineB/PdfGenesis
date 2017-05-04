@@ -66,16 +66,18 @@
                     <a class="" href="{{ path('new_document') }}"><i class="material-icons">format_align_justify</i> New
                         document</a>
 
-                    <a class="" href="{{ path('document_save', {'id' : document.id}) }}"> save
-                        document</a>
+                    <a class="save_document"> save document</a>
                 </div>
             </div>
         </div>
     </div>
-    <div class="modal-block">
-        {% include 'PdfGenesisDocumentBundle:Modal:_title_description_modal.html.twig' with {'id' : document.id  , 'type' : documentType } %}
-        {% include 'PdfGenesisCoreBundle:Security:login_modal.html.twig' %}
 
-    </div>
 
+{% endblock %}
+
+
+{% block modal %}
+    {{ parent() }}
+    {% include 'PdfGenesisDocumentBundle:Modal:_title_description_modal.html.twig' with {'id' : document.id  , 'type' : documentType } %}
+    {% include 'PdfGenesisCoreBundle:Security:login_modal.html.twig' %}
 {% endblock %}

@@ -26,5 +26,6 @@ class PdfGenesisCoreExtension extends Extension
         $loader->load('services.yml');
         $loader->load('services/event_listener.yml');
         $loader->load('services/utils.yml');
+        $loader->load('services/mailer.yml');
     }
 }

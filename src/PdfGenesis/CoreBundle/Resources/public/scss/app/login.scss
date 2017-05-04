@@ -11,6 +11,9 @@
         width: 70%;
         margin: auto;
         border:none;
+        #tabs-3{
+          display: none;
+        }
         .ui-tabs-nav{
            height: 3em;
           @include plainWidth();
@@ -65,6 +68,9 @@
         }
         &#google{
           background: $google;
+        }
+        &#password{
+          background: #bdad90;
         }
         a{
           margin: 0;

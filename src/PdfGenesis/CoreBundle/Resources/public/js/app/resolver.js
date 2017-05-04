@@ -20,3 +20,36 @@ function confirmationRegistrationModal(){
 
     return modal;
 }
+
+function emailUpdateInput(value, id){
+    var input = UPDATE_INPUT,
+        submit_icon = SUBMIT_ICON;
+
+    submit_icon = submit_icon.replace('%id_action%','email-user-submit');
+
+    input = input.replace('%label_name%','email :');
+    input = input.replace('%type_input%','text');
+    input = input.replace(/'%input_id%'/g,id);
+    input = input.replace('%input_value%',value);
+    input = input.replace('%icons_input%',submit_icon);
+
+    return input;
+
+}
+
+
+
+function emailUpdateModal(success){
+    var modal = MODAL,
+        btn_close = BUTTON_MODAL_CLOSE,
+        text = success == 'success' ? EMAIL_TEXT_SUCCESS : EMAIL_TEXT_ERROR;
+
+    btn_close = btn_close.replace('%btn_class%','');
+
+    modal = modal.replace('%modal_id%',EMAIL_UPDATE_CLASS);
+    modal = modal.replace('%modal_header%','Modification d\'email');
+    modal = modal.replace('%modal_body%',text);
+    modal = modal.replace('%modal_footer%',btn_close);
+
+    return modal;
+}

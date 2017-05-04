@@ -19,6 +19,7 @@ use PdfGenesis\DocumentBundle\Event\PageEvent;
 use PdfGenesis\DocumentBundle\Form\TitleDescriptionForm;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\Config\Definition\Exception\Exception;
+use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 
@@ -182,21 +183,106 @@ class DocumentController extends Controller
     }
 
 
-    public function saveDocumentAction(Document $document){
+   /* public function saveDocumentAction(Document $document){
         if(null == $user = $this->getUser()){
-            return false;
+            //bientôt en ajax
+            return $this->redirect($this->generateUrl('design'));
         }
 
-    //    $user->getLibrary()->addDocument($document);
+        $event = new DocumentEvent($document);
 
-      //  $document->setLibrary($user->getLibrary());
-
-        $this->get("event_dispatcher")->dispatch(
-            DocumentBundleEvents::SAVE_DOCUMENT, new DocumentEvent($document)
-        );
+        $this->container->get("event_dispatcher")->dispatch(DocumentBundleEvents::GENERATE_DOCUMENT, $event);
+        $this->container->get("event_dispatcher")->dispatch(DocumentBundleEvents::SAVE_DOCUMENT, $event);
 
         // trouver une solution pour rendre indé
         return $this->redirect($this->generateUrl('design'));
+    }*/
+
+   public function updateDocumentAjaxAction(Request $request){
+
+       $title = $request->get('title');
+       $description = $request->get('description');
+       $document_id = $request->get('id');
+
+       $document = $this->getDoctrine()->getManager()->getRepository('PdfGenesisDocumentBundle:Document')->find($document_id);
+
+       if($document_id == null){
+           return JsonResponse::create(false);
+       }
+
+       $document->setDescription($description);
+       $document->setTitle($title);
+
+       $this->container->get("event_dispatcher")->dispatch(DocumentBundleEvents::SAVE_DOCUMENT, new DocumentEvent($document));
+
+       return new JsonResponse(array('id'=> $document_id,'title' =>$title, 'description' => $description ));
+   }
+
+
+
+    /**
+     * @return static
+     */
+    public function saveDocumentAjaxAction(){
+        $id_document = $this->get('session')->get('document');
+
+        if(null == $user = $this->getUser() || $id_document == null){
+            return JsonResponse::create(false);
+        }
+
+        $document = $this->getDoctrine()->getManager()
+            ->getRepository('PdfGenesisDocumentBundle:Document')->find($id_document);
+
+        $event = new DocumentEvent($document);
+
+        $this->container->get("event_dispatcher")->dispatch(DocumentBundleEvents::GENERATE_DOCUMENT, $event);
+        $this->container->get("event_dispatcher")->dispatch(DocumentBundleEvents::SAVE_DOCUMENT, $event);
+
+        return JsonResponse::create(true);
+    }
+
+    /**
+     * @param Request $request
+     * @return static
+     */
+    public function dataDocumentAjaxAction(Request $request){
+        $id_document = $request->get('id');
+
+        if(null == $user = $this->getUser() || $id_document == null){
+            return JsonResponse::create(false);
+        }
+
+        $document = $this->getDoctrine()->getManager()
+            ->getRepository('PdfGenesisDocumentBundle:Document')->find($id_document);
+
+
+        $serializedEntity = $this->container->get('jms_serializer')->serialize($document, 'json');
+
+        return new Response($serializedEntity);
+    }
+
+    /**
+     * @param Request $request
+     * @return static
+     */
+    public function deleteDocumentAjaxAction(Request $request){
+        $id_document = $request->get('id');
+
+        if(null == $user = $this->getUser() || $id_document == null){
+            return JsonResponse::create(false);
+        }
+
+        $em = $this->getDoctrine()->getManager();
+
+        $document = $em->getRepository('PdfGenesisDocumentBundle:Document')->find($id_document);
+
+        $this->container->get("event_dispatcher")->dispatch(DocumentBundleEvents::CLEAR_DOCUMENT, new DocumentEvent($document));
+
+        $em->remove($document);
+        $em->flush();
+
+
+        return new JsonResponse(array('id'=> $id_document));
     }
 
 }

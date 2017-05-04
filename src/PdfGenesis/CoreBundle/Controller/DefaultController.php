@@ -14,22 +14,43 @@ class DefaultController extends Controller
     }
 
 
-    public function designAction()
+    public function designAction(Request $request)
     {
         $em = $this->getDoctrine()->getEntityManager();
+        $documentId = $request->get('id_document');
+        $new = $request->get('new');
+        $psdToken = $request->get('mdp_token');
 
-        if(!$this->get('security.authorization_checker')->isGranted('IS_AUTHENTICATED_ANONYMOUSLY')){
+        if(null == $documentId && $this->get('security.authorization_checker')->isGranted('ROLE_USER')){
             // proposez de reprendre un projet ou d'en créer un autre
         }
 
-        if(!$this->get('session')->has('document')){
-            $document = $this->container->get('pdfgenesis.document_manager');
 
-            $em->persist($document);
-            $em->flush();
+        if($psdToken != null){
+            $this->get('session')->getFlashBag()->add('reset_token',$psdToken);
 
-            $this->get('session')->set('document', $document->getId());
+
+           /* $uri = $request->getUri();
+            $url = strtok($uri, '?');
+
+            return $this->redirect($url);*/
         }
+
+        if($documentId != null || !$this->get('session')->has('document') || $new != null){
+
+            if($documentId == null || $new != null){
+                $document = $this->container->get('pdfgenesis.document_manager');
+                $em->persist($document);
+                $em->flush();
+
+                $documentId = $document->getId();
+            }
+
+            $this->get('session')->set('document',$documentId );
+
+            return $this->redirect($this->generateUrl('design'));
+        }
+
 
         $documentId = $this->get('session')->get('document');
 

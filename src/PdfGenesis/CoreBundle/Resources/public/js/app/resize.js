@@ -12,6 +12,7 @@ interact('.resize-drag')
 
             ajaxElementSizeChange(id, target.style.width, target.style.height);
             elementPositionResolver(event.target);
+            ajaxSaveDocument();
         }
     })
     .on('resizemove', function (event) {
