@@ -1,0 +1,83 @@
+#user-section .navbar {
+  background-color: #fdb772 !important; }
+  #user-section .navbar .navbar-header {
+    float: left;
+    padding-left: 3%; }
+  #user-section .navbar .nav {
+    width: 40%; }
+    #user-section .navbar .nav li {
+      padding-left: 60px; }
+#user-section .section-title h2 {
+  margin: 3em 5% 1em 7%;
+  font-style: italic; }
+#user-section .user-content {
+  padding: 20px 12% 20px 12%; }
+  #user-section .user-content .profile-picture {
+    width: 15em;
+    height: 15em;
+    padding: 4px 4px;
+    display: inline-block;
+    border: 1px solid grey; }
+    #user-section .user-content .profile-picture #picture {
+      width: 100%;
+      height: 100%;
+      display: inline-block;
+      background-color: #b5b5b5;
+      border: 1px solid #a2a2a0; }
+  #user-section .user-content .data {
+    display: inline-block;
+    vertical-align: top;
+    height: 15em; }
+    #user-section .user-content .data ul {
+      margin-top: 30px; }
+      #user-section .user-content .data ul li {
+        padding: 20px 0 20px 0;
+        font-size: 15pt; }
+  #user-section .user-content .info-plus {
+    margin: 30px 0;
+    font-style: italic; }
+  #user-section .user-content .dynamic-library {
+    border: 1px solid grey;
+    padding: 4px 4px;
+    margin-top: 5em; }
+    #user-section .user-content .dynamic-library .droppable-zone {
+      min-height: 22em;
+      padding: 20px 20px;
+      background-color: rgba(156, 153, 150, 0.36);
+      border: 1px solid #a2a2a0; }
+      #user-section .user-content .dynamic-library .droppable-zone .library-element {
+        display: inline-block; }
+        #user-section .user-content .dynamic-library .droppable-zone .library-element .document-element {
+          width: 107px;
+          height: 120px;
+          display: inline-block;
+          box-shadow: 0 2px 10px grey;
+          margin: 10px 10px;
+          border: 1px solid white;
+          background-color: #b5b5b5; }
+          #user-section .user-content .dynamic-library .droppable-zone .library-element .document-element img {
+            position: absolute;
+            width: 107px;
+            height: 120px;
+            display: inline-block;
+            box-shadow: 0 2px 10px grey;
+            border: 1px solid white; }
+          #user-section .user-content .dynamic-library .droppable-zone .library-element .document-element ul {
+            display: none; }
+          #user-section .user-content .dynamic-library .droppable-zone .library-element .document-element:hover {
+            cursor: pointer; }
+            #user-section .user-content .dynamic-library .droppable-zone .library-element .document-element:hover ul {
+              display: block;
+              position: relative;
+              z-index: 2;
+              background-color: rgba(181, 181, 181, 0.83);
+              height: auto;
+              box-shadow: 0 1px 2px slategrey;
+              width: auto;
+              max-width: 100%;
+              padding: 0;
+              margin: auto;
+              font-size: 9pt;
+              line-height: 60px; }
+
+/*# sourceMappingURL=user.css.map */

@@ -1,0 +1,64 @@
+#login-modal .modal-content {
+  width: 90%; }
+  #login-modal .modal-content .modal-body #tabs {
+    width: 70%;
+    margin: auto;
+    border: none; }
+    #login-modal .modal-content .modal-body #tabs .ui-tabs-nav {
+      height: 3em;
+      width: 100%;
+      margin: 0;
+      padding: 0; }
+      #login-modal .modal-content .modal-body #tabs .ui-tabs-nav li {
+        height: 3em;
+        width: 50%;
+        margin: 0;
+        padding: 0; }
+        #login-modal .modal-content .modal-body #tabs .ui-tabs-nav li a {
+          width: 100%;
+          height: 100%;
+          border: 1px solid #dadada !important; }
+          #login-modal .modal-content .modal-body #tabs .ui-tabs-nav li a:focus {
+            outline: none; }
+        #login-modal .modal-content .modal-body #tabs .ui-tabs-nav li.ui-state-active {
+          background: #efedea;
+          box-shadow: 0 2px 14px #d8ccb7;
+          border: none; }
+          #login-modal .modal-content .modal-body #tabs .ui-tabs-nav li.ui-state-active a {
+            color: #000; }
+  #login-modal .modal-content .modal-body form {
+    width: 80%;
+    margin: auto; }
+    #login-modal .modal-content .modal-body form .form-group {
+      margin: 10px;
+      height: 4em; }
+  #login-modal .modal-content .login-social {
+    margin-top: 15px; }
+    #login-modal .modal-content .login-social div {
+      margin: 5px auto;
+      width: 50%;
+      text-align: center; }
+      #login-modal .modal-content .login-social div#facebook {
+        background: #3b5998; }
+      #login-modal .modal-content .login-social div#google {
+        background: #d2995d; }
+      #login-modal .modal-content .login-social div a {
+        margin: 0;
+        font-size: 9pt;
+        font-weight: 500;
+        width: 100%;
+        height: 100%;
+        color: white; }
+  #login-modal .modal-content .login-table li {
+    display: none; }
+    #login-modal .modal-content .login-table li.active {
+      display: block !important; }
+  #login-modal .modal-content #register-form form .inputs {
+    margin-top: 15px; }
+    #login-modal .modal-content #register-form form .inputs .form-group {
+      margin: 0 10px; }
+      #login-modal .modal-content #register-form form .inputs .form-group .control-label {
+        font-size: 13px !important;
+        color: #847b7b !important; }
+
+/*# sourceMappingURL=login.css.map */
