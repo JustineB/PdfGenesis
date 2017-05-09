@@ -27,7 +27,7 @@
                 </div>
 
                 <div class="login-social">
-                    <div id="facebook"><a class="btn btn-default">{{ 'login with'|trans }} Facebook</a></div>
+                    <div id="facebook"><a href="{{ path('hwi_oauth_service_redirect',{'service' : 'facebook'}) }}" class="btn btn-default">{{ 'login with'|trans }} Facebook</a></div>
                     <div id="google"><a class="btn btn-default">{{ 'login with'|trans }} Google </a></div>
                     <div id="password"><a data-id="tabs-3" id="psd-tab" class="btn btn-default">Forgot password ?</a></div>
                     {#<div><a class="btn btn-default">{{ 'I already have an account'|trans }}</a></div>

@@ -112,5 +112,17 @@ fos_user:
                 sender_name:    Pdf Genesis service
 
 
+hwi_oauth:
+    firewall_names: [secured_area]
+    resource_owners:
+        facebook:
+            type:                facebook
+            client_id:           234941426988280
+            client_secret:       2bdf7f4b07cd2c8b7c8cc4ba1154db37
+            options:
+                  display: popup #dialog is optimized for popup window
+                  auth_type: rerequest # Re-asking for Declined Permissions
+
+
 
 

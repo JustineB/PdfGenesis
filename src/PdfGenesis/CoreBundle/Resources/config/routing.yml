@@ -2,6 +2,10 @@ pdf_genesis_main:
     resource: "@PdfGenesisCoreBundle/Resources/config/routing/main.yml"
     prefix:   /
 
+pdf_genesis_login:
+    resource: "@PdfGenesisCoreBundle/Resources/config/routing/login.yml"
+    prefix:   /social
+
 pdf_genesis_element:
     resource: "@PdfGenesisElementBundle/Resources/config/routing.yml"
     prefix:   /element
