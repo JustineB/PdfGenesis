@@ -127,9 +127,14 @@ hwi_oauth:
             type:                facebook
             client_id:           234941426988280
             client_secret:       2bdf7f4b07cd2c8b7c8cc4ba1154db37
+            scope:               "public_profile,email"
             options:
                   display: popup #dialog is optimized for popup window
                   auth_type: rerequest # Re-asking for Declined Permissions
+            infos_url: "https://graph.facebook.com/me?fields=id,name,email,picture.type(square)"
+            paths:
+                  email:          email
+                  profilepicture: picture.data.url
         google:
             type:                google
             client_id:           "78814584502-ouhe8ordogaj4jg0gcjqptsu6gall5os.apps.googleusercontent.com"

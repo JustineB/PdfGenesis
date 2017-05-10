@@ -57,6 +57,7 @@ class FOSUBUserProvider extends BaseClass {
         $setter_id = $setter.'Id';
         $setter_token = $setter.'AccessToken';
 
+
         if (null === $user) {
 
             // create new user here
@@ -64,8 +65,9 @@ class FOSUBUserProvider extends BaseClass {
             $user->$setter_id($username);
             $user->$setter_token($response->getAccessToken());
 
-            $user->setUsername($username);
-            $user->setEmail($username);
+            $user->setUsername($response->getNickname().substr($username,0,5));
+            $user->setPath($response->getProfilePicture());
+            $user->setEmail($response->getEmail());
             $user->setPassword($username);
             $user->setEnabled(true);
             $this->userManager->updateUser($user);

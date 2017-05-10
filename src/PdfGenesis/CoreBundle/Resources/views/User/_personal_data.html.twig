@@ -6,8 +6,12 @@
     {% if user is defined and user is not null %}
         <div class="profile-picture profile-picture-{{ import_icon }}">
             <div id="picture">
-                {% if user.path is not null and user.file is not null  %}
-                    <img src="{{ image64(user.path) }}" id="user-picture-path">
+                {% if user.path is not null  %}
+                    {% if user.file is not null %}
+                        <img src="{{ image64(user.path) }}" id="user-picture-path">
+                    {% else %}
+                        <img src="{{ user.path }}" id="user-picture-path">
+                    {% endif %}
                 {% endif %}
             </div>
             <div id="picture-download">

@@ -22,6 +22,7 @@ class MenuBuilder implements ContainerAwareInterface{
 
         if($this->container->get('security.authorization_checker')->isGranted('ROLE_USER')){
             $menu->addChild('account', array('route' => 'user_index'))->setLabel('My account');
+            $menu->addChild('logout', array('route' => 'logout'))->setLabel('Logout');
         }else{
             $menu->addChild('login-sign-up', array('uri' => '#'));
 
