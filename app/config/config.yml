@@ -113,7 +113,15 @@ fos_user:
 
 
 hwi_oauth:
+    http_client:
+         verify_peer: false
     firewall_names: [secured_area]
+    fosub:
+         username_iterations: 30
+         properties:
+             # these properties will be used/redefined later in the custom FOSUBUserProvider service.
+             facebook: facebook_id
+             google: google_id
     resource_owners:
         facebook:
             type:                facebook
@@ -122,7 +130,11 @@ hwi_oauth:
             options:
                   display: popup #dialog is optimized for popup window
                   auth_type: rerequest # Re-asking for Declined Permissions
-
+        google:
+            type:                google
+            client_id:           "78814584502-ouhe8ordogaj4jg0gcjqptsu6gall5os.apps.googleusercontent.com"
+            client_secret:       "Ha5yZBJ_a4luOIS-M4XdTGVm"
+            scope:               "email profile"
 
 
 

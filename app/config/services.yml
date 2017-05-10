@@ -5,7 +5,5 @@ parameters:
 
 services:
     my.oauth_aware.user_provider.service:
-        class: HWI\Bundle\OAuthBundle\Security\Core\User\FOSUBUserProvider
-        arguments:
-             - '@fos_user.user_manager'
-             - ['pass properties as array']
+        class: PdfGenesis\CoreBundle\Security\User\FOSUBUserProvider
+        arguments: [@fos_user.user_manager,{facebook: facebook_id, google: google_id}]
