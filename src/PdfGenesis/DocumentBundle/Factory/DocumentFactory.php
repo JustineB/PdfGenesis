@@ -5,6 +5,8 @@ namespace PdfGenesis\DocumentBundle\Factory;
 use PdfGenesis\DocumentBundle\Entity\Document;
 use PdfGenesis\DocumentBundle\Entity\DocumentInterface;
 use PdfGenesis\DocumentBundle\Entity\Page;
+use PdfGenesis\DocumentBundle\Event\PageBundleEvents;
+use PdfGenesis\DocumentBundle\Event\PageEvent;
 
 class DocumentFactory{
 
@@ -21,7 +23,7 @@ class DocumentFactory{
         $page->setDocument($document);
         $page->setPaginationOrder(1);
         $page->setActivate(true);
-        $page->setIndex(self::$index);
+
 
         $document->addPage($page);
 

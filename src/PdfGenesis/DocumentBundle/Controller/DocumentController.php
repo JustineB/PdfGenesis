@@ -37,6 +37,9 @@ class DocumentController extends Controller
         $em->persist($document);
         $em->flush();
 
+        $this->container->get("event_dispatcher")->dispatch(PageBundleEvents::NEW_PAGE, new PageEvent($document->getPages()->get(0)));
+
+
         $this->get('session')->set('document', $document->getId());
 
         return $this->redirect($this->generateUrl('design'));
