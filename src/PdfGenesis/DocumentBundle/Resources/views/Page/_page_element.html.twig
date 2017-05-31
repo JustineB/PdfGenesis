@@ -2,15 +2,14 @@
 
 <div class="page-container ">
 {% for page in pages %}
-    <div class="page-container">
-        <div class="page-icon"> <img src="{{ asset(page.path) }}" class="page-icon-image" data-id="{{ page.id }}"></div>
+
+        <div class="page-icon {% if page.activate == true %}active{% endif %}"> <img src="{{ asset(page.path) }}" class="page-icon-image" data-id="{{ page.id }}"></div>
         <p>{{ loop.index }}</p>
-    </div>
 {% endfor %}
 </div>
 
 <div class="page-container">
-    <a>
+    <a href="{{ path('generate_new_page', {'id': document.id }) }}">
         <div class="page-icon page-create">
             <p>New page</p>
         </div>

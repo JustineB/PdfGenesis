@@ -49,10 +49,15 @@
       margin: 10% 31%;
       .page-icon{
         width: 110px;
-        height: 140px;
         background: white;
+        img{
+          width: 110px;
+          height: 140px;
+        }
         &.active{
-          border: 3px solid #ffa812;
+          img{
+            border: 3px solid #ffa812;
+          }
         }
         &.page-create{
           background: inherit;

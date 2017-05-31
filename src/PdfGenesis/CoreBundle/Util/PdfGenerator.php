@@ -17,10 +17,18 @@ class PdfGenerator
     Use ContainerAwareTrait;
 
     protected static $options = [
-        'margin-top' => 80,
+        'margin-top' => 0,
         'margin-right' => 0,
-        'margin-bottom' => 80,
+        'margin-bottom' => 0,
         'margin-left' => 0,
+        'disable-smart-shrinking' => true,
+    ];
+
+    protected static $options_img = [
+        'images' => true,
+        'disable-smart-width' => true,
+        "height" => "1100",
+        "width"=> "1024",
     ];
 
     /** @var TokenStorage $tokenStorage */
@@ -72,15 +80,20 @@ class PdfGenerator
             return false;
         }
 
+
         try{
             $snappy_image = $this->container->get('knp_snappy.image');
 
+            foreach (self::$options_img as $key => $value) {
+                $snappy_image->setOption($key, $value);
+            }
             if($page instanceof Document){
                 $view = $this->container->get('templating')->render('PdfGenesisCoreBundle:Design:_pdf_document.html.twig', array('pages' => $page->getPages()));
                 $object = new DocumentImage();
                 $path_file = 'pdf/img/';
             }elseif($page instanceof Page){
-                $view = $this->container->get('templating')->render('PdfGenesisCoreBundle:Page:_page.html.twig', array('page' => $page));
+
+                $view = $this->container->get('templating')->render('PdfGenesisCoreBundle:Design:_pdf_document.html.twig', array('pages' => array($page)));
                 $object = $page;
                 $path_file = "doc".$page->getDocument()->getId()."/pages/img/";
             }else{

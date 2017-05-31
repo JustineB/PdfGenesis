@@ -243,9 +243,9 @@ class DocumentController extends Controller
         $this->container->get("event_dispatcher")->dispatch(DocumentBundleEvents::SAVE_DOCUMENT, $event);
 
         $page_active = $this->getDoctrine()->getManager()
-            ->getRepository('PdfGenesisDocumentBundle:Document')->findBy(array('document' => $document, 'activate' => true));
+            ->getRepository('PdfGenesisDocumentBundle:Page')->findBy(array('document' => $document, 'activate' => true));
 
-        $this->container->get("event_dispatcher")->dispatch(PageBundleEvents::NEW_PAGE, new PageEvent($page_active));
+        $this->container->get("event_dispatcher")->dispatch(PageBundleEvents::UPDATE_PAGE, new PageEvent($page_active[0]));
 
 
 

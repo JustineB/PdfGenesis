@@ -39,8 +39,8 @@ class PageSubscriber implements EventSubscriberInterface{
         return array(
             PageBundleEvents::ACTIVATE_PAGE => 'activate',
             PageBundleEvents::UPDATE_PAGE => array(
-                array('clearMethod',0),
-                array('newMethod',10),
+                array('clearMethod',10),
+                array('newMethod',0),
             ),
             PageBundleEvents::NEW_PAGE => array(
                 array('clearMethod',10),
@@ -90,7 +90,8 @@ class PageSubscriber implements EventSubscriberInterface{
 
         $this->container->get('pdf_genesis.pdf_generator')->ImgGenerate($page, $path);
 
-
+        $this->em->persist($page);
+        $this->em->flush();
 
         return new PageEvent($page);
     }
@@ -108,7 +109,7 @@ class PageSubscriber implements EventSubscriberInterface{
 
 
             $this->container->get('pdf_genesis.file_updater')->deleteFile($fichiers);
-
+            var_dump('b');
 
             $page->setPath(null);
             $page->setFile(null);
