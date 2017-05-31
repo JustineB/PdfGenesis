@@ -1,22 +1,24 @@
 
 {% for page in pages %}
     {% if page.activate == true %}
+        {% include 'PdfGenesisCoreBundle:Page:_page.html.twig' %}
+
         <div class="blank-sheet">
             {{ render(path('element_list', {'page_id' : page.id })) }}
         </div>
 
-        <div class="page-info" >
+        <div class="page-info top-describing" >
             <div class="page-describing">
-                <span> {{ page.title }} </span>
+                <span> {{ page.title }} <a><i class="material-icons">mode_edit</i></a></span>
             </div>
             <div class="change-page-section">
-                <a href="{{ path('change_page', {'id' : document.id, 'change_number' : -1 }) }}">
+                <a href="{{ path('change_page', {'id' : document.id, 'change_number' : -1 }) }}" class="arrow" id="left">
                     <i class="material-icons">keyboard_arrow_left</i>
                 </a>
                 <div class="page-index">
                     <span>{{ page.paginationOrder }}</span>
                 </div>
-                <a href="{{ path('change_page', {'id' : document.id, 'change_number' : 1 }) }}">
+                <a href="{{ path('change_page', {'id' : document.id, 'change_number' : 1 }) }}" class="arrow" id="right">
                     <i class="material-icons">keyboard_arrow_right</i>
                 </a>
             </div>

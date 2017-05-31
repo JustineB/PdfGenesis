@@ -3,6 +3,10 @@
 namespace PdfGenesis\CoreBundle\Controller;
 
 use PdfGenesis\DocumentBundle\Entity\Document;
+use PdfGenesis\DocumentBundle\Event\DocumentBundleEvents;
+use PdfGenesis\DocumentBundle\Event\DocumentEvent;
+use PdfGenesis\DocumentBundle\Event\PageBundleEvents;
+use PdfGenesis\DocumentBundle\Event\PageEvent;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Request;
 
@@ -42,6 +46,9 @@ class DefaultController extends Controller
                 $document = $this->container->get('pdfgenesis.document_manager');
                 $em->persist($document);
                 $em->flush();
+
+                $this->container->get("event_dispatcher")->dispatch(PageBundleEvents::NEW_PAGE, new PageEvent($document->getPages()->get(0)));
+                $this->container->get("event_dispatcher")->dispatch(DocumentBundleEvents::GENERATE_DOCUMENT, new DocumentEvent($document));
 
                 $documentId = $document->getId();
             }

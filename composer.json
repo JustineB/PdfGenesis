@@ -28,7 +28,8 @@
         "knplabs/knp-snappy-bundle": "~1.4",
         "friendsofsymfony/user-bundle": "~2.0@dev",
         "friendsofsymfony/jsrouting-bundle": "^1.6",
-        "jms/serializer-bundle": "^1.4"
+        "jms/serializer-bundle": "^1.4",
+        "hwi/oauth-bundle": "^0.5.3"
     },
     "require-dev": {
         "sensio/generator-bundle": "~3.0",

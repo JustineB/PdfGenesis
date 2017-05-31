@@ -99,6 +99,7 @@ knp_snappy:
         options:    []
 
 
+
 # FOS User Configuration
 fos_user:
     db_driver: orm # other valid values are 'mongodb' and 'couchdb'
@@ -111,6 +112,35 @@ fos_user:
                 address:        justine.benezra@gmail.com
                 sender_name:    Pdf Genesis service
 
+
+hwi_oauth:
+    http_client:
+         verify_peer: false
+    firewall_names: [main]
+    fosub:
+         username_iterations: 30
+         properties:
+             # these properties will be used/redefined later in the custom FOSUBUserProvider service.
+             facebook: facebook_id
+             google: google_id
+    resource_owners:
+        facebook:
+            type:                facebook
+            client_id:           234941426988280
+            client_secret:       2bdf7f4b07cd2c8b7c8cc4ba1154db37
+            scope:               "public_profile,email"
+            options:
+                  display: popup #dialog is optimized for popup window
+                  auth_type: rerequest # Re-asking for Declined Permissions
+            infos_url: "https://graph.facebook.com/me?fields=id,name,email,picture.type(square)"
+            paths:
+                  email:          email
+                  profilepicture: picture.data.url
+        google:
+            type:                google
+            client_id:           "78814584502-ouhe8ordogaj4jg0gcjqptsu6gall5os.apps.googleusercontent.com"
+            client_secret:       "Ha5yZBJ_a4luOIS-M4XdTGVm"
+            scope:               "email profile"
 
 
 

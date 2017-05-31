@@ -29,12 +29,26 @@ li{
     width: 33%;
   }
   .page-index{
-    width:30%;
+    width:80%;
+    font-weight:600;
+  }
+  .arrow{
+    width:10%;
+    #left{
+      float: left !important;
+    }
+    #right{
+      float:right !important;
+    }
   }
 }
 
 .page-describing{
   margin: 20px 200px;
+  i{
+    position: relative;
+    top: 5px;
+  }
 }
 
 p.text-warning{

@@ -1,0 +1,7 @@
+
+{% if page is not defined %}
+    <div class="blank-sheet">
+        {{ render(path('element_list', {'page_id' : page.id })) }}
+    </div>
+{% endif %}
+

@@ -12,9 +12,11 @@ namespace PdfGenesis\DocumentBundle\Controller;
 
 
 use PdfGenesis\DocumentBundle\Entity\Document;
+use PdfGenesis\DocumentBundle\Entity\DocumentInterface;
 use PdfGenesis\DocumentBundle\Entity\Page;
 use PdfGenesis\DocumentBundle\Event\DocumentBundleEvents;
 use PdfGenesis\DocumentBundle\Event\DocumentEvent;
+use PdfGenesis\DocumentBundle\Event\PageBundleEvents;
 use PdfGenesis\DocumentBundle\Event\PageEvent;
 use PdfGenesis\DocumentBundle\Form\TitleDescriptionForm;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
@@ -34,6 +36,10 @@ class DocumentController extends Controller
 
         $em->persist($document);
         $em->flush();
+
+        $this->container->get("event_dispatcher")->dispatch(PageBundleEvents::NEW_PAGE, new PageEvent($document->getPages()->get(0)));
+        $this->container->get("event_dispatcher")->dispatch(DocumentBundleEvents::GENERATE_DOCUMENT, new DocumentEvent($document));
+
 
         $this->get('session')->set('document', $document->getId());
 
@@ -96,11 +102,12 @@ class DocumentController extends Controller
         $page = new Page();
         $page->setDocument($document);
 
+
         $document->addPage($page);
 
         $page->setPaginationOrder($numberOfPages+1);
 
-        $this->get('event_dispatcher')->dispatch('pdf_genesis.page.activate', new PageEvent($page));
+        $this->container->get("event_dispatcher")->dispatch(PageBundleEvents::NEW_PAGE, new PageEvent($page));
 
         return $this->redirect($this->generateUrl('design'));
     }
@@ -114,7 +121,7 @@ class DocumentController extends Controller
         $em = $this->getDoctrine()->getManager();
 
         $id = $request->get('id');
-        $value = intval($request->get('change_number'));
+
 
         //imagine if you want to jump du 0 à 5
 
@@ -125,7 +132,14 @@ class DocumentController extends Controller
         }
 
         $paginationOrder = $activatePage->getPaginationOrder();
-        $changePage = $paginationOrder + $value;
+
+        if($request->get('change_number')!= null){
+            $value = intval($request->get('change_number'));
+            $changePage = $paginationOrder + $value;
+        }else{
+            $changePage = intval($request->get('index_number'));
+        }
+
 
         if($changePage <= 0 || $changePage > sizeof($document->getPages()) ){
             return $this->redirect($this->generateUrl('design'));
@@ -134,10 +148,13 @@ class DocumentController extends Controller
 
         $page = $this->getPage($document, $changePage);
 
-        $this->get('event_dispatcher')->dispatch('pdf_genesis.page.activate', new PageEvent($page));
+        $this->container->get("event_dispatcher")->dispatch(PageBundleEvents::ACTIVATE_PAGE, new PageEvent($page));
+
 
         return $this->redirect($this->generateUrl('design'));
     }
+
+
 
 
 
@@ -237,6 +254,13 @@ class DocumentController extends Controller
 
         $this->container->get("event_dispatcher")->dispatch(DocumentBundleEvents::GENERATE_DOCUMENT, $event);
         $this->container->get("event_dispatcher")->dispatch(DocumentBundleEvents::SAVE_DOCUMENT, $event);
+
+        $page_active = $this->getDoctrine()->getManager()
+            ->getRepository('PdfGenesisDocumentBundle:Page')->findBy(array('document' => $document, 'activate' => true));
+
+        $this->container->get("event_dispatcher")->dispatch(PageBundleEvents::UPDATE_PAGE, new PageEvent($page_active[0]));
+
+
 
         return JsonResponse::create(true);
     }
