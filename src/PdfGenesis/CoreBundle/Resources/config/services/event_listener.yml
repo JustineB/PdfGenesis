@@ -15,11 +15,11 @@ services:
          tags:
             - {name: kernel.event_subscriber }
 
-     pdf_genesis.event_listener.page:
-         class: PdfGenesis\DocumentBundle\EventListener\PageListener
-         arguments:  ["@doctrine.orm.entity_manager"]
-         tags:
-            - { name: kernel.event_listener, event: pdf_genesis.page.activate, method: activate }
+ #    pdf_genesis.event_listener.page:
+ #       class: PdfGenesis\DocumentBundle\EventListener\PageListener
+ #        arguments:  ["@doctrine.orm.entity_manager"]
+ #        tags:
+ #           - { name: kernel.event_listener, event: pdf_genesis.page.activate, method: activate }
 
      fos_user.listener.flash:
          class: PdfGenesis\CoreBundle\EventListener\FlashListener

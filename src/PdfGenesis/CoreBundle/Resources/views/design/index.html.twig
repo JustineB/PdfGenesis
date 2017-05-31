@@ -7,15 +7,25 @@
         <div class="row">
 
             <div class="design-tool-container col-sm-2 design-tool-container-right">
-                <div class="title-section"><h4>Elements</h4></div>
-
-                <div class="classification-section">
-                    <a href="" class="element-mark-link">
-                        <div class="element-mark">
-                            {{ render(path('element_list_classification', {'id' : document.id })) }}
+                <div id="tabs">
+                    <ul>
+                        <li><a href="#tabs-page" data-tabs="tabs-page">{{ 'Pages'|trans }}</a></li>
+                        <li><a href="#tabs-element" data-tabs="tabs-element">{{ 'Element'|trans }}</a></li>
+                    </ul>
+                    <div id="tabs-page">
+                        {% include 'PdfGenesisDocumentBundle:Page:_page_element.html.twig' with {'pages': document.pages} %}
+                    </div>
+                    <div id="tabs-element">
+                        <div class="classification-section">
+                            <a href="" class="element-mark-link">
+                                <div class="element-mark">
+                                    {{ render(path('element_list_classification', {'id' : document.id })) }}
+                                </div>
+                            </a>
                         </div>
-                    </a>
+                    </div>
                 </div>
+
             </div>
 
             <div class="blank-sheet-container col-sm-8">
@@ -24,20 +34,22 @@
                     <nav class="navbar navbar-default navbar-main">
                         <div class="container-fluid">
                             <div class="navbar-header">
-                                <a class="navbar-brand" href="{{ path('homepage') }}"> </a>PDF GENESIS
+                                <a class="navbar-brand" href="{{ path('homepage') }}"> </a>
                             </div>
                         </div>
                     </nav>
                 </div>
 
                 <div class="top-describing">
-                    <div id="doc-title">
-                        <div class="top-label">Title :</div>
-                        {{ document.title }}
+                    <div id="doc-title" class="doc">
+                        <div class="top-label doc-label">Title :</div>
+                        <p>{{ document.title }}</p>
+
                     </div>
-                    <div id="doc-description">
-                        <div class="top-label">Description :</div>
-                        {{ document.description }}
+                    <div id="doc-description" class="doc">
+                        <div class="top-label doc-label">Description :</div>
+                        <p>{{ document.description }}</p>
+
                     </div>
                 </div>
 
@@ -66,7 +78,7 @@
                     <a class="" href="{{ path('new_document') }}"><i class="material-icons">format_align_justify</i> New
                         document</a>
 
-                    <a class="save_document"> save document</a>
+                    <a class="save_document"><i class="material-icons">save</i> save document</a>
                 </div>
             </div>
         </div>

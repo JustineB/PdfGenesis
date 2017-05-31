@@ -8,6 +8,8 @@ use PdfGenesis\DocumentBundle\Entity\Page;
 
 class DocumentFactory{
 
+
+
     public static function createDocument(){
 
         $document = new Document();
@@ -19,6 +21,7 @@ class DocumentFactory{
         $page->setDocument($document);
         $page->setPaginationOrder(1);
         $page->setActivate(true);
+        $page->setIndex(self::$index);
 
         $document->addPage($page);
 

@@ -10,3 +10,12 @@ services:
           - [ setContainer,[ @service_container ] ]
          tags:
           - {name: kernel.event_subscriber }
+
+
+     pdf_genesis_document.page.subscriber:
+         class:  PdfGenesis\DocumentBundle\EventListener\PageSubscriber
+         arguments:  ["@doctrine.orm.entity_manager", "@security.token_storage"]
+         calls:
+          - [ setContainer,[ @service_container ] ]
+         tags:
+          - {name: kernel.event_subscriber }

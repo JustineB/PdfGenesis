@@ -12,9 +12,11 @@ namespace PdfGenesis\DocumentBundle\Controller;
 
 
 use PdfGenesis\DocumentBundle\Entity\Document;
+use PdfGenesis\DocumentBundle\Entity\DocumentInterface;
 use PdfGenesis\DocumentBundle\Entity\Page;
 use PdfGenesis\DocumentBundle\Event\DocumentBundleEvents;
 use PdfGenesis\DocumentBundle\Event\DocumentEvent;
+use PdfGenesis\DocumentBundle\Event\PageBundleEvents;
 use PdfGenesis\DocumentBundle\Event\PageEvent;
 use PdfGenesis\DocumentBundle\Form\TitleDescriptionForm;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
@@ -96,11 +98,12 @@ class DocumentController extends Controller
         $page = new Page();
         $page->setDocument($document);
 
+
         $document->addPage($page);
 
         $page->setPaginationOrder($numberOfPages+1);
 
-        $this->get('event_dispatcher')->dispatch('pdf_genesis.page.activate', new PageEvent($page));
+        $this->container->get("event_dispatcher")->dispatch(PageBundleEvents::NEW_PAGE, new PageEvent($page));
 
         return $this->redirect($this->generateUrl('design'));
     }
@@ -134,7 +137,8 @@ class DocumentController extends Controller
 
         $page = $this->getPage($document, $changePage);
 
-        $this->get('event_dispatcher')->dispatch('pdf_genesis.page.activate', new PageEvent($page));
+        $this->container->get("event_dispatcher")->dispatch(PageBundleEvents::ACTIVATE_PAGE, new PageEvent($page));
+
 
         return $this->redirect($this->generateUrl('design'));
     }
@@ -237,6 +241,13 @@ class DocumentController extends Controller
 
         $this->container->get("event_dispatcher")->dispatch(DocumentBundleEvents::GENERATE_DOCUMENT, $event);
         $this->container->get("event_dispatcher")->dispatch(DocumentBundleEvents::SAVE_DOCUMENT, $event);
+
+        $page_active = $this->getDoctrine()->getManager()
+            ->getRepository('PdfGenesisDocumentBundle:Document')->findBy(array('document' => $document, 'activate' => true));
+
+        $this->container->get("event_dispatcher")->dispatch(PageBundleEvents::NEW_PAGE, new PageEvent($page_active));
+
+
 
         return JsonResponse::create(true);
     }

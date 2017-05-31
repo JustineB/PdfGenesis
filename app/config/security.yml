@@ -22,20 +22,19 @@ security:
             pattern: ^/(_(profiler|wdt)|css|images|js)/
             security: false
 
-        secured_area:
+        main:
             anonymous: ~
             logout: ~
             oauth:
                 resource_owners:
-                     facebook:           "/login/check-facebook"
-                     google:             "/login/check-google"
+                      facebook:           "/login/check-facebook"
+                      google:             "/login/check-google"
                 login_path:        /login-oauth
                 use_forward:       false
                 failure_path:      /login
 
                 oauth_user_provider:
-                     service: my.oauth_aware.user_provider.service
-        main:
+                      service: my.oauth_aware.user_provider.service
             pattern: ^/
             form_login:
                 provider: fos_userbundle

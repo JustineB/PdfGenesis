@@ -48,7 +48,9 @@ class DocumentSubscriber implements EventSubscriberInterface{
     {
         $document = $event->getData();
 
-        if(null != $user =  $this->tokenStorage->getToken()->getUser() ){
+        if($this->container->get('security.context')->isGranted('ROLE_USER') ){
+            $user = $this->tokenStorage->getToken()->getUser();
+
             if(!$user->getLibrary()->hasDocument($document)){
                 $document->setLibrary($user->getLibrary());
             }
@@ -75,6 +77,7 @@ class DocumentSubscriber implements EventSubscriberInterface{
         );
 
         $this->container->get('pdf_genesis.pdf_generator')->pdfGenerate($document, $path);
+        $this->container->get('pdf_genesis.pdf_generator')->ImgGenerate($document, $path);
 
       /*  if($response == false){
             $this->container->get('session')->getFlashbag()->add('error','error');

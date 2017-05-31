@@ -115,7 +115,7 @@ fos_user:
 hwi_oauth:
     http_client:
          verify_peer: false
-    firewall_names: [secured_area]
+    firewall_names: [main]
     fosub:
          username_iterations: 30
          properties:

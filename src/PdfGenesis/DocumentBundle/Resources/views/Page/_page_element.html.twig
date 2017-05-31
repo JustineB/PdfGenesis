@@ -1,0 +1,18 @@
+
+
+<div class="page-container ">
+{% for page in pages %}
+    <div class="page-container">
+        <div class="page-icon"> <img src="{{ asset(page.path) }}" class="page-icon-image" data-id="{{ page.id }}"></div>
+        <p>{{ loop.index }}</p>
+    </div>
+{% endfor %}
+</div>
+
+<div class="page-container">
+    <a>
+        <div class="page-icon page-create">
+            <p>New page</p>
+        </div>
+    </a>
+</div>

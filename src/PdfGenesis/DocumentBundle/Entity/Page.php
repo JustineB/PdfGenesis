@@ -59,6 +59,22 @@ class Page
     protected $title;
 
     /**
+     * @var string
+     *
+     * @ORM\Column(name="file", type="string", length=255, nullable=true)
+     */
+    private $file;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="path", type="string", length=255, nullable=true)
+     */
+    private $path;
+
+
+
+    /**
      * Get id
      *
      * @return int
@@ -210,4 +226,38 @@ class Page
     {
         return $this->title;
     }
+
+    /**
+     * @return string
+     */
+    public function getPath()
+    {
+        return $this->path;
+    }
+
+    /**
+     * @param string $path
+     */
+    public function setPath($path)
+    {
+        $this->path = $path;
+    }
+
+    /**
+     * @return string
+     */
+    public function getFile()
+    {
+        return $this->file;
+    }
+
+    /**
+     * @param string $file
+     */
+    public function setFile($file)
+    {
+        $this->file = $file;
+    }
+
+
 }
