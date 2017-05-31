@@ -38,6 +38,7 @@ class DocumentController extends Controller
         $em->flush();
 
         $this->container->get("event_dispatcher")->dispatch(PageBundleEvents::NEW_PAGE, new PageEvent($document->getPages()->get(0)));
+        $this->container->get("event_dispatcher")->dispatch(DocumentBundleEvents::GENERATE_DOCUMENT, new DocumentEvent($document));
 
 
         $this->get('session')->set('document', $document->getId());
@@ -120,7 +121,7 @@ class DocumentController extends Controller
         $em = $this->getDoctrine()->getManager();
 
         $id = $request->get('id');
-        $value = intval($request->get('change_number'));
+
 
         //imagine if you want to jump du 0 à 5
 
@@ -131,7 +132,14 @@ class DocumentController extends Controller
         }
 
         $paginationOrder = $activatePage->getPaginationOrder();
-        $changePage = $paginationOrder + $value;
+
+        if($request->get('change_number')!= null){
+            $value = intval($request->get('change_number'));
+            $changePage = $paginationOrder + $value;
+        }else{
+            $changePage = intval($request->get('index_number'));
+        }
+
 
         if($changePage <= 0 || $changePage > sizeof($document->getPages()) ){
             return $this->redirect($this->generateUrl('design'));
@@ -145,6 +153,8 @@ class DocumentController extends Controller
 
         return $this->redirect($this->generateUrl('design'));
     }
+
+
 
 
 

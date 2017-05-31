@@ -2,7 +2,9 @@
     <ul>
         {% for document in library.documents %}
             <li class="library-element">
-                {% include "PdfGenesisDocumentBundle:Document:_element.html.twig" with {'document' : document} %}
+       
+               {% include "PdfGenesisDocumentBundle:Document:_element.html.twig" with {'document' : document} %}
+
             </li>
         {% endfor %}
         <li class="new_document">

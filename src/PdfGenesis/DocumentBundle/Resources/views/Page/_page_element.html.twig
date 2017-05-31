@@ -2,9 +2,10 @@
 
 <div class="page-container ">
 {% for page in pages %}
-
+    <a href="{{ path('change_page', {'id': document.id, 'index_number': page.paginationOrder }) }}">
         <div class="page-icon {% if page.activate == true %}active{% endif %}"> <img src="{{ asset(page.path) }}" class="page-icon-image" data-id="{{ page.id }}"></div>
         <p>{{ loop.index }}</p>
+    </a>
 {% endfor %}
 </div>
 

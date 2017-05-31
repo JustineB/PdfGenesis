@@ -88,10 +88,12 @@ class PageSubscriber implements EventSubscriberInterface{
                 'name'=> 'pages'. time() .'.jpg')
         );
 
-        $this->container->get('pdf_genesis.pdf_generator')->ImgGenerate($page, $path);
-
         $this->em->persist($page);
         $this->em->flush();
+
+        $this->container->get('pdf_genesis.pdf_generator')->ImgGenerate($page, $path);
+
+
 
         return new PageEvent($page);
     }
@@ -109,7 +111,7 @@ class PageSubscriber implements EventSubscriberInterface{
 
 
             $this->container->get('pdf_genesis.file_updater')->deleteFile($fichiers);
-            var_dump('b');
+
 
             $page->setPath(null);
             $page->setFile(null);
