@@ -69,3 +69,4 @@ function ajaxDocumentDelete(id,handleData){
 
     });
 }
+

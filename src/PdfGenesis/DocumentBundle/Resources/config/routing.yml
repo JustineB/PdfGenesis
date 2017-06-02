@@ -53,6 +53,11 @@ document_delete_ajax:
      options:
            expose: true
 
+document_get_page_ajax:
+     path:   /get-page
+     defaults:  { _controller: PdfGenesisDocumentBundle:Document:getPageAjax }
+     options:
+           expose: true
 
 
 library_index:

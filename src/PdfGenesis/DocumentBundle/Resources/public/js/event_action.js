@@ -17,6 +17,12 @@ $(document).ready(function(){
 
     });
 
+    $(document).on('click','.change-page-element',function(){
+        var id = $(this).data('id');
+
+       getPage(id);
+    });
+
     $(document).on('click','.delete-document',function(){
         var id = $(this).parent().data('id');
 

@@ -155,6 +155,19 @@ class DocumentController extends Controller
     }
 
 
+    public function getPageAjaxAction(Request $request){
+        $id = $request->get('id');
+
+        $page = $this->getDoctrine()->getManager()->getRepository('PdfGenesisDocumentBundle:Page')->find($id);
+
+        if($page){
+            $this->container->get("event_dispatcher")->dispatch(PageBundleEvents::ACTIVATE_PAGE, new PageEvent($page));
+        }
+
+        $view = $this->renderView('PdfGenesisCoreBundle:Design:_edit.html.twig',array('pages' => array($page), 'document' => $page->getDocument()));
+
+        return JsonResponse::create($view);
+    }
 
 
 

@@ -52,8 +52,10 @@
 
                     </div>
                 </div>
+                <div id="page-view">
+                    {% include  'PdfGenesisCoreBundle:Design:_edit.html.twig' with {'pages' : document.pages } %}
+                </div>
 
-                {% include  'PdfGenesisCoreBundle:Design:_edit.html.twig' with {'pages' : document.pages } %}
 
             </div>
 
