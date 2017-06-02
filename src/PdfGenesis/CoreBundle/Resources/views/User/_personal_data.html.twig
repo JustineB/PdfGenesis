@@ -1,7 +1,7 @@
 
 {% set import_icon = user.path is not null and user.file is not null ? 'full' : 'empty'  %}
 
-
+<div><a class="btn btn-success btn-mdp" data-toggle="modal"  data-target="#update_user-modal">Changer le mot de passe</a></div>
 <div class="personal-data">
     {% if user is defined and user is not null %}
         <div class="profile-picture profile-picture-{{ import_icon }}">
@@ -34,7 +34,6 @@
                     <strong>Email : </strong> <text>{{ user.email }} </text> <a id="email-user-edit" data-value="{{ user.email }}"><i class="material-icons">mode_edit</i></a></li>
             </ul>
         </div>
-        <div><a class="btn btn-success" data-toggle="modal" data-target="#update_user-modal">Changer le mot de passe</a></div>
         <div class="info-plus"> Member since {{ user.createdAt | date('d-m-Y') }}</div>
         <div class="update-user-modal">
             {% include 'PdfGenesisCoreBundle:User:_update_modal.html.twig' %}

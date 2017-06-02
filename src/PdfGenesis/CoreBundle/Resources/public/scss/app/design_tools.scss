@@ -1,9 +1,12 @@
+@import "color";
+
 .design-tool-container{
 
   //width:100%;
   height: 100%;
 
   #import_path{
+    opacity: 0;
     position: absolute;
     margin-top: 17px;
     //temporaire
@@ -13,6 +16,11 @@
   }
   a{
     text-align:center;
+  }
+
+  .input-file-trigger{
+    font-weight: 300;
+    color: $link-color;
   }
 }
 

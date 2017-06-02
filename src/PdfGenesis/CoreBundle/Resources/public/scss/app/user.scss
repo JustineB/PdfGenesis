@@ -1,3 +1,5 @@
+@import 'color';
+
 #user-section {
   .navbar {
     background-color: #fdb772 !important;
@@ -6,7 +8,7 @@
       padding-left: 3%;
     }
     .nav {
-      width: 40%;
+      width: 50%;
       li {
         padding-left: 60px;
       }
@@ -203,5 +205,21 @@
       }
     }
   }
+  .document-action{
+    margin: auto;
+    width: 70%;
+  }
+
+  .btn-mdp{
+    float: right;
+    color: white;
+    box-shadow: 0 2px 16px #9e9b9b;
+    background: #fdb772 !important;
+  }
+
+
+
 }
+
+
 

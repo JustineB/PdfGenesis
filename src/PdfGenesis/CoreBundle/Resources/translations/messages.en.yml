@@ -9,4 +9,7 @@ pdf-genesis:
     concept: Concept
     design: Design
     login-sign-up: Log in/Sign up
+    account: Account
+    logout: Logout
+
 

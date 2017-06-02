@@ -1,9 +1,15 @@
 .design-tool-container {
   height: 100%; }
   .design-tool-container #import_path {
+    opacity: 0;
     position: absolute;
     margin-top: 17px;
     z-index: 9999;
     width: 114px; }
+  .design-tool-container a {
+    text-align: center; }
+  .design-tool-container .input-file-trigger {
+    font-weight: 300;
+    color: #845c1f; }
 
 /*# sourceMappingURL=design_tools.css.map */

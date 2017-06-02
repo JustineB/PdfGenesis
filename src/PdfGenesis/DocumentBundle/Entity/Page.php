@@ -40,7 +40,7 @@ class Page
     /**
      * @var ArrayCollection
      *
-     * @ORM\OneToMany(targetEntity="PdfGenesis\ElementBundle\Entity\Element", mappedBy="page" )
+     * @ORM\OneToMany(targetEntity="PdfGenesis\ElementBundle\Entity\Element", mappedBy="page", cascade={"all"} )
      */
     protected $elements;
 

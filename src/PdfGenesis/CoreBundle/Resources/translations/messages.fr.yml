@@ -9,4 +9,6 @@ pdf-genesis:
     concept: Concept
     design: Créer
     login-sign-up: se connecter/s'inscrire
+    account: Compte
+    logout: Se deconnecter
 

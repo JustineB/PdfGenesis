@@ -8,7 +8,12 @@
             </li>
         {% endfor %}
         <li class="new_document">
-            <a class="btn btn-secondary" href="{{ path('design',{'new':1}) }}" > New document </a>
+            <a class="btn btn-secondary" href="{{ path('design',{'new':1}) }}" >
+                <div
+                        class="page-icon page-create">
+                     <p>New document </p>
+                </div>
+            </a>
         </li>
     </ul>
     {% if library.documents is empty %}

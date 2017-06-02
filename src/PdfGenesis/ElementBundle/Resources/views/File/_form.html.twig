@@ -1,4 +1,6 @@
 <form action="{{ path('import_file') }}" method="post" id="import-file" enctype="multipart/form-data">
+
+    <a><label for="import_path" class="input-file-trigger" tabindex="0"><i class="material-icons">file_upload</i>Import</label></a>
     {{ form_widget(form.path) }}
     {#<a class=""> Import </a>#}
 

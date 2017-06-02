@@ -1,0 +1,52 @@
+#design-container #tabs, #design-container #tabs2 {
+  padding: 0;
+  border: none;
+  background: transparent; }
+  #design-container #tabs ul, #design-container #tabs2 ul {
+    border: none;
+    background: inherit;
+    padding: 0; }
+    #design-container #tabs ul#element-list, #design-container #tabs2 ul#element-list {
+      padding: 50px 5% 0 30%;
+      width: 100%; }
+    #design-container #tabs ul li, #design-container #tabs2 ul li {
+      font-size: 12pt;
+      font-weight: 500;
+      text-align: center;
+      width: 50%;
+      margin: 0 !important;
+      border: inherit;
+      border-radius: 0;
+      background: transparent; }
+      #design-container #tabs ul li.element-part, #design-container #tabs2 ul li.element-part {
+        display: inline-block;
+        width: 100%;
+        padding: 10px 0 20px 0 !important; }
+      #design-container #tabs ul li.ui-tabs-active, #design-container #tabs2 ul li.ui-tabs-active {
+        box-shadow: 0 0 14px #d2a87f;
+        background: #e8c8a8; }
+      #design-container #tabs ul li a, #design-container #tabs2 ul li a {
+        width: 100%; }
+        #design-container #tabs ul li a.element-link i, #design-container #tabs ul li a.element-link p, #design-container #tabs2 ul li a.element-link i, #design-container #tabs2 ul li a.element-link p {
+          display: inline-block;
+          float: left; }
+  #design-container #tabs .page-container, #design-container #tabs2 .page-container {
+    margin: 10% 31%; }
+    #design-container #tabs .page-container .page-icon, #design-container #tabs2 .page-container .page-icon {
+      width: 110px;
+      background: white; }
+      #design-container #tabs .page-container .page-icon img, #design-container #tabs2 .page-container .page-icon img {
+        width: 110px;
+        height: 140px; }
+      #design-container #tabs .page-container .page-icon.active img, #design-container #tabs2 .page-container .page-icon.active img {
+        border: 3px solid #ffa812; }
+      #design-container #tabs .page-container .page-icon.page-create, #design-container #tabs2 .page-container .page-icon.page-create {
+        background: inherit;
+        border: 2px dashed #ffa812; }
+        #design-container #tabs .page-container .page-icon.page-create p, #design-container #tabs2 .page-container .page-icon.page-create p {
+          text-align: center;
+          padding: 50% 0; }
+    #design-container #tabs .page-container p, #design-container #tabs2 .page-container p {
+      text-align: center; }
+
+/*# sourceMappingURL=design_container.css.map */

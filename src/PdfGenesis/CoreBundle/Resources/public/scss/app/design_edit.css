@@ -1,42 +1,57 @@
-.blank-sheet {
-  width: 100%;
-  margin-left: auto;
-  margin-right: auto;
-  position: relative;
-  height: 750px;
-  background-color: #FFF; }
-
-.free-space {
-  height: 100px; }
+#design-container {
+  background-color: #f2f2f2; }
+  #design-container .blank-sheet {
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    position: relative;
+    height: 60em;
+    background-color: #FFF;
+    box-shadow: 0px 2px 15px #c3bcbc; }
+  #design-container .free-space {
+    height: 100px; }
 
 .design-tool-container-left a {
   float: none;
   display: inline-block;
-  margin: 40px 0px;
+  margin: 40px 0;
   width: 100%; }
 
 .design-tool-container-right .element-part {
-  margin: 9px 0px; }
+  margin: 9px 0; }
 
 .design-tool-container {
-  padding-left: 68px;
-  height: 155vh !important;
-  padding-top: 35vh;
-  background-color: rgba(236, 134, 43, 0.12); }
+  padding: 0;
+  box-shadow: 0 2px 15px #c3bcbc;
+  height: 205vh !important;
+  background-color: rgba(253, 166, 80, 0.61); }
 
 .blank-sheet-container {
   padding-right: 90px;
   padding-left: 90px; }
 
 .top-describing {
-  border: 2px solid gray;
+  box-shadow: 0 2px 15px #c3bcbc;
   padding: 10px;
   margin-bottom: 20px;
   text-align: center;
-  background-color: rgba(226, 208, 193, 0.42); }
+  height: 60px;
+  background-color: rgba(253, 166, 80, 0.61); }
+  .top-describing .doc .doc-label {
+    width: 30%;
+    float: left;
+    font-weight: 200;
+    color: #845c1f;
+    font-size: 10pt; }
+  .top-describing .doc p {
+    text-align: center;
+    padding: 0 20% 0 20%; }
+  .top-describing.page-info {
+    margin: 55px 0 55px 0;
+    height: 120px; }
 
 #design-container a {
-  color: #c18b27; }
+  color: #845c1f; }
 #design-container .navbar-header {
   color: #c18b27; }
 

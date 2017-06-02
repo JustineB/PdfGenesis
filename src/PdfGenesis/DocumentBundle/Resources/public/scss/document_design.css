@@ -1,0 +1,19 @@
+.document-action a {
+  cursor: pointer; }
+  .document-action a i {
+    cursor: pointer; }
+
+.page-create {
+  background: inherit;
+  border: 2px dashed #ffa812;
+  width: 110px; }
+  .page-create p {
+    text-align: center;
+    padding: 50% 0; }
+
+.new_document .page-create {
+  height: 120px;
+  position: relative;
+  top: -90px; }
+
+/*# sourceMappingURL=document_design.css.map */

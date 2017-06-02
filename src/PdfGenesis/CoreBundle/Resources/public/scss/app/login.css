@@ -1,30 +1,32 @@
 #login-modal .modal-content {
   width: 90%; }
-  #login-modal .modal-content .modal-body #tabs {
+  #login-modal .modal-content .modal-body #tabs, #login-modal .modal-content .modal-body #tabs2 {
     width: 70%;
     margin: auto;
     border: none; }
-    #login-modal .modal-content .modal-body #tabs .ui-tabs-nav {
+    #login-modal .modal-content .modal-body #tabs #tabs-3, #login-modal .modal-content .modal-body #tabs2 #tabs-3 {
+      display: none; }
+    #login-modal .modal-content .modal-body #tabs .ui-tabs-nav, #login-modal .modal-content .modal-body #tabs2 .ui-tabs-nav {
       height: 3em;
       width: 100%;
       margin: 0;
       padding: 0; }
-      #login-modal .modal-content .modal-body #tabs .ui-tabs-nav li {
+      #login-modal .modal-content .modal-body #tabs .ui-tabs-nav li, #login-modal .modal-content .modal-body #tabs2 .ui-tabs-nav li {
         height: 3em;
         width: 50%;
         margin: 0;
         padding: 0; }
-        #login-modal .modal-content .modal-body #tabs .ui-tabs-nav li a {
+        #login-modal .modal-content .modal-body #tabs .ui-tabs-nav li a, #login-modal .modal-content .modal-body #tabs2 .ui-tabs-nav li a {
           width: 100%;
           height: 100%;
           border: 1px solid #dadada !important; }
-          #login-modal .modal-content .modal-body #tabs .ui-tabs-nav li a:focus {
+          #login-modal .modal-content .modal-body #tabs .ui-tabs-nav li a:focus, #login-modal .modal-content .modal-body #tabs2 .ui-tabs-nav li a:focus {
             outline: none; }
-        #login-modal .modal-content .modal-body #tabs .ui-tabs-nav li.ui-state-active {
+        #login-modal .modal-content .modal-body #tabs .ui-tabs-nav li.ui-state-active, #login-modal .modal-content .modal-body #tabs2 .ui-tabs-nav li.ui-state-active {
           background: #efedea;
           box-shadow: 0 2px 14px #d8ccb7;
           border: none; }
-          #login-modal .modal-content .modal-body #tabs .ui-tabs-nav li.ui-state-active a {
+          #login-modal .modal-content .modal-body #tabs .ui-tabs-nav li.ui-state-active a, #login-modal .modal-content .modal-body #tabs2 .ui-tabs-nav li.ui-state-active a {
             color: #000; }
   #login-modal .modal-content .modal-body form {
     width: 80%;
@@ -42,6 +44,8 @@
         background: #3b5998; }
       #login-modal .modal-content .login-social div#google {
         background: #d2995d; }
+      #login-modal .modal-content .login-social div#password {
+        background: #bdad90; }
       #login-modal .modal-content .login-social div a {
         margin: 0;
         font-size: 9pt;

@@ -5,6 +5,13 @@ li{
   list-style-type: none;
 }
 
+a{
+  i{
+    color: $link-color;
+  }
+}
+
+
 #design-container{
   .navbar-header{
     margin-top:20px;

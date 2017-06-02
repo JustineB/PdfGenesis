@@ -6,3 +6,22 @@
     }
   }
 }
+
+.page-create{
+  background: inherit;
+  border: 2px dashed #ffa812;
+  width:110px;
+  p{
+    text-align: center;
+    padding: 50% 0;
+  }
+}
+
+.new_document{
+  display: inline-block;
+  .page-create{
+    height: 120px;
+    position: relative;
+    top: -90px;
+  }
+}

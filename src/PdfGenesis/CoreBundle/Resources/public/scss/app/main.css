@@ -1,6 +1,9 @@
 li {
   list-style-type: none; }
 
+a i {
+  color: #845c1f; }
+
 #design-container .navbar-header {
   margin-top: 20px; }
   #design-container .navbar-header .navbar-brand {
@@ -15,9 +18,22 @@ li {
     float: left !important;
     width: 33%; }
   .change-page-section .page-index {
-    width: 30%; }
+    width: 80%;
+    font-weight: 600; }
+  .change-page-section .arrow {
+    width: 10%; }
+    .change-page-section .arrow #left {
+      float: left !important; }
+    .change-page-section .arrow #right {
+      float: right !important; }
 
 .page-describing {
   margin: 20px 200px; }
+  .page-describing i {
+    position: relative;
+    top: 5px; }
+
+p.text-warning {
+  font-size: 10pt; }
 
 /*# sourceMappingURL=main.css.map */

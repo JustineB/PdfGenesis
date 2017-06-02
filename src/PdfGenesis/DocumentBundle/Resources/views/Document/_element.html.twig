@@ -1,7 +1,7 @@
 <div class="document-element-container" data-id="{{ document.id }}">
     <div class="document-element">
         <a href="{{ path('design',{'id_document' : document.id}) }}">
-            <img src="{{ image64(document.documentImg.path) }}" alt="{{ document.title }}"/>
+            <img src="{{ asset(document.documentImg.path) }}" alt="{{ document.title }}"/>
             <ul>
                 <li class="title">{{ document.title }}</li>
                 <li>{{ document.createdAt | date('d-m-Y') }}</li>
