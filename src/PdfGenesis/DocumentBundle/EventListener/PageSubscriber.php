@@ -89,13 +89,11 @@ class PageSubscriber implements EventSubscriberInterface{
                 'name'=> 'pages'. time() .'.jpg')
         );
 
-        $this->em->persist($page);
-        $this->em->flush();
-
 
         $this->container->get('pdf_genesis.pdf_generator')->ImgGenerate($page, $path);
 
-
+        $this->em->persist($page);
+        $this->em->flush();
 
         return new PageEvent($page);
     }

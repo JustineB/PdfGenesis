@@ -110,6 +110,7 @@ class PdfGenerator
             if($page instanceof Document){
                 $page->setDocumentImg($image);
             }
+
         }catch(FileException $e){
             return false;
         }
