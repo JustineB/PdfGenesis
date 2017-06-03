@@ -82,6 +82,7 @@ class PageSubscriber implements EventSubscriberInterface{
     public function newMethod(PageEvent $event){
         $page = $event->getData();
 
+
         $path = array(
             'img' => array(
                 'extension'=> "medias/doc".$page->getDocument()->getId()."/pages/img/",
@@ -90,6 +91,7 @@ class PageSubscriber implements EventSubscriberInterface{
 
         $this->em->persist($page);
         $this->em->flush();
+
 
         $this->container->get('pdf_genesis.pdf_generator')->ImgGenerate($page, $path);
 

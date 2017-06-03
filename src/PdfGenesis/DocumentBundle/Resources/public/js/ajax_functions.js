@@ -5,8 +5,14 @@ function ajaxSaveDocument(){
         method: 'POST',
         url: Routing.generate('document_save_ajax'),
         success: function (data) {
-            if (data == false) {
-                console.log(' error ! an error occurs .. ');
+            if (data != false) {
+                var page_id = data.id,
+                    $page_element = $('.page_element[data-id="'+page_id+'"]');
+
+                $page_element.empty();
+                $page_element.append(data.view);
+
+                console.log(data);
             }
         },
         error: function () {

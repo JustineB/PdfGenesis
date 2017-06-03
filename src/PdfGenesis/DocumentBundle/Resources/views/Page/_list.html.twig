@@ -1,0 +1,18 @@
+
+
+<div class="page-container ">
+{% for page in pages %}
+        <div class="page_element" data-id="{{ page.id  }}">
+            {% include 'PdfGenesisDocumentBundle:Page:_page_element.html.twig' with {'page': page, 'loop_index': loop.index} %}
+        </div>
+
+{% endfor %}
+</div>
+
+<div class="page-container">
+    <a href="{{ path('generate_new_page', {'id': document.id }) }}">
+        <div class="page-icon page-create">
+            <p>New page</p>
+        </div>
+    </a>
+</div>

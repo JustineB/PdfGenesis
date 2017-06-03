@@ -28,6 +28,12 @@ use Symfony\Component\HttpFoundation\Response;
 class DocumentController extends Controller
 {
 
+    /**
+     * Créer un nouveau document et génère une nouvelle image du document
+     *
+     * @param Request $request
+     * @return \Symfony\Component\HttpFoundation\RedirectResponse
+     */
     public function newAction(Request $request){
 
         $em = $this->getDoctrine()->getManager();
@@ -113,6 +119,8 @@ class DocumentController extends Controller
     }
 
     /**
+     * Action pour changer sa pageau sein d'un document
+     *
      * @param Request $request
      * @return \Symfony\Component\HttpFoundation\RedirectResponse
      */
@@ -122,8 +130,6 @@ class DocumentController extends Controller
 
         $id = $request->get('id');
 
-
-        //imagine if you want to jump du 0 à 5
 
         $document = $em->getRepository('PdfGenesisDocumentBundle:Document')->find($id);
 
@@ -155,7 +161,13 @@ class DocumentController extends Controller
     }
 
 
-    public function getPageAjaxAction(Request $request){
+    /**
+     * Récupère la page et l'active
+     *
+     * @param Request $request
+     * @return static
+     */
+    public function activateAjaxAction(Request $request){
         $id = $request->get('id');
 
         $page = $this->getDoctrine()->getManager()->getRepository('PdfGenesisDocumentBundle:Page')->find($id);
@@ -213,21 +225,6 @@ class DocumentController extends Controller
     }
 
 
-   /* public function saveDocumentAction(Document $document){
-        if(null == $user = $this->getUser()){
-            //bientôt en ajax
-            return $this->redirect($this->generateUrl('design'));
-        }
-
-        $event = new DocumentEvent($document);
-
-        $this->container->get("event_dispatcher")->dispatch(DocumentBundleEvents::GENERATE_DOCUMENT, $event);
-        $this->container->get("event_dispatcher")->dispatch(DocumentBundleEvents::SAVE_DOCUMENT, $event);
-
-        // trouver une solution pour rendre indé
-        return $this->redirect($this->generateUrl('design'));
-    }*/
-
    public function updateDocumentAjaxAction(Request $request){
 
        $title = $request->get('title');
@@ -251,34 +248,44 @@ class DocumentController extends Controller
 
 
     /**
+     * Sauvegarde automatiquement le document
+     *
      * @return static
      */
     public function saveDocumentAjaxAction(){
         $id_document = $this->get('session')->get('document');
 
-        if(null == $user = $this->getUser() || $id_document == null){
+
+        if( $id_document == null){
             return JsonResponse::create(false);
         }
 
         $document = $this->getDoctrine()->getManager()
             ->getRepository('PdfGenesisDocumentBundle:Document')->find($id_document);
 
+
         $event = new DocumentEvent($document);
 
-        $this->container->get("event_dispatcher")->dispatch(DocumentBundleEvents::GENERATE_DOCUMENT, $event);
+        if(null != $user = $this->getUser()){
+            $this->container->get("event_dispatcher")->dispatch(DocumentBundleEvents::GENERATE_DOCUMENT, $event);
+        }
         $this->container->get("event_dispatcher")->dispatch(DocumentBundleEvents::SAVE_DOCUMENT, $event);
 
+
         $page_active = $this->getDoctrine()->getManager()
-            ->getRepository('PdfGenesisDocumentBundle:Page')->findBy(array('document' => $document, 'activate' => true));
+            ->getRepository('PdfGenesisDocumentBundle:Page')->findOneBy(array('document' => $document, 'activate' => true));
 
-        $this->container->get("event_dispatcher")->dispatch(PageBundleEvents::UPDATE_PAGE, new PageEvent($page_active[0]));
+        $this->container->get("event_dispatcher")->dispatch(PageBundleEvents::UPDATE_PAGE, new PageEvent($page_active));
 
 
+        $view = $this->renderView('PdfGenesisDocumentBundle:Page:_page_element.html.twig',array('page' => $page_active,'loop_index' => $page_active->getPaginationOrder()));
 
-        return JsonResponse::create(true);
+        return JsonResponse::create(array('view' => $view, 'id' => $page_active->getId()));
     }
 
     /**
+     * Récupère les données du document
+     *
      * @param Request $request
      * @return static
      */

@@ -11,6 +11,12 @@ use Symfony\Component\HttpFoundation\Request;
 class ElementController extends Controller
 {
 
+    /**
+     * Liste tout les élements présent sur la page
+     *
+     * @param Request $request
+     * @return \Symfony\Component\HttpFoundation\Response
+     */
     public function listAction(Request $request){
         $pageId = $request->get('page_id');
 
@@ -29,6 +35,10 @@ class ElementController extends Controller
 
     }
 
+    /**
+     * @param Request $request
+     * @return \Symfony\Component\HttpFoundation\Response
+     */
     public function classificationAction(Request $request){
         $documentId = $request->get('id');
 

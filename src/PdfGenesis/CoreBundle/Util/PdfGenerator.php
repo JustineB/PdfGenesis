@@ -84,6 +84,7 @@ class PdfGenerator
         try{
             $snappy_image = $this->container->get('knp_snappy.image');
 
+
             foreach (self::$options_img as $key => $value) {
                 $snappy_image->setOption($key, $value);
             }

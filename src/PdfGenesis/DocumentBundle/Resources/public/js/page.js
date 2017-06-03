@@ -1,8 +1,8 @@
-function getPage(id){
+function activatePage(id){
 
     $.ajax({
         method: "post",
-        url: Routing.generate('document_get_page_ajax'),
+        url: Routing.generate('document_activate_page_ajax'),
         data: {'id' : id},
         success: function(data){
             console.log(data);
